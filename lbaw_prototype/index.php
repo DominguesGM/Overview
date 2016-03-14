@@ -142,6 +142,8 @@ include('template/header.html');
                 </div>
             </div>
         </div>
+
+
 <?php
 include('template/footer.html');
 ?>
