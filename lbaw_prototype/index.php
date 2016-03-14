@@ -1,9 +1,6 @@
 <?php
 include('template/header.html');
 ?>
-<!-- Page Content -->
-<div class="container">
-
     <!-- Page Header -->
     <div class="row">
         <div class="col-lg-12">
@@ -145,7 +142,6 @@ include('template/header.html');
                 </div>
             </div>
         </div>
-    </div>
 <?php
 include('template/footer.html');
 ?>
