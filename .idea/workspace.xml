@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="734edb07-9774-4920-a425-0be15b3003f9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lbaw_prototype/search.php" afterPath="$PROJECT_DIR$/lbaw_prototype/search.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lbaw_prototype/profile.php" afterPath="$PROJECT_DIR$/lbaw_prototype/profile.php" />
     </list>
     <ignored path="Overview.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,11 +34,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="search.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lbaw_prototype/search.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41034484">
+            <state vertical-scroll-proportion="-9.153846">
               <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lbaw_prototype/profile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.61551726">
+              <caret line="56" column="60" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -91,6 +101,7 @@
         <option value="$PROJECT_DIR$/lbaw_prototype/template/header.html" />
         <option value="$PROJECT_DIR$/lbaw_prototype/index.php" />
         <option value="$PROJECT_DIR$/lbaw_prototype/search.php" />
+        <option value="$PROJECT_DIR$/lbaw_prototype/profile.php" />
       </list>
     </option>
   </component>
@@ -632,12 +643,12 @@
       <created>1458169001735</created>
       <option name="number" value="Default" />
       <updated>1458169001735</updated>
-      <workItem from="1458169015510" duration="1878000" />
+      <workItem from="1458169015510" duration="2241000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1878000" />
+    <option name="totallyTimeSpent" value="2241000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -725,8 +736,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lbaw_prototype/search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41034484">
+        <state vertical-scroll-proportion="-9.153846">
           <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lbaw_prototype/profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61551726">
+          <caret line="56" column="60" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="60" />
           <folding />
         </state>
       </provider>

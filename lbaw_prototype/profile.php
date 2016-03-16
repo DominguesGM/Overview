@@ -10,7 +10,7 @@ include('template/header.html');
 <div class="container1">
   <div class="container">
     <div class="row">
-      <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+      <div class="col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
 
         <div class="profile">
           <div class="col-sm-12">
