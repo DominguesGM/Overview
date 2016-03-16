@@ -9,7 +9,7 @@ include('template/header.html');
 include('template/search_bar.html');
 ?>
 <div class="container">
-  <div class="col-md-8 col-xs-offset-2">
+  <div class="col-md-12">
     <hgroup class="mb20">
       <br>
       <h1>Search results</h1>
@@ -18,7 +18,7 @@ include('template/search_bar.html');
     </hgroup>
   </div>
 
-  <div class="col-md-8 col-xs-offset-2">
+  <div class="col-md-12">
     <section class="col-md-12 col-sm-6 col-md-18">
       <article class="search-result row">
         <span class="image-box" data-score="321"><img class="img-thumbnail" src="http://placehold.it/75x75" alt=""></span>
