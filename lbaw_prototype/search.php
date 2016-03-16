@@ -56,7 +56,7 @@ include('template/search_bar.html');
 
 
       <article class="search-result row">
-        <span class="image-box" data-score="321"><img class="img-thumbnail" src="http://lorempixel.com/250/140/sports" alt=""></span>
+        <span class="image-box" data-score="321"><img class="img-thumbnail" src="http://placehold.it/75x75" alt=""></span>
         <div class="col-xs-12 col-sm-12 col-md-2">
           <ul class="meta-search">
             <li><i class="glyphicon glyphicon-calendar"></i> <span>02/15/2014</span></li>
