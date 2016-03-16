@@ -26,3 +26,7 @@ hgroup h2.lead strong { font: bold normal 1.125em "Roboto",Arial,Verdana,sans-se
 .search-result span.plus a i { color: #fff !important; }
 .search-result span.border { display: block; width: 97%; margin: 0 15px; border-bottom: 1px dotted #ccc; }
 
+.tick, .cross{
+    font-size:1.5em;
+    text-align:right;
+}
