@@ -12,6 +12,14 @@ body {
     margin-top: 25px;
 }
 
+.navbar-brand{
+    font-size: 2em;
+}
+
+.header-fa{
+    font-size: 1.5em;
+}
+
 .navbar{
     margin-bottom: 0px;
 }
