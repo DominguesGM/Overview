@@ -93,7 +93,7 @@ include("template/header.html");?>
                     <p class="pull-right"><small>5 days ago</small></p>
                     <div class="comment-vote"><a href="#"><i class="fa fa-arrow-up"></i></a><br><a href="#"><i class="fa fa-arrow-down"></i></a></div>
                     <a class="media-left" href="#">
-                        <img class="comment-user-picture" src="http://placehold.it/40x40">
+                        <img class="img-circle comment-user-picture" src="http://placehold.it/40x40">
                     </a>
                     <div class="media-body">
 
@@ -108,7 +108,7 @@ include("template/header.html");?>
                     <p class="pull-right"><small>5 days ago</small></p>
                     <div class="comment-vote"><a href="#"><i class="fa fa-arrow-up"></i></a><br><a href="#"><i class="fa fa-arrow-down"></i></a></div>
                     <a class="media-left" href="#">
-                        <img class="comment-user-picture" src="http://placehold.it/40x40">
+                        <img class="img-circle comment-user-picture" src="http://placehold.it/40x40">
                     </a>
                     <div class="media-body">
 
@@ -123,7 +123,7 @@ include("template/header.html");?>
                     <p class="pull-right"><small>5 days ago</small></p>
                     <div class="comment-vote"><a href="#"><i class="fa fa-arrow-up"></i></a><br><a href="#"><i class="fa fa-arrow-down"></i></a></div>
                     <a class="media-left" href="#">
-                        <img class="comment-user-picture" src="http://placehold.it/40x40">
+                        <img class="img-circle comment-user-picture" src="http://placehold.it/40x40">
                     </a>
                     <div class="media-body">
 
@@ -138,7 +138,7 @@ include("template/header.html");?>
                     <p class="pull-right"><small>5 days ago</small></p>
                     <div class="comment-vote"><a href="#"><i class="fa fa-arrow-up"></i></a><br><a href="#"><i class="fa fa-arrow-down"></i></a></div>
                     <a class="media-left" href="#">
-                        <img class="comment-user-picture" src="http://placehold.it/40x40">
+                        <img class="img-circle comment-user-picture" src="http://placehold.it/40x40">
                     </a>
                     <div class="media-body">
 
