@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="734edb07-9774-4920-a425-0be15b3003f9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lbaw_prototype/article.php" afterPath="$PROJECT_DIR$/lbaw_prototype/article.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lbaw_prototype/template/footer.html" afterPath="$PROJECT_DIR$/lbaw_prototype/template/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lbaw_prototype/template/header.html" afterPath="$PROJECT_DIR$/lbaw_prototype/template/header.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lbaw_prototype/index.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lbaw_prototype/css/main.css" afterPath="$PROJECT_DIR$/lbaw_prototype/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lbaw_prototype/index.php" afterPath="$PROJECT_DIR$/lbaw_prototype/index.php" />
     </list>
     <ignored path="Overview.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,21 +27,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lbaw_prototype/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.090909">
-              <caret line="367" column="21" selection-start-line="367" selection-start-column="21" selection-end-line="367" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.67332125">
+              <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="article.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lbaw_prototype/article.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lbaw_prototype/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6913793">
-              <caret line="141" column="24" selection-start-line="141" selection-start-column="24" selection-end-line="141" selection-end-column="24" />
+            <state vertical-scroll-proportion="-21.0">
+              <caret line="105" column="28" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -59,15 +60,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lbaw_prototype/index.php" />
         <option value="$PROJECT_DIR$/lbaw_prototype/search.php" />
         <option value="$PROJECT_DIR$/lbaw_prototype/profile.php" />
         <option value="$PROJECT_DIR$/lbaw_prototype/css/search.css" />
         <option value="$PROJECT_DIR$/lbaw_prototype/report_management.php" />
         <option value="$PROJECT_DIR$/lbaw_prototype/css/report_management.css" />
-        <option value="$PROJECT_DIR$/lbaw_prototype/template/header.html" />
-        <option value="$PROJECT_DIR$/lbaw_prototype/css/main.css" />
         <option value="$PROJECT_DIR$/lbaw_prototype/article.php" />
+        <option value="$PROJECT_DIR$/lbaw_prototype/template/header.html" />
+        <option value="$PROJECT_DIR$/lbaw_prototype/index.php" />
+        <option value="$PROJECT_DIR$/lbaw_prototype/css/main.css" />
       </list>
     </option>
   </component>
@@ -644,12 +645,12 @@
       <option name="number" value="Default" />
       <updated>1458169001735</updated>
       <workItem from="1458169015510" duration="6242000" />
-      <workItem from="1458212133169" duration="1951000" />
+      <workItem from="1458212133169" duration="3572000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8193000" />
+    <option name="totallyTimeSpent" value="9814000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -700,21 +701,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lbaw_prototype/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lbaw_prototype/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.3012047">
-          <caret line="96" column="62" selection-start-line="96" selection-start-column="62" selection-end-line="96" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -776,18 +762,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lbaw_prototype/template/header.html">
+    <entry file="file://$PROJECT_DIR$/lbaw_prototype/css/bootstrapreadable.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.73077">
-          <caret line="83" column="17" selection-start-line="83" selection-start-column="17" selection-end-line="83" selection-end-column="17" />
+        <state vertical-scroll-proportion="30.841463">
+          <caret line="10" column="19119" selection-start-line="10" selection-start-column="19109" selection-end-line="10" selection-end-column="19119" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lbaw_prototype/css/main.css">
+    <entry file="file://$PROJECT_DIR$/lbaw_prototype/template/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.090909">
-          <caret line="367" column="21" selection-start-line="367" selection-start-column="21" selection-end-line="367" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.31206897">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -796,6 +782,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6913793">
           <caret line="141" column="24" selection-start-line="141" selection-start-column="24" selection-end-line="141" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lbaw_prototype/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.0">
+          <caret line="105" column="28" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lbaw_prototype/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67332125">
+          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
           <folding />
         </state>
       </provider>

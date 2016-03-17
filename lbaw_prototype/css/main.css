@@ -29,11 +29,16 @@ body {
 }
 
 .short_news_item{
-    background-color: #DDD;
     padding-left: 15px;
     padding-right: 15px;
     margin-left: 0px;
     margin-right: 0px;
+}
+
+.news-row{
+    background-color: #DDD;
+    padding-top:10px;
+    margin-bottom: 25px;
 }
 
 h2{

@@ -4,7 +4,7 @@ include('template/header.html');
     <!-- /.row -->
 
     <!-- Projects Row -->
-    <div class="row">
+    <div class="row news-row">
         <div class="col-md-4 portfolio-item short_news_item">
             <h2 class="main_category"><a href="#">Trending</a></h2>
             <div class="short_category_content">
@@ -54,7 +54,7 @@ include('template/header.html');
     <!-- /.row -->
 
     <!-- Projects Row -->
-    <div class="row">
+    <div class="row news-row">
         <div class="col-md-4 portfolio-item short_news_item">
             <h2 class="main_category"><a href="#">Economy</a></h2>
             <div class="short_category_content">
@@ -103,7 +103,7 @@ include('template/header.html');
     </div>
 
     <!-- Projects Row -->
-    <div class="row">
+    <div class="row news-row">
         <div class="col-md-4 portfolio-item short_news_item">
             <h2 class="main_category"><a href="#">Category</a></h2>
             <div class="short_category_content">
