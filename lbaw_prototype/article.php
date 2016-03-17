@@ -22,7 +22,7 @@ include("template/header.html");?>
                     <p class="author"><a href="#">Jon Doe</a>
                 </div>
                 <a href="#">
-                    <img src="http://placehold.it/500x400" alt="" class="feature">
+                    <img src="http://placehold.it/600x400" alt="" class="feature">
                 </a>
                 <div class="article-body">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis molestie pellentesque justo vel dignissim. Donec eleifend magna mi, vitae rhoncus turpis tempus ac. Suspendisse lacinia lectus mi, egestas commodo lorem pulvinar non. Donec sollicitudin lacinia condimentum. Ut venenatis suscipit quam quis fermentum. Vivamus vel lectus vel diam vulputate varius. Vivamus tempor, tortor non accumsan hendrerit, enim velit blandit elit, at cursus ante eros vitae quam. Donec tellus metus, lobortis sit amet lorem fermentum, tristique semper nisl. Nunc pellentesque sagittis lorem quis congue. Proin ac nunc at nisi eleifend pretium in vel velit. Proin ut faucibus tortor. Maecenas enim ante, placerat id dictum ac, consequat id est. Maecenas vitae dui quis enim sagittis fermentum in eget dolor. Donec suscipit consectetur feugiat. Aliquam sagittis pretium congue.</p>
@@ -35,7 +35,7 @@ include("template/header.html");?>
             <ul class="all-blogs">
                 <li class="media">
                     <a class="pull-left" href="#">
-                        <img src="http://placehold.it/200x100" alt="...">
+                        <img src="http://placehold.it/100x100" alt="...">
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading">Latest Google Updates</h4>
@@ -44,7 +44,7 @@ include("template/header.html");?>
                 </li>
                 <li class="media">
                     <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/200x100" alt="...">
+                        <img class="media-object" src="http://placehold.it/100x100" alt="...">
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading">Newest bootstrap version</h4>
@@ -53,7 +53,7 @@ include("template/header.html");?>
                 </li>
                 <li class="media">
                     <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/200x100" alt="...">
+                        <img class="media-object" src="http://placehold.it/100x100" alt="...">
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading">Android rolls our another update</h4>
@@ -62,7 +62,7 @@ include("template/header.html");?>
                 </li>
                 <li class="media">
                     <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/200x100" alt="...">
+                        <img class="media-object" src="http://placehold.it/100x100" alt="...">
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading">Survey results are out</h4>
@@ -92,7 +92,7 @@ include("template/header.html");?>
                     <p class="pull-right"><small>5 days ago</small></p>
                     <div class="comment-vote"><a href="#"><i class="fa fa-arrow-up"></i></a><br><a href="#"><i class="fa fa-arrow-down"></i></a></div>
                     <a class="media-left" href="#">
-                        <img src="http://lorempixel.com/40/40/people/1/">
+                        <img class="comment-user-picture" src="http://placehold.it/40x40">
                     </a>
                     <div class="media-body">
 
@@ -106,7 +106,7 @@ include("template/header.html");?>
                     <p class="pull-right"><small>5 days ago</small></p>
                     <div class="comment-vote"><a href="#"><i class="fa fa-arrow-up"></i></a><br><a href="#"><i class="fa fa-arrow-down"></i></a></div>
                     <a class="media-left" href="#">
-                        <img src="http://lorempixel.com/40/40/people/2/">
+                        <img class="comment-user-picture" src="http://placehold.it/40x40">
                     </a>
                     <div class="media-body">
 
@@ -120,7 +120,7 @@ include("template/header.html");?>
                     <p class="pull-right"><small>5 days ago</small></p>
                     <div class="comment-vote"><a href="#"><i class="fa fa-arrow-up"></i></a><br><a href="#"><i class="fa fa-arrow-down"></i></a></div>
                     <a class="media-left" href="#">
-                        <img src="http://lorempixel.com/40/40/people/3/">
+                        <img class="comment-user-picture" src="http://placehold.it/40x40">
                     </a>
                     <div class="media-body">
 
@@ -134,7 +134,7 @@ include("template/header.html");?>
                     <p class="pull-right"><small>5 days ago</small></p>
                     <div class="comment-vote"><a href="#"><i class="fa fa-arrow-up"></i></a><br><a href="#"><i class="fa fa-arrow-down"></i></a></div>
                     <a class="media-left" href="#">
-                        <img src="http://lorempixel.com/40/40/people/4/">
+                        <img class="comment-user-picture" src="http://placehold.it/40x40">
                     </a>
                     <div class="media-body">
 
