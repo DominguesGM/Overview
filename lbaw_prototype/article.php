@@ -30,6 +30,7 @@ include("template/header.html");?>
                     <p>Sed hendrerit, ante id vestibulum efficitur, ligula felis feugiat lacus, ut tincidunt diam turpis quis dolor. Sed molestie scelerisque tellus quis viverra. Etiam a risus id turpis hendrerit egestas. Sed id iaculis augue, eget luctus sapien. In ac quam augue. Nullam in laoreet ante. Aliquam non justo accumsan ex egestas porttitor et et ligula. Quisque convallis, purus et vulputate blandit, nunc dolor tincidunt dolor, ac gravida magna neque ut sapien. Curabitur laoreet erat nec leo convallis, imperdiet luctus enim ultrices. Donec aliquam vitae mi in ullamcorper. Vivamus velit arcu, euismod ac molestie in, pharetra at diam. Suspendisse aliquet ultricies semper.</p>
                 </div>
             </div>
+            <div class="report-article"><a href="#">Report Article</a></div>
         </div>
         <div class="col-md-4 col-lg-4">
             <ul class="all-blogs">
@@ -100,6 +101,7 @@ include("template/header.html");?>
                         Wow! this is really great.
 
                         <p><small>Score: 123</small></p>
+                        <p><small><a href="#">Report Comment</a></small></p>
                     </div>
                 </div>
                 <div class="media comment">
@@ -114,6 +116,7 @@ include("template/header.html");?>
                         No idea why this is even news, downvote!
 
                         <p><small>Score: -3</small></p>
+                        <p><small><a href="#">Report Comment</a></small></p>
                     </div>
                 </div>
                 <div class="media comment">
@@ -128,6 +131,7 @@ include("template/header.html");?>
                         Very informative, great work!
 
                         <p><small>Score: 1</small></p>
+                        <p><small><a href="#">Report Comment</a></small></p>
                     </div>
                 </div>
                 <div class="media comment">
@@ -142,6 +146,7 @@ include("template/header.html");?>
                         Impressive journalistig job, keep it up.
 
                         <p><small>Score: 10</small></p>
+                        <p><small><a href="#">Report Comment</a></small></p>
                     </div>
                 </div>
             </div>
