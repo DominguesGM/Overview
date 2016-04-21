@@ -88,6 +88,12 @@ include("template/header.html");?>
             <div class="page-header">
                 <h1><small class="pull-right">4 comments</small> Comments </h1>
             </div>
+            <div class="form-group comment-div">
+                <label for="comment">Comment:</label>
+                <input type="text" class="form-control comment-input" id="usr"><br>
+                <span><button class="submit-comment">Submit</button></span>
+            </div>
+            <!-- list of comments -->
             <div class="comments-list">
                 <div class="media comment">
                     <p class="pull-right"><small>5 days ago</small></p>

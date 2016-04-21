@@ -372,3 +372,16 @@ a#menu-toggle{
 .report-article{
     text-align:right;
 }
+
+.comment-input{
+    height:100px;
+}
+
+.submit-comment{
+    text-align: left;
+
+}
+
+.comment-div span{
+    text-align: right;
+}
