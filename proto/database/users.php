@@ -59,14 +59,14 @@
     $user = $stmt->fetch();
     
     if(hash('sha256', $user['validation_code'] . $password) === $user['password']){
-       return $user['status'];
+       return $user;
     }else{
-      return 0;
+      return false;
     }  
     
     }catch (PDOException $e) {
      print $e->getMessage();
-     return -1;
+     return false;
    }
   }
   
@@ -81,8 +81,8 @@
       validation_code = ?, picture = ?, about = ?  
       WHERE id = ?");
                 
-      $stmt->execute(array($id, $firstName, $lastName, $email, hash('sha256', $validation_code . $password), 
-                            $validation_code, $picture, $about));
+      $stmt->execute(array($firstName, $lastName, $email, hash('sha256', $validation_code . $password), 
+                            $validation_code, $picture, $about, $id));
       
     }catch (PDOException $e) {
       print $e->getMessage();
@@ -125,4 +125,5 @@
       return null;
     }
   }
+  
 ?>

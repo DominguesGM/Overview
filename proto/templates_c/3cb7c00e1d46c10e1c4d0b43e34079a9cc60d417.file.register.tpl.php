@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-04-26 23:37:12
+<?php /* Smarty version Smarty-3.1.15, created on 2016-04-27 21:30:56
          compiled from "C:\wamp\www\Overview\proto\templates\users\register.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:17834571f8d228440f5-26308493%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3cb7c00e1d46c10e1c4d0b43e34079a9cc60d417' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\users\\register.tpl',
-      1 => 1461705740,
+      1 => 1461785451,
       2 => 'file',
     ),
   ),
@@ -45,7 +45,7 @@ actions/users/login.php" method="post">
 
           <div style="margin-bottom: 25px" class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="login-username" type="text" class="form-control" name="username" value="<?php echo $_smarty_tpl->tpl_vars['FORM_VALUES']->value['email'];?>
+            <input id="login-email" type="text" class="form-control" name="email" value="<?php echo $_smarty_tpl->tpl_vars['FORM_VALUES']->value['email'];?>
 " placeholder="Email">
           </div>
 
@@ -58,7 +58,8 @@ actions/users/login.php" method="post">
           <div style="margin-top:10px" class="form-group">
             <!-- Button -->
             <div class="col-sm-12 controls">
-              <button id="btn-signin" type="button" class="btn btn-primary"><i class="icon-hand-right"></i>Entrar </button>
+              <input type="submit" id="btn-signup" type="button" class="btn btn-primary" value="Entrar">
+              <!--<input type="submit" id="btn-signin" type="button" class="btn btn-primary"><i class="icon-hand-right"></i>Entrar </button>-->
               <a id="btn-fblogin" href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Entrar com Facebook </a>
               <a id="btn-twlogin" href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Entrar com Twitter </a>
             </div>

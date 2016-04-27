@@ -17,7 +17,7 @@
 
           <div style="margin-bottom: 25px" class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="login-username" type="text" class="form-control" name="username" value="{$FORM_VALUES.email}" placeholder="Email">
+            <input id="login-email" type="text" class="form-control" name="email" value="{$FORM_VALUES.email}" placeholder="Email">
           </div>
 
           <div style="margin-bottom: 25px" class="input-group">
@@ -28,7 +28,8 @@
           <div style="margin-top:10px" class="form-group">
             <!-- Button -->
             <div class="col-sm-12 controls">
-              <button id="btn-signin" type="button" class="btn btn-primary"><i class="icon-hand-right"></i>Entrar </button>
+              <input type="submit" id="btn-signup" type="button" class="btn btn-primary" value="Entrar">
+              <!--<input type="submit" id="btn-signin" type="button" class="btn btn-primary"><i class="icon-hand-right"></i>Entrar </button>-->
               <a id="btn-fblogin" href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Entrar com Facebook </a>
               <a id="btn-twlogin" href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Entrar com Twitter </a>
             </div>

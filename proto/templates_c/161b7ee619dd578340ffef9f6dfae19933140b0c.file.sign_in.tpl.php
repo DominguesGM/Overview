@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-04-27 11:18:21
+<?php /* Smarty version Smarty-3.1.15, created on 2016-04-27 21:18:48
          compiled from "C:\wamp\www\Overview\proto\templates\common\sign_in.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3375571fb560e0e3c5-92990932%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '161b7ee619dd578340ffef9f6dfae19933140b0c' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\common\\sign_in.tpl',
-      1 => 1461716983,
+      1 => 1461784723,
       2 => 'file',
     ),
   ),
@@ -36,12 +36,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <form class="form" role="form" method="post" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 actions/users/login.php" accept-charset="UTF-8" id="login-nav">
           <div class="form-group">
-            <label class="sr-only" for="exampleInputEmail2">Email </label>
-            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email" required>
+            <label class="sr-only" for="email">Email </label>
+            <input type="email" class="form-control" name="email" placeholder="Email" required>
           </div>
           <div class="form-group">
-            <label class="sr-only" for="exampleInputPassword2">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+            <label class="sr-only" for="password">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password" required>
             <div class="help-block text-right"><a href="">Esqueceu a password?</a></div>
           </div>
           <div class="form-group">

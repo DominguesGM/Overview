@@ -41,10 +41,9 @@
     exit;
   }
   
-$headers = 'From: no-reply@overview.org' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
-
-  //  mail($email, 'Overview', "Bem-vindo ao Overview! \r\nFoi efetuado um registo associado a esta conta de e-mail. \r\nEnviamos, abaixo, o código para activar a conta: \r\n $validationCode\r\n\r\nObrigado,\r\nA equipa Overview.", $headers);
+  $headers = 'From: no-reply@overview.org' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+  //print mail($email, 'Overview', "Bem-vindo ao Overview! \r\nFoi efetuado um registo associado a esta conta de e-mail. \r\nEnviamos, abaixo, o código para activar a conta: \r\n $validationCode\r\n\r\nObrigado,\r\nA equipa Overview.", $headers);
     
-    $_SESSION['success_messages'][] = 'Conta de utilizador criada.';  
-   header("Location: $BASE_URL");
+  $_SESSION['success_messages'][] = 'Conta de utilizador criada.';  
+  header("Location: $BASE_URL");
 ?>
