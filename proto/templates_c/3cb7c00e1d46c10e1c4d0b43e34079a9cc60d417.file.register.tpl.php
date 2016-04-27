@@ -1,4 +1,31 @@
-{include file='common/header.tpl'}
+<?php /* Smarty version Smarty-3.1.15, created on 2016-04-26 23:37:12
+         compiled from "C:\wamp\www\Overview\proto\templates\users\register.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:17834571f8d228440f5-26308493%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '3cb7c00e1d46c10e1c4d0b43e34079a9cc60d417' => 
+    array (
+      0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\users\\register.tpl',
+      1 => 1461705740,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '17834571f8d228440f5-26308493',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_571f8d2345afe9_06207350',
+  'variables' => 
+  array (
+    'BASE_URL' => 0,
+    'FORM_VALUES' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_571f8d2345afe9_06207350')) {function content_571f8d2345afe9_06207350($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
 
 <div class="container">
 
@@ -13,16 +40,19 @@
 
         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
-        <form id="loginform" class="form-horizontal" role="form" action="{$BASE_URL}actions/users/login.php" method="post">
+        <form id="loginform" class="form-horizontal" role="form" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+actions/users/login.php" method="post">
 
           <div style="margin-bottom: 25px" class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="login-username" type="text" class="form-control" name="username" value="{$FORM_VALUES.email}" placeholder="Email">
+            <input id="login-username" type="text" class="form-control" name="username" value="<?php echo $_smarty_tpl->tpl_vars['FORM_VALUES']->value['email'];?>
+" placeholder="Email">
           </div>
 
           <div style="margin-bottom: 25px" class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input id="login-password" type="password" class="form-control" name="password" value="{$FORM_VALUES.password}" placeholder="Password">
+            <input id="login-password" type="password" class="form-control" name="password" value="<?php echo $_smarty_tpl->tpl_vars['FORM_VALUES']->value['password'];?>
+" placeholder="Password">
           </div>
 
           <div style="margin-top:10px" class="form-group">
@@ -56,7 +86,8 @@
         <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Entrar</a></div>
       </div>
       <div class="panel-body" >
-        <form id="signupform" class="form-horizontal" role="form" action="{$BASE_URL}actions/users/register.php" method="post" enctype="multipart/form-data" onsubmit="return checkRegisterForm();">
+        <form id="signupform" class="form-horizontal" role="form" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+actions/users/register.php" method="post" enctype="multipart/form-data" onsubmit="return checkRegisterForm();">
 
           <div id="signupalert" style="display:none" class="alert alert-danger">
             <p>Erro: </p>
@@ -66,21 +97,24 @@
           <div class="form-group">
             <label for="email" class="col-md-3 control-label">Email</label>
             <div class="col-md-9">
-              <input type="email" class="form-control" name="email" placeholder="Email" value="{$FORM_VALUES.email}" required>
+              <input type="email" class="form-control" name="email" placeholder="Email" value="<?php echo $_smarty_tpl->tpl_vars['FORM_VALUES']->value['email'];?>
+" required>
             </div>
           </div>
 
           <div class="form-group">
             <label for="firstname" class="col-md-3 control-label">Nome</label>
             <div class="col-md-9">
-              <input type="text" class="form-control" name="firstname" placeholder="Nome" value="{$FORM_VALUES.firstname}" required>
+              <input type="text" class="form-control" name="firstname" placeholder="Nome" value="<?php echo $_smarty_tpl->tpl_vars['FORM_VALUES']->value['firstname'];?>
+" required>
             </div>
           </div>
 
           <div class="form-group">
             <label for="lastname" class="col-md-3 control-label">Apelido</label>
             <div class="col-md-9">
-              <input type="text" class="form-control" name="lastname" placeholder="Apelido" value="{$FORM_VALUES.lastname}" required>
+              <input type="text" class="form-control" name="lastname" placeholder="Apelido" value="<?php echo $_smarty_tpl->tpl_vars['FORM_VALUES']->value['lastname'];?>
+" required>
             </div>
           </div>
 
@@ -108,7 +142,8 @@
           <div class="form-group">
           <label for="photo" class="col-md-3 control-label">Fotografia</label>
             <div class="col-md-9">
-              {include file='common/browse_button.tpl'}
+              <?php echo $_smarty_tpl->getSubTemplate ('common/browse_button.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
             </div>
           </div>
 
@@ -143,4 +178,6 @@
   </div>
 </div>
 
-{include file='common/footer.tpl'}
+<?php echo $_smarty_tpl->getSubTemplate ('common/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+<?php }} ?>

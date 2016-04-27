@@ -2,19 +2,26 @@
   include_once('../../config/init.php');
   include_once($BASE_DIR .'database/users.php');  
 
-  if (!$_POST['username'] || !$_POST['password']) {
+  if (!$_POST['email'] || !$_POST['password']) {
     $_SESSION['error_messages'][] = 'Invalid login';
     $_SESSION['form_values'] = $_POST;
     header('Location: ' . $_SERVER['HTTP_REFERER']);
     exit;
   }
 
-  $username = $_POST['username'];
+  $email = $_POST['email'];
   $password = $_POST['password'];
   
-  if (isLoginCorrect($username, $password)) {
-    $_SESSION['username'] = $username;
-    $_SESSION['success_messages'][] = 'Login successful';  
+  $login = checkLogin($email, $password);
+  
+  if ($login['status'] !== 'false') {    
+    if($login['status'] === 'Unverified'){
+      $_SESSION['success_messages'][] = 'Login failed: unverified e-mail.';
+      header('Location: ' . );    
+    }else{    
+      $_SESSION['id'] = $login['id'];
+      $_SESSION['success_messages'][] = 'Login successful';
+    }  
   } else {
     $_SESSION['error_messages'][] = 'Login failed';  
   }

@@ -4,14 +4,14 @@
 
   error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
-  $BASE_DIR = '/opt/lbaw/lbaw1566/public_html/frmk/'; //FIXME
-  $BASE_URL = '/~lbaw1566/frmk/'; //FIXME
-
-  $conn = new PDO('pgsql:host=dbm;dbname=lbaw1566', 'lbaw1566', 'GH43P4H8'); //FIXME
+  $BASE_DIR = 'C:/wamp/www/Overview/proto/'; //FIXME
+  $BASE_URL = '/Overview/proto/'; //FIXME
+  
+  $conn = new PDO('pgsql:host=dbm.fe.up.pt;port=5432;dbname=lbaw1566', 'lbaw1566', 'GH43P4H8'); //FIXME
   $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  $conn->exec('SET SCHEMA \'frmk\''); //FIXME?
+  $conn->exec('SET SCHEMA \'lbaw\''); //FIXME?
 
   include_once($BASE_DIR . 'lib/smarty/Smarty.class.php');
   
