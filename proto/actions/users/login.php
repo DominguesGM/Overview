@@ -19,7 +19,14 @@
        $_SESSION['error_messages'][] = 'Login failed: unverified e-mail';    
     }else{    
       $_SESSION['id'] = $login['id'];
+      $_SESSION['email'] = $email;
+      $_SESSION['status'] = $login['status'];
+      $_SESSION['type'] = $login['type'];
+      $_SESSION['first_name'] = $login['first_name'];
+      $_SESSION['last_name'] = $login['last_name'];
       $_SESSION['success_messages'][] = 'Login successful';
+      
+      var_dump($_SESSION);
     }  
   } else {
     $_SESSION['error_messages'][] = 'Login failed: invalid credentials';  

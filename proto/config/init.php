@@ -1,5 +1,5 @@
 <?php
-  session_set_cookie_params(3600, '/~lbaw1566'); //FIXME
+  session_set_cookie_params(3600); //FIXME
   session_start();
 
   error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
@@ -24,7 +24,13 @@
   $smarty->assign('FIELD_ERRORS', $_SESSION['field_errors']);
   $smarty->assign('SUCCESS_MESSAGES', $_SESSION['success_messages']);
   $smarty->assign('FORM_VALUES', $_SESSION['form_values']);
-  $smarty->assign('USERNAME', $_SESSION['username']);
+  
+  $smarty->assign('ID', $_SESSION['id']);
+  $smarty->assign('EMAIL', $_SESSION['email']);
+  $smarty->assign('STATUS', $_SESSION['status']);
+  $smarty->assign('TYPE', $_SESSION['type']);
+  $smarty->assign('FIRST_NAME', $_SESSION['first_name']);
+  $smarty->assign('LAST_NAME', $_SESSION['last_name']);
   
   unset($_SESSION['success_messages']);
   unset($_SESSION['error_messages']);  

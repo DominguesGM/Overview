@@ -52,7 +52,7 @@
     
     try {
     
-    $stmt = $conn->prepare("SELECT validation_code, password, status 
+    $stmt = $conn->prepare("SELECT validation_code, password, type, status, first_name, last_name, id
                             FROM contributor 
                             WHERE email = ?");
     $stmt->execute(array($email)); 

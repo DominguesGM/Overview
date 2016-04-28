@@ -5,11 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="author" content="lbaw1566">
 
   <title>Overview</title>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 
   <!-- Bootstrap Core CSS -->
   <link href="{$BASE_URL}css/bootstrap.min.css" rel="stylesheet">
@@ -64,22 +64,31 @@
           <a id="menu-toggle"><i class="fa fa-bars"></i></a>
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Overview</a>
+            <a class="navbar-brand" href="{$BASE_URL}">Overview</a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
-            <ul class="nav navbar-nav">
-              <li>
-                <a id="search-button"><i class="fa fa-search header-fa"></i></a>
-              </li>
-              <li>
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><i class="fa fa-user header-fa"></i></b> <span class="caret"></span></a>
-                  {include file='common/sign_in.tpl'}
-              </li>
-            </ul>
+          <ul class="nav navbar-nav">
+            <li>
+              <a id="search-button"><i class="fa fa-search header-fa"></i></a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><i class="fa fa-user header-fa"></i></b> <span class="caret"></span></a>
+              {if $ID}
+                {include file='common/user_menu.tpl'}
+              {else}
+                {include file='common/sign_in.tpl'}
+              {/if}
+            </li>
+          </ul>
           <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
       </nav>
+
+      {$id|@var_dump}
+      {$id1|@var_dump}
+      {$ID|@var_dump}
+      {$EMAIL|@var_dump}
 
       <!-- Page Content -->
       <div class="container">
