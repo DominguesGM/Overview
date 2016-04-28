@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-04-28 02:08:19
+<?php /* Smarty version Smarty-3.1.15, created on 2016-04-28 03:10:00
          compiled from "C:\wamp\www\Overview\proto\templates\common\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:423657214fcb596f00-09594317%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6a0591bc0d71cf38e365b339d2b83f140cb68dce' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\common\\header.tpl',
-      1 => 1461802093,
+      1 => 1461805745,
       2 => 'file',
     ),
   ),
@@ -21,9 +21,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'BASE_URL' => 0,
     'ID' => 0,
-    'id' => 0,
-    'id1' => 0,
-    'EMAIL' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -102,7 +99,7 @@ css/browse_button.css" rel="stylesheet">
 ">Overview</a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav navbar-right">
             <li>
               <a id="search-button"><i class="fa fa-search header-fa"></i></a>
             </li>
@@ -121,15 +118,6 @@ css/browse_button.css" rel="stylesheet">
         </div>
         <!-- /.container -->
       </nav>
-
-      <?php echo var_dump($_smarty_tpl->tpl_vars['id']->value);?>
-
-      <?php echo var_dump($_smarty_tpl->tpl_vars['id1']->value);?>
-
-      <?php echo var_dump($_smarty_tpl->tpl_vars['ID']->value);?>
-
-      <?php echo var_dump($_smarty_tpl->tpl_vars['EMAIL']->value);?>
-
 
       <!-- Page Content -->
       <div class="container">

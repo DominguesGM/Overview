@@ -67,7 +67,7 @@
             <a class="navbar-brand" href="{$BASE_URL}">Overview</a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav navbar-right">
             <li>
               <a id="search-button"><i class="fa fa-search header-fa"></i></a>
             </li>
@@ -84,11 +84,6 @@
         </div>
         <!-- /.container -->
       </nav>
-
-      {$id|@var_dump}
-      {$id1|@var_dump}
-      {$ID|@var_dump}
-      {$EMAIL|@var_dump}
 
       <!-- Page Content -->
       <div class="container">

@@ -5,16 +5,16 @@
 
   <?
   if($_SESSION['type']!= 'Contributor'
-  && $_SESSION['staus']!= 'Blocked'
-  && $_SESSION['staus']!= 'Inactive'){
+  && $_SESSION['status']!= 'Blocked'
+  && $_SESSION['status']!= 'Inactive'){
   ?>
   <li class="divider"></li>
   <li><a href="#"><span class="glyphicon glyphicon-eye-open"></span> Área de Moderação</a></li>
 
   <? }
   if($_SESSION['type'] == 'Administrator'
-  && $_SESSION['staus']!= 'Blocked'
-  && $_SESSION['staus']!= 'Inactive'){
+  && $_SESSION['status']!= 'Blocked'
+  && $_SESSION['status']!= 'Inactive'){
   ?>
   <li><a href="#"><span class="glyphicon glyphicon-lock"></span> Área de Administração</a></li>
   <? } ?>

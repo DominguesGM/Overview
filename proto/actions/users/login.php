@@ -32,5 +32,5 @@
     $_SESSION['error_messages'][] = 'Login failed: invalid credentials';  
   }
   
- header('Location: ' . $_SERVER['HTTP_REFERER']);
+ header('Location: ' . $BASE_URL);
 ?>

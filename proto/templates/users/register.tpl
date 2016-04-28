@@ -1,9 +1,5 @@
 {include file='common/header.tpl'}
 
-{if $ID}
-  header('Location: ' . $BASE_URL);
-{/if}
-
 <div class="container">
 
   <div id="loginbox" style="display:none; margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
