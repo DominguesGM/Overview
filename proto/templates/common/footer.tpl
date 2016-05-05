@@ -26,6 +26,7 @@
 <script src="{$BASE_URL}javascript/bootstrap.min.js"></script>
 
 <!-- Header and Sidebar Script -->
+<script>BASE_URL = "{$BASE_URL}"</script>
 <script src="{$BASE_URL}javascript/main-template.js"></script>
 
 <!-- Register Script -->

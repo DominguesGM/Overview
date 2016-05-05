@@ -11,6 +11,8 @@
 
   <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 
+  <script src="{$BASE_URL}javascript/main.js"></script>
+
   <!-- Bootstrap Core CSS -->
   <link href="{$BASE_URL}css/bootstrap.min.css" rel="stylesheet">
 
@@ -26,6 +28,22 @@
   <!-- browse_button CSS -->
   <link href="{$BASE_URL}css/browse_button.css" rel="stylesheet">
 
+  <!-- image_gallery CSS-->
+  <link rel="stylesheet" href="{$BASE_URL}css/image_gallery.css">
+
+  <!-- small_image_gallery -->
+  <link rel="stylesheet" href="{$BASE_URL}lib/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+  <script type="text/javascript" src="{$BASE_URL}lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  <!-- image upload -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{$BASE_URL}lib/fileinput/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
+  <script src="{$BASE_URL}lib/fileinput/js/fileinput.js" type="text/javascript"></script>
+  <script src="{$BASE_URL}lib/fileinput/js/fileinput_locale_pt.js"></script>
+
+  <!-- rich text -->
+  <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+  <script src="{$BASE_URL}javascript/rich_text.js"></script>
 </head>
 
 <body>
@@ -34,24 +52,9 @@
 
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
-      <ul class="sidebar-nav">
+      <ul id="all-categories" class="sidebar-nav">
         <li>
           <a href="#">Trending</a>
-        </li>
-        <li>
-          <a href="#">World</a>
-        </li>
-        <li>
-          <a href="#">Europe</a>
-        </li>
-        <li>
-          <a href="#">Economy</a>
-        </li>
-        <li>
-          <a href="#">Sports</a>
-        </li>
-        <li>
-          <a href="#">Culture</a>
         </li>
       </ul>
     </div>
@@ -72,7 +75,7 @@
               <a id="search-button"><i class="fa fa-search header-fa"></i></a>
             </li>
             <li>
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><i class="fa fa-user header-fa"></i></b> <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><i class="fa fa-user header-fa"></i></b> <span class="caret">{$FIRST_NAME} {$LAST_NAME}</span></a>
               {if $ID}
                 {include file='common/user_menu.tpl'}
               {else}

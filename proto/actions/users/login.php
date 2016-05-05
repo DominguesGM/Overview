@@ -1,11 +1,11 @@
 <?php
   include_once('../../config/init.php');
-  include_once($BASE_DIR .'database/users.php');  
+  include_once($BASE_DIR . 'database/users.php');  
 
-  if (!$_POST['email'] || !$_POST['password']) {
-    $_SESSION['error_messages'][] = 'Invalid login';
+  if (!isset($_POST['email']) || !isset($_POST['password'])) {
+    $_SESSION['error_messages'][] = 'A autenticação falhou.';
     $_SESSION['form_values'] = $_POST;
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    header('Location: ' . $BASE_URL);
     exit;
   }
 
@@ -14,22 +14,24 @@
   
   $login = checkLogin($email, $password);
   
-  if ($login !== false) {    
-    if($login['status'] === 'Unverified'){
+  if ($login !== false) {
+    // TODO implement email verification    
+    /*if($login['status'] === 'Unverified'){
        $_SESSION['error_messages'][] = 'Login failed: unverified e-mail';    
-    }else{    
+    }else{*/
       $_SESSION['id'] = $login['id'];
+      $_SESSION['picture'] = $login['picture'];
       $_SESSION['email'] = $email;
       $_SESSION['status'] = $login['status'];
       $_SESSION['type'] = $login['type'];
       $_SESSION['first_name'] = $login['first_name'];
       $_SESSION['last_name'] = $login['last_name'];
-      $_SESSION['success_messages'][] = 'Login successful';
-      
-      var_dump($_SESSION);
-    }  
+      $_SESSION['success_messages'][] = 'Autenticação concluída.';
+   //}  
   } else {
-    $_SESSION['error_messages'][] = 'Login failed: invalid credentials';  
+    $_SESSION['error_messages'][] = 'Email ou password incorretos.';
+    header('Location: ' . $BASE_URL . 'pages/users/authentication.php?email=' . $_POST['email']);
+    exit;  
   }
   
  header('Location: ' . $BASE_URL);
