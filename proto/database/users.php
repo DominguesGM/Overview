@@ -125,5 +125,26 @@
       return null;
     }
   }
+
+  function searchUser($keyword){
+    global $conn;
+
+    $keyword = '%' . $keyword . '%';
+
+    try{
+      $stmt = $conn->prepare("SELECT contributor.id, contributor.first_name, contributor.last_name,
+                                      contributor.type, contributor.about, image.path
+                              FROM contributor INNER JOIN image ON (contributor.picture = image.id)
+                              WHERE contributor.first_name || ' ' || contributor.last_name LIKE :keyword
+                              AND contributor.status = 'Active'");
+
+      $stmt->execute(array($keyword));
+
+      return $stmt->fetchAll();
+    } catch (PDOException $e){
+        print $e->getMessage();
+        return null;
+    }
+  }
   
 ?>
