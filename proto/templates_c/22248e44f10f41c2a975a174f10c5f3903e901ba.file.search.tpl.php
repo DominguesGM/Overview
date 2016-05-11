@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-12 01:10:09
+<?php /* Smarty version Smarty-3.1.15, created on 2016-05-12 01:24:56
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\search.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:111195728ca84ceb092-84415026%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '22248e44f10f41c2a975a174f10c5f3903e901ba' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\search.tpl',
-      1 => 1463008202,
+      1 => 1463009073,
       2 => 'file',
     ),
   ),
@@ -59,7 +59,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <h1>Search results</h1>
             <h2 class="lead">Showing results for "<strong id="query-string" class="text-danger"><?php echo $_smarty_tpl->tpl_vars['SEARCH_QUERY']->value;?>
 </strong>" in <strong id="query-type" class="text-danger"><?php echo $_smarty_tpl->tpl_vars['SEARCH_TYPE']->value;?>
-</strong> <?php if ($_smarty_tpl->tpl_vars['SEARCH_TYPE']->value=="article"&&$_smarty_tpl->tpl_vars['SEARCH_CATEGORY']->value!='') {?>of category <strong id="query-category" class="text-danger"><?php echo $_smarty_tpl->tpl_vars['SEARCH_CATEGORY']->value;?>
+</strong> <?php if ($_smarty_tpl->tpl_vars['SEARCH_TYPE']->value=="Article"&&$_smarty_tpl->tpl_vars['SEARCH_CATEGORY']->value!='') {?>of category <strong id="query-category" class="text-danger"><?php echo $_smarty_tpl->tpl_vars['SEARCH_CATEGORY']->value;?>
 </strong><?php }?></h2>
         </hgroup>
     </div>

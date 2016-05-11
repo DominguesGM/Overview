@@ -28,7 +28,7 @@
         <hgroup class="mb20">
             <br>
             <h1>Search results</h1>
-            <h2 class="lead">Showing results for "<strong id="query-string" class="text-danger">{$SEARCH_QUERY}</strong>" in <strong id="query-type" class="text-danger">{$SEARCH_TYPE}</strong> {if $SEARCH_TYPE == "article" && $SEARCH_CATEGORY != ""}of category <strong id="query-category" class="text-danger">{$SEARCH_CATEGORY}</strong>{/if}</h2>
+            <h2 class="lead">Showing results for "<strong id="query-string" class="text-danger">{$SEARCH_QUERY}</strong>" in <strong id="query-type" class="text-danger">{$SEARCH_TYPE}</strong> {if $SEARCH_TYPE == "Article" && $SEARCH_CATEGORY != ""}of category <strong id="query-category" class="text-danger">{$SEARCH_CATEGORY}</strong>{/if}</h2>
         </hgroup>
     </div>
 

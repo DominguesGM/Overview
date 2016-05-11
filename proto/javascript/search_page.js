@@ -14,7 +14,7 @@ var categories;
 $(document).ready(function(){
     query = $('#query-string').html();
     queryType = $('#query-type').html();
-    if(queryType == "article"){
+    if(queryType == "Article"){
         category = $('#query-category').html();
     }
     var listHtml = "";
@@ -30,7 +30,6 @@ $(document).ready(function(){
         if($(this).val() == "Contributor")
             $('#category-selector').remove();
         else {
-            $('.selectors').append('<select id="category-selector" class="form-control" name="category"></select>');
             generateCategorySelect();
         }
     });
@@ -108,7 +107,7 @@ $(document).ready(function(){
 function prepareUsersHtml(usersArray){
     var html = "";
     for(var i = 0; i < usersArray.length; i++){
-        html += '<article class="search-result row"><span class="image-box" data-score="';
+        html += '<article class="search-result row"><span class="image-box-contributor" data-score="';
         html += 0;
         html += '"><img class="img-thumbnail" src="';
         html += usersArray[i]['path'];
@@ -132,7 +131,7 @@ function prepareArticlesHtml(articlesArray){
         html += '" alt=""></span><div class="col-xs-12 col-sm-12 col-md-2"><ul class="meta-search"><li><i class="glyphicon glyphicon-calendar"></i> <span>';
         html += articlesArray[i]['publication_date'];
         html += '</span></li><li><i class="glyphicon glyphicon-tags"></i> <span>';
-        html += articlesArray[i]['name'];
+        html += '<a href="' + BASE_URL + 'pages/search.php?type=Article&category=' + articlesArray[i]['name'] + '">' + articlesArray[i]['name'] + '</a>';
         html += '</span></li>';
         html += '</ul></div><div class="col-xs-12 col-sm-12 col-md-7 excerpet"><h3><a href="#" title="">';
         html += articlesArray[i]['title'];
