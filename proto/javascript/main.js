@@ -1,4 +1,4 @@
-BASE_URL = '...';
+BASE_URL = '/Overview/proto/';
 
 $(document).ready(function() {
   initMessageClosers();

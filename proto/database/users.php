@@ -1,4 +1,5 @@
 <?php
+  include_once($BASE_DIR .'database/images.php');
   
   function createUser($firstName, $lastName, $email, $password, $about, $extension) {
     global $conn;
@@ -12,11 +13,7 @@
     $stmt->execute(array($email, $firstName, $lastName, hash('sha256', $validation_code . $password), $validation_code, $about));
     $userId = $stmt->fetch()['id'];
     
-    $stmt = $conn->prepare("INSERT INTO 
-              image(path) 
-              VALUES(?) RETURNING id");
-    $stmt->execute(array("images/users/$userId.$extension"));
-    $photoId = $stmt->fetch()['id'];
+    $photoId = createImage("images/users/profile_$userId.$extension");
     
     $stmt = $conn->prepare("UPDATE contributor 
       SET picture = ?  WHERE id = ?");      
@@ -52,11 +49,13 @@
     
     try {
     
-    $stmt = $conn->prepare("SELECT validation_code, password, type, status, first_name, last_name, id
+    $stmt = $conn->prepare("SELECT *
                             FROM contributor 
                             WHERE email = ?");
     $stmt->execute(array($email)); 
     $user = $stmt->fetch();
+    
+    $user['picture'] = getImagePath($user['picture']);
     
     if(hash('sha256', $user['validation_code'] . $password) === $user['password']){
        return $user;
@@ -69,6 +68,18 @@
      return false;
    }
   }
+  
+   function validateEmail($email, $validationCode) {
+    global $conn;
+    
+    $stmt = $conn->prepare("SELECT validation_code FROM 
+              contributor WHERE id = ?");
+              
+    $stmt->execute(array($email));
+    $validationCodeCheck = $stmt->fetch()['validation_code'];
+    
+    return $validationCode === substr($validationCodeCheck, 0, 16);  ;
+   }
   
   function updateUserInfo($id, $firstName, $lastName, $email, $password, $picture, $about) {
     global $conn;
@@ -109,36 +120,77 @@
     
     return true;
   }
-  
-  function checkUserAccess($id) {
+   
+   function getContributors($exceptId) {
     global $conn;
     
-    try{
-      $stmt = $conn->prepare("SELECT type, status FROM contributor 
-      WHERE id = ?");
-                
-      $stmt->execute(array($id));
-      
-      return $stmt->fetch();
+    try {
+    
+    $stmt = $conn->prepare("SELECT id, email, picture, first_name, last_name, about
+                            FROM contributor
+                            WHERE id != ?");
+    $stmt->execute(array($exceptId)); 
+    return $stmt->fetchAll();
+      }catch (PDOException $e) {
+      print $e->getMessage();
+      return false;
+    }
+   }
+  
+  function getFollowers($id) {
+    global $conn;
+    
+    try {
+    
+    $stmt = $conn->prepare("SELECT id, email, picture, first_name, last_name, about
+                            FROM contributor INNER JOIN follows
+                            WHERE followee = ?");
+    $stmt->execute(array($id)); 
+    return $stmt->fetchAll();
     }catch (PDOException $e) {
       print $e->getMessage();
-      return null;
+      return false;
+    }
+  }
+  
+  function getFollowing($id) {
+    global $conn;
+    
+    try {
+    
+    $stmt = $conn->prepare("SELECT id, email, picture, first_name, last_name, about
+                            FROM contributor INNER JOIN follows
+                            WHERE follower = ?");
+    $stmt->execute(array($id)); 
+    return $stmt->fetchAll();
+    }catch (PDOException $e) {
+      print $e->getMessage();
+      return false;
     }
   }
 
-  function searchUser($keyword){
+  function searchUser($keyword, $offset, $limit){
     global $conn;
 
     $keyword = '%' . $keyword . '%';
+
+    if($offset == NULL || !isset($offset) || $offset == ""){
+      $offset = 0;
+    }
+
+    if(!isset($limit) || $limit == ""){
+      $limit = NULL;
+    }
 
     try{
       $stmt = $conn->prepare("SELECT contributor.id, contributor.first_name, contributor.last_name,
                                       contributor.type, contributor.about, image.path
                               FROM contributor INNER JOIN image ON (contributor.picture = image.id)
-                              WHERE contributor.first_name || ' ' || contributor.last_name LIKE :keyword
-                              AND contributor.status = 'Active'");
+                              WHERE contributor.first_name || ' ' || contributor.last_name LIKE ?
+                              AND contributor.status = 'Active'
+                              LIMIT ? OFFSET ?");
 
-      $stmt->execute(array($keyword));
+      $stmt->execute(array($keyword, $limit, $offset));
 
       return $stmt->fetchAll();
     } catch (PDOException $e){

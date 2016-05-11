@@ -13,7 +13,7 @@ $("#menu-toggle").click(function(e) {
     $("#wrapper").toggleClass("toggled");
 });
 
-$("#search-button").click(function(e){
+$("#search-button").click(function(e) {
     e.preventDefault();
     if(!searchbarTOGGLE) {
         $('body').append(searchbarHTML);

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-04-28 12:40:05
+<?php /* Smarty version Smarty-3.1.15, created on 2016-05-09 20:21:15
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\common\footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:289595721e88570d9f5-09750137%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7d18eeb09e390fa189563215131a9fe684358f06' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\common\\footer.tpl',
-      1 => 1461834565,
+      1 => 1462817931,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_5721e88576ee14_20788268',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_5721e88576ee14_20788268',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5721e88576ee14_20788268')) {function content_5721e88576ee14_20788268($_smarty_tpl) {?></div>
 <hr>
@@ -54,6 +54,8 @@ javascript/jquery.js"></script>
 javascript/bootstrap.min.js"></script>
 
 <!-- Header and Sidebar Script -->
+<script>BASE_URL = "<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+"</script>
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/main-template.js"></script>
 

@@ -3,7 +3,7 @@
   include_once($BASE_DIR .'database/users.php');  
 
   if (!$_POST['email'] || !$_POST['firstname'] || !$_POST['lastname'] || !$_POST['password'] || !$_POST['about']) {
-    $_SESSION['error_messages'][] = 'All fields are mandatory';
+    $_SESSION['error_messages'][] = 'Todos os campos são necessários.';
     $_SESSION['form_values'] = $_POST;
     header("Location: $BASE_URL" . 'pages/users/register.php');
     exit;
@@ -16,23 +16,33 @@
   $password = $_POST['password'];
 
   $photo = $_FILES['photo'];
-  $extension = end(explode(".", $photo["name"]));
-
-    print $email . ' ' . $firstName . ' ' . $lastName . ' ' . $about . ' ' . $password;
+  
+  if($photo['name']==""){
+    $photo = null;
+  }
+  
+  if($photo){
+    $extension = end(explode(".", $photo["name"]));
+  }else{
+    $extension = 'png';
+  } 
 
   try {
     $result = createUser($firstName, $lastName, $email, $password, $about, $extension);
     $userId = $result[0];
-    $validationCode = substr($result[1], 0, 8);    
+    $validationCode = substr($result[1], 0, 16);    
   
-    // TODO support no picture upload
-    move_uploaded_file($photo["tmp_name"], $BASE_DIR . "images/users/" . $userId . '.' . $extension); // this is dangerous
-    chmod($BASE_DIR . "images/users/" . $userId . '.' . $extension, 0644);
+    if($photo){
+      move_uploaded_file($photo["tmp_name"], $BASE_DIR . "images/users/profile_" . $userId . '.' . $extension);
+    }else{
+      copy($BASE_DIR . "images/users/default.png",  $BASE_DIR . "images/users/profile_" . $userId . '.' . $extension);
+    }
+    
+    chmod($BASE_DIR . "images/users/profile_" . $userId . '.' . $extension, 0644);
   } catch (PDOException $e) {
   
-    if(strpos($e->getMessage(), 'users_pkey') !== false) {
-      $_SESSION['error_messages'][] = 'O email já existe.';
-      $_SESSION['field_errors']['username'] = 'O email já existe.';
+    if(strpos($e->getMessage(), 'contributor_email_key') !== false) {
+      $_SESSION['error_messages'][] = 'O email introduzido já se encontra registado.';
     }else $_SESSION['error_messages'][] = 'Erro ao criar a conta de utilizador.';
 
     print $e->getMessage();
@@ -41,9 +51,10 @@
     exit;
   }
   
-  $headers = 'From: no-reply@overview.org' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
-  //print mail($email, 'Overview', "Bem-vindo ao Overview! \r\nFoi efetuado um registo associado a esta conta de e-mail. \r\nEnviamos, abaixo, o código para activar a conta: \r\n $validationCode\r\n\r\nObrigado,\r\nA equipa Overview.", $headers);
-    
-  $_SESSION['success_messages'][] = 'Conta de utilizador criada.';  
-  header("Location: $BASE_URL");
+  // TODO implement email verification
+  //$headers = 'From: no-reply@overview.org' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+  //print mail($email, 'Overview', "Bem-vindo ao Overview! \r\nFoi efetuado um registo associado a esta conta de e-mail. \r\nSiga o link abaixo para activar a conta: \r\n $BASE_URL/action/users/verify.php?email=$email&token=$validationCode\r\n\r\nObrigado,\r\nA equipa Overview.", $headers);
+  
+  $_SESSION['success_messages'][] = 'Registo efetuado.';  
+  header("Location: $BASE_URL" . "pages/users/register.php");
 ?>

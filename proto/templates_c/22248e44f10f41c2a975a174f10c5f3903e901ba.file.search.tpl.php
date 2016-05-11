@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-06 16:06:08
+<?php /* Smarty version Smarty-3.1.15, created on 2016-05-12 01:10:09
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\search.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:111195728ca84ceb092-84415026%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '22248e44f10f41c2a975a174f10c5f3903e901ba' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\search.tpl',
-      1 => 1462543567,
+      1 => 1463008202,
       2 => 'file',
     ),
   ),
@@ -21,6 +21,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'SEARCH_QUERY' => 0,
     'SEARCH_TYPE' => 0,
+    'SEARCH_CATEGORY' => 0,
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
@@ -29,69 +30,42 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 
 <div class="container">
+    <div class="row">
+        <div class="col-md-6 col-xs-offset-3">
+            <form id="search-form" method="get" action="">
+                <div class="selectors">
+                    <select id="type-selector" class="form-control" name="type">
+                        <option value="Contributor">Contributor</option>
+                        <option value="Article">Article</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" name="query" placeholder="Search on Overview...">
+
+                    <span class="input-group-btn">
+                      <button id="search-form-button" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
     <div class="col-md-12">
         <hgroup class="mb20">
             <br>
             <h1>Search results</h1>
-            <h2 class="lead"><strong class="text-danger" id="result-count"></strong> results were found for the search for <strong id="query-string" class="text-danger"><?php echo $_smarty_tpl->tpl_vars['SEARCH_QUERY']->value;?>
-</strong> in <strong id="query-type" class="text-danger"><?php echo $_smarty_tpl->tpl_vars['SEARCH_TYPE']->value;?>
-</strong></h2>
+            <h2 class="lead">Showing results for "<strong id="query-string" class="text-danger"><?php echo $_smarty_tpl->tpl_vars['SEARCH_QUERY']->value;?>
+</strong>" in <strong id="query-type" class="text-danger"><?php echo $_smarty_tpl->tpl_vars['SEARCH_TYPE']->value;?>
+</strong> <?php if ($_smarty_tpl->tpl_vars['SEARCH_TYPE']->value=="article"&&$_smarty_tpl->tpl_vars['SEARCH_CATEGORY']->value!='') {?>of category <strong id="query-category" class="text-danger"><?php echo $_smarty_tpl->tpl_vars['SEARCH_CATEGORY']->value;?>
+</strong><?php }?></h2>
         </hgroup>
     </div>
 
     <div class="col-md-12">
         <section id="item-container" class="col-md-12 col-sm-6 col-md-18">
-            <article class="search-result row">
-                <span class="image-box" data-score="321"><img class="img-thumbnail" src="http://placehold.it/75x75" alt=""></span>
-                <div class="col-xs-12 col-sm-12 col-md-2">
-                    <ul class="meta-search">
-                        <li><i class="glyphicon glyphicon-calendar"></i> <span>02/15/2014</span></li>
-                        <li><i class="glyphicon glyphicon-time"></i> <span>4:28 pm</span></li>
-                        <li><i class="glyphicon glyphicon-tags"></i> <span>Category1</span></li>
-                    </ul>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
-                    <h3><a href="#" title="">Voluptatem, exercitationem, suscipit, distinctio</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.</p>
-                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
-                </div>
-                <span class="clearfix borda"></span>
-            </article>
-
-            <article class="search-result row">
-                <span class="image-box" data-score="321"><img class="img-thumbnail" src="http://placehold.it/75x75" alt=""></span>
-                <div class="col-xs-12 col-sm-12 col-md-2">
-                    <ul class="meta-search">
-                        <li><i class="glyphicon glyphicon-calendar"></i> <span>02/15/2014</span></li>
-                        <li><i class="glyphicon glyphicon-time"></i> <span>4:28 pm</span></li>
-                        <li><i class="glyphicon glyphicon-tags"></i> <span>Category1</span></li>
-                    </ul>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
-                    <h3><a href="#" title="">Voluptatem, exercitationem, suscipit, distinctio</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.</p>
-                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
-                </div>
-                <span class="clearfix borda"></span>
-            </article>
-
-
-            <article class="search-result row">
-                <span class="image-box" data-score="321"><img class="img-thumbnail" src="http://placehold.it/75x75" alt=""></span>
-                <div class="col-xs-12 col-sm-12 col-md-2">
-                    <ul class="meta-search">
-                        <li><i class="glyphicon glyphicon-calendar"></i> <span>02/15/2014</span></li>
-                        <li><i class="glyphicon glyphicon-time"></i> <span>4:28 pm</span></li>
-                        <li><i class="glyphicon glyphicon-tags"></i> <span>Category1</span></li>
-                    </ul>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
-                    <h3><a href="#" title="">Voluptatem, exercitationem, suscipit, distinctio</a></h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.</p>
-                    <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
-                </div>
-                <span class="clearfix borda"></span>
-            </article>
         </section>
     </div>
 </div>
