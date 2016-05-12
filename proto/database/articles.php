@@ -169,7 +169,7 @@
                                           ON single_image.article_id = a_search.id
                                 INNER JOIN lbaw.category_article ON lbaw.category_article.article_id = a_search.id
                                 INNER JOIN lbaw.category ON (lbaw.category.id = lbaw.category_article.category_id" . $categoryString . ")
-                           " . $keywordString . " ORDER BY a_search.score DESC
+                           " . $keywordString . " ORDER BY a_search.publication_date, a_search.score DESC
                            LIMIT ?  OFFSET ?");
 
     array_push($argumentArray, $limit, $offset);

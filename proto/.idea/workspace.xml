@@ -22,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2689394">
-              <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
+            <state vertical-scroll-proportion="-1.6545454">
+              <caret line="257" column="13" selection-start-line="257" selection-start-column="13" selection-end-line="257" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -35,7 +35,7 @@
       <file leaf-file-name="footer.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/common/footer.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.3846154">
+            <state vertical-scroll-proportion="0.0">
               <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
@@ -45,7 +45,7 @@
       <file leaf-file-name="header.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/common/header.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.6219512">
+            <state vertical-scroll-proportion="0.0">
               <caret line="25" column="59" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
               <folding />
             </state>
@@ -55,7 +55,7 @@
       <file leaf-file-name="search.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/search.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.3454547">
+            <state vertical-scroll-proportion="-19.615385">
               <caret line="30" column="215" selection-start-line="30" selection-start-column="215" selection-end-line="30" selection-end-column="215" />
               <folding />
             </state>
@@ -65,10 +65,43 @@
       <file leaf-file-name="search_page.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/javascript/search_page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.620689">
-              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="149" column="22" selection-start-line="149" selection-start-column="22" selection-end-line="149" selection-end-column="22" />
               <folding>
-                <marker date="1463009021737" expanded="true" signature="4750:4798" placeholder="..." />
+                <marker date="1463042271118" expanded="true" signature="4750:4798" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main-template.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/javascript/main-template.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="38" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/users.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5278276">
+              <caret line="190" column="46" selection-start-line="185" selection-start-column="30" selection-end-line="190" selection-end-column="46" />
+              <folding>
+                <marker date="1463002150662" expanded="true" signature="250:400" placeholder="INSERT INTO ..contributor..." />
+                <marker date="1463002150662" expanded="true" signature="694:749" placeholder="UPDATE contr..." />
+                <marker date="1463002150662" expanded="true" signature="1071:1184" placeholder="SELECT * FRO..contributor..." />
+                <marker date="1463002150662" expanded="true" signature="1503:1601" placeholder="SELECT * FRO..contributor..." />
+                <marker date="1463002150662" expanded="true" signature="2078:2145" placeholder="SELECT valid..contributor..." />
+                <marker date="1463002150662" expanded="true" signature="2554:2711" placeholder="UPDATE contr..." />
+                <marker date="1463002150662" expanded="true" signature="3144:3213" placeholder="UPDATE contr..." />
+                <marker date="1463002150662" expanded="true" signature="3515:3657" placeholder="SELECT id, e..contributor..." />
+                <marker date="1463002150662" expanded="true" signature="3924:4090" placeholder="SELECT id, e..contributor..." />
+                <marker date="1463002150662" expanded="true" signature="4348:4514" placeholder="SELECT id, e..contributor..." />
+                <marker date="1463002150662" expanded="true" signature="4974:5391" placeholder="SELECT contr..contributor..." />
+                <marker date="1463002150662" expanded="true" signature="4974:5438" placeholder="SELECT contr..contributor..." />
               </folding>
             </state>
           </provider>
@@ -77,9 +110,40 @@
       <file leaf-file-name="search.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/search.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385">
+            <state vertical-scroll-proportion="-9.0">
               <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="articles.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/articles.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.73077">
+              <caret line="171" column="86" selection-start-line="171" selection-start-column="86" selection-end-line="171" selection-end-column="86" />
+              <folding>
+                <marker date="1463010573759" expanded="true" signature="139:237" placeholder="SELECT * FRO..category..." />
+                <marker date="1463010573759" expanded="true" signature="389:650" placeholder="SELECT * FRO..article..." />
+                <marker date="1463010573759" expanded="true" signature="805:992" placeholder="SELECT * FRO..article..." />
+                <marker date="1463010573759" expanded="true" signature="1140:1202" placeholder="DELETE FROM ..." />
+                <marker date="1463010573759" expanded="true" signature="1329:1580" placeholder="SELECT * FRO..article..." />
+                <marker date="1463010573759" expanded="true" signature="1736:1846" placeholder="SELECT * FRO..category_article..." />
+                <marker date="1463010573759" expanded="true" signature="2044:2158" placeholder="INSERT INTO article..." />
+                <marker date="1463010573759" expanded="true" signature="2282:2335" placeholder="INSERT INTO article_image..." />
+                <marker date="1463010573759" expanded="true" signature="2887:2983" placeholder="UPDATE artic..." />
+                <marker date="1463010573759" expanded="true" signature="3081:3211" placeholder="SELECT MAX(i..article_image..." />
+                <marker date="1463010573759" expanded="true" signature="3543:3596" placeholder="INSERT INTO article_image..." />
+                <marker date="1463010573759" expanded="true" signature="4139:4313" placeholder="SELECT id, p..image..." />
+                <marker date="1463010573759" expanded="true" signature="5115:6375" placeholder="SELECT * FRO..id..." />
+                <marker date="1463010573759" expanded="true" signature="5247:5479" placeholder="SELECT artic..article..." />
+                <marker date="1463010573759" expanded="true" signature="5247:6200" placeholder="SELECT * FRO..id..." />
+                <marker date="1463010573759" expanded="true" signature="5247:6224" placeholder="SELECT * FRO..id..." />
+                <marker date="1463010573759" expanded="true" signature="5247:6252" placeholder="SELECT * FRO..id..." />
+                <marker date="1463010573759" expanded="true" signature="5247:6375" placeholder="SELECT * FRO..id..." />
+                <marker date="1463010573759" expanded="true" signature="5544:5824" placeholder="SELECT artic..article_id..." />
+                <marker date="1463010573759" expanded="true" signature="5640:5720" placeholder="SELECT artic..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,18 +167,18 @@
       <list>
         <option value="$PROJECT_DIR$/config/init.php" />
         <option value="$PROJECT_DIR$/templates/common/footer.tpl" />
-        <option value="$PROJECT_DIR$/javascript/main-template.js" />
         <option value="$PROJECT_DIR$/pages/search.php" />
         <option value="$PROJECT_DIR$/api/articles/search.php" />
-        <option value="$PROJECT_DIR$/database/articles.php" />
         <option value="$PROJECT_DIR$/api/users/search.php" />
         <option value="$PROJECT_DIR$/database/users.php" />
         <option value="$PROJECT_DIR$/javascript/search.js" />
         <option value="$PROJECT_DIR$/css/search.css" />
         <option value="$PROJECT_DIR$/templates/common/header.tpl" />
-        <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/javascript/search_page.js" />
         <option value="$PROJECT_DIR$/templates/search.tpl" />
+        <option value="$PROJECT_DIR$/database/articles.php" />
+        <option value="$PROJECT_DIR$/javascript/search_page.js" />
+        <option value="$PROJECT_DIR$/css/main.css" />
+        <option value="$PROJECT_DIR$/javascript/main-template.js" />
       </list>
     </option>
   </component>
@@ -200,6 +264,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -257,8 +335,8 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -703,12 +781,13 @@
       <workItem from="1462807344103" duration="6142000" />
       <workItem from="1462870739071" duration="16000" />
       <workItem from="1462913669862" duration="1847000" />
-      <workItem from="1462970499468" duration="15791000" />
+      <workItem from="1462970499468" duration="17594000" />
+      <workItem from="1463042102146" duration="1308000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60151000" />
+    <option name="totallyTimeSpent" value="63262000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -723,7 +802,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24583964" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24583964" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -754,6 +833,35 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/database/articles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1463010573759" expanded="true" signature="139:237" placeholder="SELECT * FRO..category..." />
+            <marker date="1463010573759" expanded="true" signature="389:650" placeholder="SELECT * FRO..article..." />
+            <marker date="1463010573759" expanded="true" signature="805:992" placeholder="SELECT * FRO..article..." />
+            <marker date="1463010573759" expanded="true" signature="1140:1202" placeholder="DELETE FROM ..." />
+            <marker date="1463010573759" expanded="true" signature="1329:1580" placeholder="SELECT * FRO..article..." />
+            <marker date="1463010573759" expanded="true" signature="1736:1846" placeholder="SELECT * FRO..category_article..." />
+            <marker date="1463010573759" expanded="true" signature="2044:2158" placeholder="INSERT INTO article..." />
+            <marker date="1463010573759" expanded="true" signature="2282:2335" placeholder="INSERT INTO article_image..." />
+            <marker date="1463010573759" expanded="true" signature="2887:2983" placeholder="UPDATE artic..." />
+            <marker date="1463010573759" expanded="true" signature="3081:3211" placeholder="SELECT MAX(i..article_image..." />
+            <marker date="1463010573759" expanded="true" signature="3543:3596" placeholder="INSERT INTO article_image..." />
+            <marker date="1463010573759" expanded="true" signature="4139:4313" placeholder="SELECT id, p..image..." />
+            <marker date="1463010573759" expanded="true" signature="5115:6375" placeholder="SELECT * FRO..id..." />
+            <marker date="1463010573759" expanded="true" signature="5247:5479" placeholder="SELECT artic..article..." />
+            <marker date="1463010573759" expanded="true" signature="5247:6200" placeholder="SELECT * FRO..id..." />
+            <marker date="1463010573759" expanded="true" signature="5247:6224" placeholder="SELECT * FRO..id..." />
+            <marker date="1463010573759" expanded="true" signature="5247:6252" placeholder="SELECT * FRO..id..." />
+            <marker date="1463010573759" expanded="true" signature="5247:6375" placeholder="SELECT * FRO..id..." />
+            <marker date="1463010573759" expanded="true" signature="5544:5824" placeholder="SELECT artic..article_id..." />
+            <marker date="1463010573759" expanded="true" signature="5640:5720" placeholder="SELECT artic..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -781,7 +889,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
           <folding>
-            <marker date="1463009021737" expanded="true" signature="4750:4798" placeholder="..." />
+            <marker date="1463042271118" expanded="true" signature="4750:4798" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -790,7 +898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="42" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -798,7 +905,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -807,25 +913,26 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1462995537640" expanded="true" signature="139:237" placeholder="SELECT * FRO..category..." />
-            <marker date="1462995537640" expanded="true" signature="389:650" placeholder="SELECT * FRO..article..." />
-            <marker date="1462995537640" expanded="true" signature="805:992" placeholder="SELECT * FRO..article..." />
-            <marker date="1462995537640" expanded="true" signature="1140:1202" placeholder="DELETE FROM ..." />
-            <marker date="1462995537640" expanded="true" signature="1329:1580" placeholder="SELECT * FRO..article..." />
-            <marker date="1462995537640" expanded="true" signature="1736:1846" placeholder="SELECT * FRO..category_article..." />
-            <marker date="1462995537640" expanded="true" signature="2044:2158" placeholder="INSERT INTO article..." />
-            <marker date="1462995537640" expanded="true" signature="2282:2335" placeholder="INSERT INTO article_image..." />
-            <marker date="1462995537640" expanded="true" signature="2887:2983" placeholder="UPDATE artic..." />
-            <marker date="1462995537640" expanded="true" signature="3081:3211" placeholder="SELECT MAX(i..article_image..." />
-            <marker date="1462995537640" expanded="true" signature="3543:3596" placeholder="INSERT INTO article_image..." />
-            <marker date="1462995537640" expanded="true" signature="4139:4313" placeholder="SELECT id, p..image..." />
-            <marker date="1462995537640" expanded="true" signature="5115:6200" placeholder="SELECT * FRO..id..." />
-            <marker date="1462995537640" expanded="true" signature="5115:6224" placeholder="SELECT * FRO..id..." />
-            <marker date="1462995537640" expanded="true" signature="5115:6252" placeholder="SELECT * FRO..id..." />
-            <marker date="1462995537640" expanded="true" signature="5115:6348" placeholder="SELECT * FRO..id..." />
-            <marker date="1462995537640" expanded="true" signature="5130:5479" placeholder="SELECT artic..article..." />
-            <marker date="1462995537640" expanded="true" signature="5544:5824" placeholder="SELECT artic..article_id..." />
-            <marker date="1462995537640" expanded="true" signature="5640:5720" placeholder="SELECT artic..." />
+            <marker date="1463010573759" expanded="true" signature="139:237" placeholder="SELECT * FRO..category..." />
+            <marker date="1463010573759" expanded="true" signature="389:650" placeholder="SELECT * FRO..article..." />
+            <marker date="1463010573759" expanded="true" signature="805:992" placeholder="SELECT * FRO..article..." />
+            <marker date="1463010573759" expanded="true" signature="1140:1202" placeholder="DELETE FROM ..." />
+            <marker date="1463010573759" expanded="true" signature="1329:1580" placeholder="SELECT * FRO..article..." />
+            <marker date="1463010573759" expanded="true" signature="1736:1846" placeholder="SELECT * FRO..category_article..." />
+            <marker date="1463010573759" expanded="true" signature="2044:2158" placeholder="INSERT INTO article..." />
+            <marker date="1463010573759" expanded="true" signature="2282:2335" placeholder="INSERT INTO article_image..." />
+            <marker date="1463010573759" expanded="true" signature="2887:2983" placeholder="UPDATE artic..." />
+            <marker date="1463010573759" expanded="true" signature="3081:3211" placeholder="SELECT MAX(i..article_image..." />
+            <marker date="1463010573759" expanded="true" signature="3543:3596" placeholder="INSERT INTO article_image..." />
+            <marker date="1463010573759" expanded="true" signature="4139:4313" placeholder="SELECT id, p..image..." />
+            <marker date="1463010573759" expanded="true" signature="5115:6375" placeholder="SELECT * FRO..id..." />
+            <marker date="1463010573759" expanded="true" signature="5247:5479" placeholder="SELECT artic..article..." />
+            <marker date="1463010573759" expanded="true" signature="5247:6200" placeholder="SELECT * FRO..id..." />
+            <marker date="1463010573759" expanded="true" signature="5247:6224" placeholder="SELECT * FRO..id..." />
+            <marker date="1463010573759" expanded="true" signature="5247:6252" placeholder="SELECT * FRO..id..." />
+            <marker date="1463010573759" expanded="true" signature="5247:6375" placeholder="SELECT * FRO..id..." />
+            <marker date="1463010573759" expanded="true" signature="5544:5824" placeholder="SELECT artic..article_id..." />
+            <marker date="1463010573759" expanded="true" signature="5640:5720" placeholder="SELECT artic..." />
           </folding>
         </state>
       </provider>
@@ -888,7 +995,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="47" column="39" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
           <folding>
-            <marker date="1463009021737" expanded="true" signature="4750:4798" placeholder="..." />
+            <marker date="1463042271118" expanded="true" signature="4750:4798" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -897,7 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -948,7 +1054,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -999,7 +1104,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1054,7 +1158,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/common/footer.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3846154">
+        <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
@@ -1064,14 +1168,113 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6153846">
           <caret line="4" column="75" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/users/search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6153846">
+          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascript/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/common/header.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="59" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/articles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.73077">
+          <caret line="171" column="86" selection-start-line="171" selection-start-column="86" selection-end-line="171" selection-end-column="86" />
+          <folding>
+            <marker date="1463010573759" expanded="true" signature="139:237" placeholder="SELECT * FRO..category..." />
+            <marker date="1463010573759" expanded="true" signature="389:650" placeholder="SELECT * FRO..article..." />
+            <marker date="1463010573759" expanded="true" signature="805:992" placeholder="SELECT * FRO..article..." />
+            <marker date="1463010573759" expanded="true" signature="1140:1202" placeholder="DELETE FROM ..." />
+            <marker date="1463010573759" expanded="true" signature="1329:1580" placeholder="SELECT * FRO..article..." />
+            <marker date="1463010573759" expanded="true" signature="1736:1846" placeholder="SELECT * FRO..category_article..." />
+            <marker date="1463010573759" expanded="true" signature="2044:2158" placeholder="INSERT INTO article..." />
+            <marker date="1463010573759" expanded="true" signature="2282:2335" placeholder="INSERT INTO article_image..." />
+            <marker date="1463010573759" expanded="true" signature="2887:2983" placeholder="UPDATE artic..." />
+            <marker date="1463010573759" expanded="true" signature="3081:3211" placeholder="SELECT MAX(i..article_image..." />
+            <marker date="1463010573759" expanded="true" signature="3543:3596" placeholder="INSERT INTO article_image..." />
+            <marker date="1463010573759" expanded="true" signature="4139:4313" placeholder="SELECT id, p..image..." />
+            <marker date="1463010573759" expanded="true" signature="5115:6375" placeholder="SELECT * FRO..id..." />
+            <marker date="1463010573759" expanded="true" signature="5247:5479" placeholder="SELECT artic..article..." />
+            <marker date="1463010573759" expanded="true" signature="5247:6200" placeholder="SELECT * FRO..id..." />
+            <marker date="1463010573759" expanded="true" signature="5247:6224" placeholder="SELECT * FRO..id..." />
+            <marker date="1463010573759" expanded="true" signature="5247:6252" placeholder="SELECT * FRO..id..." />
+            <marker date="1463010573759" expanded="true" signature="5247:6375" placeholder="SELECT * FRO..id..." />
+            <marker date="1463010573759" expanded="true" signature="5544:5824" placeholder="SELECT artic..article_id..." />
+            <marker date="1463010573759" expanded="true" signature="5640:5720" placeholder="SELECT artic..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/search.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.615385">
+          <caret line="30" column="215" selection-start-line="30" selection-start-column="215" selection-end-line="30" selection-end-column="215" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/search.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.0">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.6545454">
+          <caret line="257" column="13" selection-start-line="257" selection-start-column="13" selection-end-line="257" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascript/search_page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="149" column="22" selection-start-line="149" selection-start-column="22" selection-end-line="149" selection-end-column="22" />
+          <folding>
+            <marker date="1463042271118" expanded="true" signature="4750:4798" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascript/main-template.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="38" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/users.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9056604">
-          <caret line="188" column="97" selection-start-line="188" selection-start-column="97" selection-end-line="188" selection-end-column="97" />
+        <state vertical-scroll-proportion="0.5278276">
+          <caret line="190" column="46" selection-start-line="185" selection-start-column="30" selection-end-line="190" selection-end-column="46" />
           <folding>
             <marker date="1463002150662" expanded="true" signature="250:400" placeholder="INSERT INTO ..contributor..." />
             <marker date="1463002150662" expanded="true" signature="694:749" placeholder="UPDATE contr..." />
@@ -1086,108 +1289,6 @@
             <marker date="1463002150662" expanded="true" signature="4974:5391" placeholder="SELECT contr..contributor..." />
             <marker date="1463002150662" expanded="true" signature="4974:5438" placeholder="SELECT contr..contributor..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/articles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.038462">
-          <caret line="152" column="4" selection-start-line="152" selection-start-column="4" selection-end-line="158" selection-end-column="5" />
-          <folding>
-            <marker date="1462995537640" expanded="true" signature="139:237" placeholder="SELECT * FRO..category..." />
-            <marker date="1462995537640" expanded="true" signature="389:650" placeholder="SELECT * FRO..article..." />
-            <marker date="1462995537640" expanded="true" signature="805:992" placeholder="SELECT * FRO..article..." />
-            <marker date="1462995537640" expanded="true" signature="1140:1202" placeholder="DELETE FROM ..." />
-            <marker date="1462995537640" expanded="true" signature="1329:1580" placeholder="SELECT * FRO..article..." />
-            <marker date="1462995537640" expanded="true" signature="1736:1846" placeholder="SELECT * FRO..category_article..." />
-            <marker date="1462995537640" expanded="true" signature="2044:2158" placeholder="INSERT INTO article..." />
-            <marker date="1462995537640" expanded="true" signature="2282:2335" placeholder="INSERT INTO article_image..." />
-            <marker date="1462995537640" expanded="true" signature="2887:2983" placeholder="UPDATE artic..." />
-            <marker date="1462995537640" expanded="true" signature="3081:3211" placeholder="SELECT MAX(i..article_image..." />
-            <marker date="1462995537640" expanded="true" signature="3543:3596" placeholder="INSERT INTO article_image..." />
-            <marker date="1462995537640" expanded="true" signature="4139:4313" placeholder="SELECT id, p..image..." />
-            <marker date="1462995537640" expanded="true" signature="5115:6200" placeholder="SELECT * FRO..id..." />
-            <marker date="1462995537640" expanded="true" signature="5115:6224" placeholder="SELECT * FRO..id..." />
-            <marker date="1462995537640" expanded="true" signature="5115:6252" placeholder="SELECT * FRO..id..." />
-            <marker date="1462995537640" expanded="true" signature="5115:6348" placeholder="SELECT * FRO..id..." />
-            <marker date="1462995537640" expanded="true" signature="5130:5479" placeholder="SELECT artic..article..." />
-            <marker date="1462995537640" expanded="true" signature="5544:5824" placeholder="SELECT artic..article_id..." />
-            <marker date="1462995537640" expanded="true" signature="5640:5720" placeholder="SELECT artic..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/users/search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6153846">
-          <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascript/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascript/main-template.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5917667">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/search.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/search.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.3454547">
-          <caret line="30" column="215" selection-start-line="30" selection-start-column="215" selection-end-line="30" selection-end-column="215" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/common/header.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.6219512">
-          <caret line="25" column="59" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascript/search_page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.620689">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <marker date="1463009021737" expanded="true" signature="4750:4798" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2689394">
-          <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>

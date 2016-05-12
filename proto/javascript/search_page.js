@@ -147,7 +147,7 @@ function prepareArticlesHtml(articlesArray){
 function loadCategories(){
     $.getJSON(BASE_URL + "api/articles/get_categories.php", function(result){
         categories = result;
-        if(queryType != "Contributor") {
+        if(queryType == "Article") {
             generateCategorySelect();
         }
     });
