@@ -39,7 +39,6 @@
   <script type="text/javascript" src="{$BASE_URL}lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
   <!-- image upload -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
   <link href="{$BASE_URL}lib/fileinput/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
   <script src="{$BASE_URL}lib/fileinput/js/fileinput.js" type="text/javascript"></script>
   <script src="{$BASE_URL}lib/fileinput/js/fileinput_locale_pt.js"></script>
@@ -78,7 +77,7 @@
               <a id="search-button" href="{$BASE_URL}pages/search.php"><i class="fa fa-search header-fa"></i></a>
             </li>
             <li>
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><i class="fa fa-user header-fa"></i></b> <span class="caret">{$FIRST_NAME} {$LAST_NAME}</span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><i class="fa fa-user header-fa"></i></b> <span>{$FIRST_NAME} {$LAST_NAME}</span></a>
               {if $ID}
                 {include file='common/user_menu.tpl'}
               {else}

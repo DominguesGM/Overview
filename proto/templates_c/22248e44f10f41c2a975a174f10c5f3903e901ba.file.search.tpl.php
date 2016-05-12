@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-12 11:51:34
+<?php /* Smarty version Smarty-3.1.15, created on 2016-05-12 12:06:12
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\search.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:111195728ca84ceb092-84415026%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '22248e44f10f41c2a975a174f10c5f3903e901ba' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\search.tpl',
-      1 => 1463046691,
+      1 => 1463047568,
       2 => 'file',
     ),
   ),
@@ -35,8 +35,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <form id="search-form" method="get" action="">
                 <div class="selectors">
                     <select id="type-selector" class="form-control" name="type">
-                        <option value="Contributor">Contributor</option>
-                        <option value="Article">Article</option>
+                        <option value="Contribuidor">Contribuidor</option>
+                        <option value="Artigo">Artigo</option>
                     </select>
                 </div>
                 <div class="input-group">
@@ -51,7 +51,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     </div>
 </div>
 
-<?php if ($_smarty_tpl->tpl_vars['SEARCH_TYPE']->value=="Contributor"||$_smarty_tpl->tpl_vars['SEARCH_TYPE']->value=="Article") {?>
+<?php if ($_smarty_tpl->tpl_vars['SEARCH_TYPE']->value=="Contribuidor"||$_smarty_tpl->tpl_vars['SEARCH_TYPE']->value=="Artigo") {?>
 <div class="container">
     <div class="col-md-12">
         <hgroup class="mb20">
@@ -59,7 +59,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <h1>Search results</h1>
             <h2 class="lead">Showing results for "<strong id="query-string" class="text-danger"><?php echo $_smarty_tpl->tpl_vars['SEARCH_QUERY']->value;?>
 </strong>" in <strong id="query-type" class="text-danger"><?php echo $_smarty_tpl->tpl_vars['SEARCH_TYPE']->value;?>
-</strong> <?php if ($_smarty_tpl->tpl_vars['SEARCH_TYPE']->value=="Article"&&$_smarty_tpl->tpl_vars['SEARCH_CATEGORY']->value!='') {?>of category <strong id="query-category" class="text-danger"><?php echo $_smarty_tpl->tpl_vars['SEARCH_CATEGORY']->value;?>
+</strong> <?php if ($_smarty_tpl->tpl_vars['SEARCH_TYPE']->value=="Artigo"&&$_smarty_tpl->tpl_vars['SEARCH_CATEGORY']->value!='') {?>of category <strong id="query-category" class="text-danger"><?php echo $_smarty_tpl->tpl_vars['SEARCH_CATEGORY']->value;?>
 </strong><?php }?></h2>
         </hgroup>
     </div>
