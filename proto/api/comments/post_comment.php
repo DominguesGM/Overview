@@ -1,6 +1,6 @@
 <?php
   include_once('../../config/init.php');
-  include_once($BASE_DIR .'database/articles.php');
+  include_once($BASE_DIR .'database/comments.php');
   include_once($BASE_DIR .'api/users/check_access.php');
 
   $body = file_get_contents('php://input');
@@ -13,31 +13,25 @@
   
   $request = json_decode($body, true);
   
-  if(!isset($request['id'])){
+  if(!isset($request['article_id']) || !isset($request['user_id']) || !isset($request['content'])){
     echo json_encode(array('error' => "Erro desconhecido."));
     exit;
   }
 
-  if(!edition_access($request['id'])){
+  if(!contributor_access()){
     echo json_encode(array('error' => "Acesso negado."));
     exit;   
   }
   
   try {
-   $articleImages = getArticleImages($request['id']);
-   deleteArticle($request['id']);
-    
-   foreach ($articleImages as $image) {
-    unlink($BASE_DIR . $image['path']);
-   }
-   
+    $result = createComment($request['user_id'], $request['article_id'], $request['content']);
+    $result['success'] = "Comentário publicado.";
   } catch (Exception $e) {
     print $e->getMessage();
-        
-    echo json_encode(array('error' => 'Erro ao eliminar o artigo.'));
+      
+    echo json_encode(array('error' => "Erro desconhecido."));
     exit;
   }
-  
-  $_SESSION['success_messages'][] = 'Artigo eliminado.';  
-  echo json_encode(array('success' => 'Artigo eliminado.'));
+    
+  echo json_encode($result);
 ?>

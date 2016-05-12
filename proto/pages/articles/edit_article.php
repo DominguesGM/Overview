@@ -6,22 +6,24 @@
   if(!isset($_GET['id'])) {
     $_SESSION['error_messages'][] = 'Artigo não encontrado.';
     header("Location: $BASE_URL");
+    exit;
   }
  
   $article = getArticleById($_GET['id']);
   
-  if(!isset($article)) {
+  if(!$article) {
     $_SESSION['error_messages'][] = 'Artigo não encontrado.';
     header("Location: $BASE_URL");
+    exit;
   }
   
+  $article['id'] = $_GET['id'];
   $article['author_picture'] = getImagePath($article['picture']);
   $article['category'] = getArticleCategory($article['id'])['category_id'];
   $articleCategories = getArticleCategories();
   $articleImages = getArticleImages($_GET['id']);
   
-  if($_SESSION['id'] === $article['author']
-     || moderator_access()){
+  if(edition_access($article['id'])){
     $smarty->assign('article', $article);
     $smarty->assign('articleCategories', $articleCategories);
     $smarty->assign('articleImages', $articleImages);   

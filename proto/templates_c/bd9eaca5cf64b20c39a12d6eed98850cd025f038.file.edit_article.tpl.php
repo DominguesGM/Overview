@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-05 20:28:14
+<?php /* Smarty version Smarty-3.1.15, created on 2016-05-11 19:41:31
          compiled from "C:\wamp\www\Overview\proto\templates\articles\edit_article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:24705729d53e7a7388-45458464%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bd9eaca5cf64b20c39a12d6eed98850cd025f038' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\edit_article.tpl',
-      1 => 1462472884,
+      1 => 1462988457,
       2 => 'file',
     ),
   ),
@@ -74,6 +74,7 @@ actions/articles/edit_article.php" method="post" enctype="multipart/form-data" o
 "/>
 
         <div id="edit-alert" style="display:none" class="alert alert-danger">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
           <span></span>
         </div>
 
@@ -82,7 +83,7 @@ actions/articles/edit_article.php" method="post" enctype="multipart/form-data" o
             Título
           </label>
           <input type="text" class="form-control" name="title" placeholder="Título" value="<?php echo $_smarty_tpl->tpl_vars['article']->value['title'];?>
-" required/>
+"/>
         </div>
 
         <div class="form-group">
@@ -90,22 +91,16 @@ actions/articles/edit_article.php" method="post" enctype="multipart/form-data" o
             Categoria
           </label>
           <br>
-          <select name="category" id="category" required>
+          <select name="category" id="category">
             <option value="---">Selecione uma categoria</option>
             <?php  $_smarty_tpl->tpl_vars['category'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['category']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['articleCategories']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['category']->key => $_smarty_tpl->tpl_vars['category']->value) {
 $_smarty_tpl->tpl_vars['category']->_loop = true;
 ?>
-              <?php if ($_smarty_tpl->tpl_vars['category']->value['id']==$_smarty_tpl->tpl_vars['article']->value['category']) {?>
                 <option value="<?php echo $_smarty_tpl->tpl_vars['category']->value['id'];?>
-" selected><?php echo $_smarty_tpl->tpl_vars['category']->value['name'];?>
+" <?php if ($_smarty_tpl->tpl_vars['category']->value['id']==$_smarty_tpl->tpl_vars['article']->value['category']) {?> selected  <?php }?>><?php echo $_smarty_tpl->tpl_vars['category']->value['name'];?>
 </option>
-              <?php } else { ?>
-                <option value="<?php echo $_smarty_tpl->tpl_vars['category']->value['id'];?>
-"><?php echo $_smarty_tpl->tpl_vars['category']->value['name'];?>
-</option>
-              <?php }?>
             <?php } ?>
           </select>
         </div>

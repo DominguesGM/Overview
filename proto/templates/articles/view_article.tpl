@@ -2,27 +2,43 @@
 
 {include file='common/status_messages.tpl'}
 
-{$article|@var_dump}
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-lg-8">
             <div class="blog-stripe">
                 <div>
-                    <div>
-                        <div class="article-title"><h2>{$article['title']}</h2></div>
-                        <div class="article-score">{$article['score']}</div>
-                        <!-- TODO score implementation-->
-                        <div class="article-scoring"><a href="#"><i class="fa fa-arrow-up"></i></a><br><a href="#"><i class="fa fa-arrow-down"></i></a></div>
+                    <input type="hidden" id="article-id" value="{$article['id']}">
+                    <div class="page-header">
+                        <h2>{$article['title']}
+                          {if $editPermission}
+                           <div class="small btn-simple pull-right text-muted" id="delete">
+                             <span onclick="eliminate()" data-placement="bottom" data-toggle="tooltip" title="Eliminar" class="glyphicon glyphicon-trash"></span>
+                           </div>
+                           <div class="small btn-simple pull-right text-muted" id="edit">
+                             <span onclick="edit()" data-placement="bottom" data-toggle="tooltip" title="Editar" class="glyphicon glyphicon-pencil">&nbsp</span>
+                           </div>
+                           {/if}
+                        </h2>
+                        <div id="article-score" class="article-score">{$article['score']}</div>
+                        <div class="article-scoring">
+                          <a onclick="upvoteArticle({$ID})"><i id="article-up-vote" class="{if $article['vote'] == 'down'} text-muted {/if} fa fa-arrow-up"></i></a>
+                          <br>
+                          <a onclick="downvoteArticle({$ID})"><i id="article-down-vote" class="{if $article['vote'] == 'up'} text-muted {/if}fa fa-arrow-down"></i></a>
+                        </div>
                     </div>
+                     <div class="auhtor">
+                       <em><a href="{$BASE_URL}users/profile.php?id={$article['author']}">{$article['first_name']} {$article['last_name']}</a></em>
+                       <span class="article-date">&nbsp{$article['publication_date']}</span>
+                     </div>
+                    <br>
                     <div class="article-summary">{$article['summary']}</div>
-                    <p class="author"><a href="{$BASE_URL}users/profile.php?id={$article['author']}">{$article['first_name']} {$article['last_name']}</a>
-                    </p>
                 </div>
                 {include file='common/image_gallery.tpl'}
                 <div class="article-body">{$article['content']}</div>
             </div>
+            <br>
             <!-- TODO implement report description -->
-            <div class="report-article"><a href="#" >Reportar artigo</a></div>
+            <div class="report-article"><span data-placement="bottom" data-toggle="tooltip" title="Reportar artigo" class="report-article glyphicon glyphicon-flag"></span><a href="#" >Reportar artigo</a></div>
         </div>
         {include file='articles/related_articles.tpl'}
     </div>

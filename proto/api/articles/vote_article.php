@@ -13,31 +13,30 @@
   
   $request = json_decode($body, true);
   
-  if(!isset($request['id'])){
+  if(!isset($request['article_id']) || !isset($request['user_id']) || !isset($request['type'])){
     echo json_encode(array('error' => "Erro desconhecido."));
     exit;
   }
 
-  if(!edition_access($request['id'])){
+  if(!contributor_access()){
     echo json_encode(array('error' => "Acesso negado."));
     exit;   
   }
   
   try {
-   $articleImages = getArticleImages($request['id']);
-   deleteArticle($request['id']);
-    
-   foreach ($articleImages as $image) {
-    unlink($BASE_DIR . $image['path']);
+   
+   if($request['type'] == 'up'){
+    $score = upvoteArticle($request['article_id'], $request['user_id']); 
+   }else if($request['type'] == 'down'){
+    $score = downvoteArticle($request['article_id'], $request['user_id']);
    }
    
   } catch (Exception $e) {
     print $e->getMessage();
-        
-    echo json_encode(array('error' => 'Erro ao eliminar o artigo.'));
+      
+    echo json_encode(array('error' => 'Erro desconhecido.'));
     exit;
   }
-  
-  $_SESSION['success_messages'][] = 'Artigo eliminado.';  
-  echo json_encode(array('success' => 'Artigo eliminado.'));
+    
+  echo json_encode(array('success' => $score));
 ?>

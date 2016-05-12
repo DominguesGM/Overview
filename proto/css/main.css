@@ -305,7 +305,10 @@ a#menu-toggle{
 
 .author {
     font-style: italic;
-    line-height: 1.3;
+    color: #aab6aa;
+}
+
+.article-date {
     color: #aab6aa;
 }
 

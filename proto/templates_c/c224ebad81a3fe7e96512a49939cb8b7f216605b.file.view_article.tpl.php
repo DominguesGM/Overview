@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-05 23:45:06
+<?php /* Smarty version Smarty-3.1.15, created on 2016-05-12 00:53:10
          compiled from "C:\wamp\www\Overview\proto\templates\articles\view_article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11407572b49bd710566-11169283%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c224ebad81a3fe7e96512a49939cb8b7f216605b' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\view_article.tpl',
-      1 => 1462484661,
+      1 => 1463007187,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'article' => 0,
+    'editPermission' => 0,
+    'ID' => 0,
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
@@ -30,37 +32,56 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php echo $_smarty_tpl->getSubTemplate ('common/status_messages.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 
-<?php echo var_dump($_smarty_tpl->tpl_vars['article']->value);?>
-
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-lg-8">
             <div class="blog-stripe">
                 <div>
-                    <div>
-                        <div class="article-title"><h2><?php echo $_smarty_tpl->tpl_vars['article']->value['title'];?>
-</h2></div>
-                        <div class="article-score"><?php echo $_smarty_tpl->tpl_vars['article']->value['score'];?>
+                    <input type="hidden" id="article-id" value="<?php echo $_smarty_tpl->tpl_vars['article']->value['id'];?>
+">
+                    <div class="page-header">
+                        <h2><?php echo $_smarty_tpl->tpl_vars['article']->value['title'];?>
+
+                          <?php if ($_smarty_tpl->tpl_vars['editPermission']->value) {?>
+                           <div class="small btn-simple pull-right text-muted" id="delete">
+                             <span onclick="eliminate()" data-placement="bottom" data-toggle="tooltip" title="Eliminar" class="glyphicon glyphicon-trash"></span>
+                           </div>
+                           <div class="small btn-simple pull-right text-muted" id="edit">
+                             <span onclick="edit()" data-placement="bottom" data-toggle="tooltip" title="Editar" class="glyphicon glyphicon-pencil">&nbsp</span>
+                           </div>
+                           <?php }?>
+                        </h2>
+                        <div id="article-score" class="article-score"><?php echo $_smarty_tpl->tpl_vars['article']->value['score'];?>
 </div>
-                        <!-- TODO score implementation-->
-                        <div class="article-scoring"><a href="#"><i class="fa fa-arrow-up"></i></a><br><a href="#"><i class="fa fa-arrow-down"></i></a></div>
+                        <div class="article-scoring">
+                          <a onclick="upvoteArticle(<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
+)"><i id="article-up-vote" class="<?php if ($_smarty_tpl->tpl_vars['article']->value['vote']=='down') {?> text-muted <?php }?> fa fa-arrow-up"></i></a>
+                          <br>
+                          <a onclick="downvoteArticle(<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
+)"><i id="article-down-vote" class="<?php if ($_smarty_tpl->tpl_vars['article']->value['vote']=='up') {?> text-muted <?php }?>fa fa-arrow-down"></i></a>
+                        </div>
                     </div>
-                    <div class="article-summary"><?php echo $_smarty_tpl->tpl_vars['article']->value['summary'];?>
-</div>
-                    <p class="author"><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+                     <div class="auhtor">
+                       <em><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['author'];?>
 "><?php echo $_smarty_tpl->tpl_vars['article']->value['first_name'];?>
  <?php echo $_smarty_tpl->tpl_vars['article']->value['last_name'];?>
-</a>
-                    </p>
+</a></em>
+                       <span class="article-date">&nbsp<?php echo $_smarty_tpl->tpl_vars['article']->value['publication_date'];?>
+</span>
+                     </div>
+                    <br>
+                    <div class="article-summary"><?php echo $_smarty_tpl->tpl_vars['article']->value['summary'];?>
+</div>
                 </div>
                 <?php echo $_smarty_tpl->getSubTemplate ('common/image_gallery.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
                 <div class="article-body"><?php echo $_smarty_tpl->tpl_vars['article']->value['content'];?>
 </div>
             </div>
+            <br>
             <!-- TODO implement report description -->
-            <div class="report-article"><a href="#" >Reportar artigo</a></div>
+            <div class="report-article"><span data-placement="bottom" data-toggle="tooltip" title="Reportar artigo" class="report-article glyphicon glyphicon-flag"></span><a href="#" >Reportar artigo</a></div>
         </div>
         <?php echo $_smarty_tpl->getSubTemplate ('articles/related_articles.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
