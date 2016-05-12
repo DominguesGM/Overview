@@ -23,17 +23,6 @@ $("#menu-toggle").click(function(e) {
     $("#wrapper").toggleClass("toggled");
 });
 
-$("#search-button").click(function(e){
-    e.preventDefault();
-    if(!searchbarTOGGLE) {
-        $('body').append(searchbarHTML);
-        $('#search-bar').focus();
-        searchbarTOGGLE = true;
-    }else {
-        $('#search-container').remove();
-        searchbarTOGGLE = false;
-    }
-});
 
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 
