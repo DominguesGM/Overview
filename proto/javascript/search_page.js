@@ -110,7 +110,7 @@ function prepareUsersHtml(usersArray){
         html += '<article class="search-result row"><span class="image-box-contributor" data-score="';
         html += 0;
         html += '"><img class="img-thumbnail" src="';
-        html += usersArray[i]['path'];
+        html += BASE_URL + usersArray[i]['path'];
         html += '" alt=""></span><div class="col-xs-12 col-sm-12 col-md-7 excerpet"><h3><a href="#">';
         html += usersArray[i]['first_name'] + " " + usersArray[i]['last_name'];
         html += '</a></h3><p>';
@@ -127,7 +127,7 @@ function prepareArticlesHtml(articlesArray){
         html += '<article class="search-result row"><span class="image-box" data-score="';
         html += articlesArray[i]['score'];
         html += '"><img class="img-thumbnail" src="';
-        html += articlesArray[i]['path'];
+        html += BASE_URL + articlesArray[i]['path'];
         html += '" alt=""></span><div class="col-xs-12 col-sm-12 col-md-2"><ul class="meta-search"><li><i class="glyphicon glyphicon-calendar"></i> <span>';
         html += articlesArray[i]['publication_date'];
         html += '</span></li><li><i class="glyphicon glyphicon-tags"></i> <span>';
