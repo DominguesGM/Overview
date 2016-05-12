@@ -17,7 +17,6 @@
             {foreach $articleComments as $comment}
 
             <div class="media comment">
-              <!--TODO check time format -->
                 <p class="pull-right"><small>{$comment['comment_date']}</small></p>
                 <div class="comment-vote"><a href="#"><i class="fa fa-arrow-up"></i></a><br><a href="#"><i class="fa fa-arrow-down"></i></a></div>
                 <a class="media-left" href="{$BASE_URL}users/profile.php?id={$comment['posted_by']}">

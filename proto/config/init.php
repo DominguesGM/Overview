@@ -1,11 +1,12 @@
 <?php
   error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
-  session_save_path('C:/wamp/www/Overview/');
-  session_set_cookie_params(3600, '/Overview'); //FIXME
+  session_save_path('C:/wamp/www/lbaw/Overview/');
+  session_set_cookie_params(3600, '/lbaw/Overview'); //FIXME
   session_start();
 
-  $BASE_DIR = 'C:/wamp/www/Overview/proto/'; //FIXME
-  $BASE_URL = '/Overview/proto/'; //FIXME
+
+  $BASE_DIR = 'C:/wamp/www/lbaw/Overview/proto/'; //FIXME
+  $BASE_URL = '/lbaw/Overview/proto/'; //FIXME
 
   $conn = new PDO('pgsql:host=dbm.fe.up.pt;port=5432;dbname=lbaw1566', 'lbaw1566', 'GH43P4H8'); //FIXME
   $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -26,11 +27,12 @@
   $smarty->assign('SUCCESS_MESSAGES', $_SESSION['success_messages']);
   $smarty->assign('FORM_VALUES', $_SESSION['form_values']);
 
+
   unset($_SESSION['success_messages']);
   unset($_SESSION['error_messages']);
   unset($_SESSION['field_errors']);
   unset($_SESSION['form_values']);
-  
+
   $smarty->assign('ID', $_SESSION['id']);
   $smarty->assign('EMAIL', $_SESSION['email']);
   $smarty->assign('PICTURE', $_SESSION['picture']);

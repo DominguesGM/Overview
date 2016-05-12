@@ -25,6 +25,9 @@
   <!-- Login Form CSS -->
   <link href="{$BASE_URL}css/sign_in.css" rel="stylesheet">
 
+  <!-- Search Page CSS -->
+  <link href="{$BASE_URL}css/search.css" rel="stylesheet">
+
   <!-- browse_button CSS -->
   <link href="{$BASE_URL}css/browse_button.css" rel="stylesheet">
 

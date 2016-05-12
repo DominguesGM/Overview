@@ -273,4 +273,49 @@
     
     return $stmt->fetch()['score'];    
   }
+
+  function searchArticle($keyword, $offset, $limit, $category){
+    global $conn;
+    $categoryString = "";
+    $keywordString = "";
+    $argumentArray = array();
+
+    if($category != NULL && isset($category) && $category != "") {
+      $categoryString =  " AND lbaw.category.name LIKE ?";
+      array_push($argumentArray, $category);
+    }
+
+    if($keyword != NULL && isset($keyword) && $keyword != "") {
+      $keywordString = " WHERE a_search.fts_article @@ plainto_tsquery('portuguese', ?)";
+      array_push($argumentArray, $keyword);
+    }
+
+    if($offset == NULL || !isset($offset) || $offset == ""){
+      $offset = 0;
+    }
+
+    if(!isset($limit) || $limit == ""){
+      $limit = NULL;
+    }
+
+    $stmt = $conn->prepare("SELECT * FROM (SELECT article.id AS id, author, publication_date, title, summary, content, score, fts_article, first_name, last_name
+                                          FROM lbaw.article INNER JOIN lbaw.contributor ON contributor.id = article.author
+                                          GROUP BY article.id, contributor.first_name, contributor.last_name) a_search INNER JOIN
+                                          (SELECT article_id, image.path FROM
+                                                            (SELECT article_id, MIN(image_id) AS first FROM article_image GROUP BY article_id) foo INNER JOIN
+                                                            image ON (first = image.id))
+                                                  single_image
+                                          ON single_image.article_id = a_search.id
+                                INNER JOIN lbaw.category_article ON lbaw.category_article.article_id = a_search.id
+                                INNER JOIN lbaw.category ON (lbaw.category.id = lbaw.category_article.category_id" . $categoryString . ")
+                           " . $keywordString . " ORDER BY a_search.score DESC
+                           LIMIT ?  OFFSET ?");
+
+    array_push($argumentArray, $limit, $offset);
+
+    $stmt->execute($argumentArray);
+
+    return $stmt->fetchAll();
+  }
+
 ?>
