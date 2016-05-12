@@ -37,10 +37,7 @@
 
         <input id="article-id" type="hidden" class="form-control" name="id" value="{$article['id']}"/>
 
-        <div id="edit-alert" style="display:none" class="alert alert-danger">
-          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <span></span>
-        </div>
+        <div id="edit-alert"></div>
 
         <div class="form-group">
           <label for="title">

@@ -3,29 +3,18 @@
  
   function getArticleVote($articleId, $contributorId) {
     global $conn;
-    $conn->beginTransaction();
-    $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY");
-    $stmt->execute();
-
     $stmt = $conn->prepare("SELECT * 
                             FROM article_up_vote 
                             WHERE article_id = ? AND voted_by = ?");
     $stmt->execute(array($articleId, $contributorId));
-    $conn->commit();
-    
     if($stmt->fetch()){
       return 'up';
     }
-    
-    $conn->beginTransaction();
-    $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY");
-    $stmt->execute();
     
     $stmt = $conn->prepare("SELECT * 
                             FROM article_down_vote 
                             WHERE article_id = ? AND voted_by = ?");
     $stmt->execute(array($articleId, $contributorId));
-    $conn->commit();
     
     if($stmt->fetch()){
       return 'down';
@@ -36,130 +25,83 @@
   
   function upvoteArticle($articleId, $contributorId) {
     global $conn;
-    $conn->beginTransaction();
-    $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ");
-    $stmt->execute();
-    
     $stmt = $conn->prepare("INSERT INTO article_up_vote(article_id, voted_by)  
                             VALUES(?,?)");
     $stmt->execute(array($articleId, $contributorId));
-    $conn->commit();
-    
     return getArticleScore($articleId);
   }
   
   function downvoteArticle($articleId, $contributorId) {
     global $conn;
-    $conn->beginTransaction();
-    $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ");
-    $stmt->execute();
-    
     $stmt = $conn->prepare("INSERT INTO article_down_vote(article_id, voted_by)  
                             VALUES(?,?)");
     $stmt->execute(array($articleId, $contributorId));
-    $conn->commit();
-    
     return getArticleScore($articleId);
   }
  
   function getArticleCategories(){
     global $conn;
     
-    $conn->beginTransaction();
-    $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY");
-    $stmt->execute();
-
     $stmt = $conn->prepare("SELECT * 
                             FROM category 
                             ORDER BY name ASC");
     $stmt->execute();
-    $conn->commit();
-    
     return $stmt->fetchAll();    
   }
   
   function getArticlesByCategory($id){
     global $conn;
     
-    $conn->beginTransaction();
-    $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY");
-    $stmt->execute();
-    
-    $stmt = $conn->prepare("SELECT * 
+    $stmt = $conn->prepare("SELECT article.*, category_id, to_char(publication_date, 'DD-MM-YYYY, HH24:MI') AS publication_date
                             FROM article INNER JOIN 
                             category_article ON article.id= category_article.article_id 
                             WHERE category_id = ? 
                             ORDER BY publication_date DESC");
     $stmt->execute(array($id));
-    $conn->commit();
-    
     return $stmt->fetchAll();
   } 
     
   function getArticleById($id) {
     global $conn;
-    $conn->beginTransaction();
-    $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY");
-    $stmt->execute();
-    
-    $stmt = $conn->prepare("SELECT *
+    $stmt = $conn->prepare("SELECT article.*, contributor.*, to_char(publication_date, 'DD-MM-YYYY, HH24:MI') AS publication_date
                             FROM article INNER JOIN 
                             contributor ON article.author = contributor.id  
                             WHERE article.id = ?");
     $stmt->execute(array($id));
-    $conn->commit();
     
     return $stmt->fetch();
   }
   
   function deleteArticle($id) {
     global $conn;
-    $conn->beginTransaction();
-    $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ");
-    $stmt->execute();
-    
     $stmt = $conn->prepare("DELETE FROM article  
                             WHERE id = ?");
     $stmt->execute(array($id));
-    $conn->commit();
   }
   
   function getArticlesByAuthor($id) {
     global $conn;
-    $conn->beginTransaction();
-    $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY");
-    $stmt->execute();
-  
-    $stmt = $conn->prepare("SELECT * 
-                            FROM article INNER JOIN 
+    $stmt = $conn->prepare("SELECT contributor.*, article.*, to_char(publication_date, 'DD-MM-YYYY, HH24:MI') AS publication_date
+                            FROM article INNER JOIN
                             contributor ON artcile.author = contributor.id 
                             WHERE contributor.id = ? 
                             ORDER BY publication_date DESC");
     $stmt->execute(array($id));
-    $conn->commit();
-    
     return $stmt->fetchAll();
   }
   
   function getArticleCategory($id) {
     global $conn;
-    $conn->beginTransaction();
-    $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY");
-    $stmt->execute();
-    
     $stmt = $conn->prepare("SELECT * 
                             FROM category_article  
                             WHERE article_id = ?");
     $stmt->execute(array($id));
-    $conn->commit();
-    
     return $stmt->fetch();
   }
   
   function createArticle($author, $title, $category, $summary, $content, $imageTypes) {
     global $conn;
         
-    $conn->beginTransaction();
     $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ");
     $stmt->execute();
     
@@ -245,32 +187,20 @@
 
   function getArticleImages($id) {
     global $conn;
-    $conn->beginTransaction();
-    $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY");
-    $stmt->execute();
-    
     $stmt = $conn->prepare("SELECT id, path
                             FROM image INNER JOIN 
                             article_image ON id=image_id  
                             WHERE article_id = ?");
     $stmt->execute(array($id));
-    $conn->commit();
-    
     return $stmt->fetchAll();
   }
   
   function getArticleScore($id){
     global $conn;
-    $conn->beginTransaction();
-    $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY");
-    $stmt->execute();
-
     $stmt = $conn->prepare("SELECT score 
                             FROM article 
                             WHERE id = ?");
     $stmt->execute(array($id));
-    $conn->commit();
-    
     return $stmt->fetch()['score'];    
   }
 
@@ -298,7 +228,7 @@
       $limit = NULL;
     }
 
-    $stmt = $conn->prepare("SELECT * FROM (SELECT article.id AS id, author, publication_date, title, summary, content, score, fts_article, first_name, last_name
+    $stmt = $conn->prepare("SELECT * FROM (SELECT article.id AS id, author, to_char(publication_date, 'DD-MM-YYYY, HH24:MI') AS publication_date, title, summary, content, score, fts_article, first_name, last_name
                                           FROM lbaw.article INNER JOIN lbaw.contributor ON contributor.id = article.author
                                           GROUP BY article.id, contributor.first_name, contributor.last_name) a_search INNER JOIN
                                           (SELECT article_id, image.path FROM
