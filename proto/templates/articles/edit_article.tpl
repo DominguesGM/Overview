@@ -38,6 +38,7 @@
         <input id="article-id" type="hidden" class="form-control" name="id" value="{$article['id']}"/>
 
         <div id="edit-alert" style="display:none" class="alert alert-danger">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
           <span></span>
         </div>
 
@@ -45,7 +46,7 @@
           <label for="title">
             Título
           </label>
-          <input type="text" class="form-control" name="title" placeholder="Título" value="{$article['title']}" required/>
+          <input type="text" class="form-control" name="title" placeholder="Título" value="{$article['title']}"/>
         </div>
 
         <div class="form-group">
@@ -53,14 +54,10 @@
             Categoria
           </label>
           <br>
-          <select name="category" id="category" required>
+          <select name="category" id="category">
             <option value="---">Selecione uma categoria</option>
             {foreach $articleCategories as $category}
-              {if $category['id'] == $article['category']}
-                <option value="{$category['id']}" selected>{$category['name']}</option>
-              {else}
-                <option value="{$category['id']}">{$category['name']}</option>
-              {/if}
+                <option value="{$category['id']}" {if $category['id'] == $article['category']} selected  {/if}>{$category['name']}</option>
             {/foreach}
           </select>
         </div>

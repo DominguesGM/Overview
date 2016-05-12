@@ -6,6 +6,10 @@
     
     $validation_code = generateValidationCode();
     
+    $conn->beginTransaction();
+    $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ");
+    $stmt->execute();
+    
     $stmt = $conn->prepare("INSERT INTO 
               contributor(email, first_name, last_name, password, validation_code, about) 
               VALUES(?,?,?,?,?,?) RETURNING id");
@@ -15,9 +19,12 @@
     
     $photoId = createImage("images/users/profile_$userId.$extension");
     
+    // TODO add support for email verification step
     $stmt = $conn->prepare("UPDATE contributor 
-      SET picture = ?  WHERE id = ?");      
-    $stmt->execute(array($photoId, $userId));
+      SET picture = ?, status = ?  WHERE id = ?");      
+    $stmt->execute(array($photoId, 'Active', $userId));
+    
+    $conn->commit();
     
     return array($userId, $validation_code);
   }
@@ -30,11 +37,15 @@
       $validationCode = bin2hex(openssl_random_pseudo_bytes(32));
       
       try{
-      $stmt = $conn->prepare("SELECT * 
+        $conn->beginTransaction();
+        $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY");
+        $stmt->execute();
+        
+        $stmt = $conn->prepare("SELECT * 
                               FROM contributor 
                               WHERE validation_code = ?");
-      $stmt->execute(array($validationCode));
-  
+        $stmt->execute(array($validationCode));
+        $conn->commit();
       }catch (PDOException $e) {
         print $e->getMessage();
       }
@@ -48,6 +59,9 @@
     global $conn;
     
     try {
+    $conn->beginTransaction();
+    $stmt =$conn->prepare("SET TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY");
+    $stmt->execute();
     
     $stmt = $conn->prepare("SELECT *
                             FROM contributor 
@@ -56,6 +70,8 @@
     $user = $stmt->fetch();
     
     $user['picture'] = getImagePath($user['picture']);
+    
+    $conn->commit();
     
     if(hash('sha256', $user['validation_code'] . $password) === $user['password']){
        return $user;
@@ -87,6 +103,10 @@
     $validation_code = generateValidationCode();
     
     try{
+      $conn->beginTransaction();
+      $stmt =$conn->prepare("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ");
+      $stmt->execute();
+      
       $stmt = $conn->prepare("UPDATE contributor 
       SET first_name = ?, last_name = ?, email = ?, password = ?, 
       validation_code = ?, picture = ?, about = ?  
@@ -95,6 +115,7 @@
       $stmt->execute(array($firstName, $lastName, $email, hash('sha256', $validation_code . $password), 
                             $validation_code, $picture, $about, $id));
       
+      $conn->commit();    
     }catch (PDOException $e) {
       print $e->getMessage();
       return false;
@@ -120,32 +141,21 @@
     
     return true;
   }
-   
-   function getContributors($exceptId) {
-    global $conn;
     
-    try {
-    
-    $stmt = $conn->prepare("SELECT id, email, picture, first_name, last_name, about
-                            FROM contributor
-                            WHERE id != ?");
-    $stmt->execute(array($exceptId)); 
-    return $stmt->fetchAll();
-      }catch (PDOException $e) {
-      print $e->getMessage();
-      return false;
-    }
-   }
-  
   function getFollowers($id) {
     global $conn;
     
     try {
+    $conn->beginTransaction();
+    $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY");
+    $stmt->execute();
     
     $stmt = $conn->prepare("SELECT id, email, picture, first_name, last_name, about
-                            FROM contributor INNER JOIN follows
+                            FROM contributor INNER JOIN follows ON follower = id
                             WHERE followee = ?");
-    $stmt->execute(array($id)); 
+    $stmt->execute(array($id));
+    $conn->commit();
+     
     return $stmt->fetchAll();
     }catch (PDOException $e) {
       print $e->getMessage();
@@ -157,11 +167,16 @@
     global $conn;
     
     try {
+    $conn->beginTransaction();
+    $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY");
+    $stmt->execute();
     
     $stmt = $conn->prepare("SELECT id, email, picture, first_name, last_name, about
-                            FROM contributor INNER JOIN follows
+                            FROM contributor INNER JOIN follows follows ON followee = id
                             WHERE follower = ?");
-    $stmt->execute(array($id)); 
+    $stmt->execute(array($id));
+    $conn->commit();
+     
     return $stmt->fetchAll();
     }catch (PDOException $e) {
       print $e->getMessage();

@@ -18,13 +18,13 @@
   }
   
   try {
-   $articleId = createArticle($_SESSION['id'], $title, $_POST['summary'], $_POST['content'], $imageTypes);
+   $articleId = createArticle($_SESSION['id'], $title, $_POST['category'], $_POST['summary'], $_POST['content'], $imageTypes);
     
    for($i = 0; $i < count($imageTypes); $i++) {
     move_uploaded_file($images["tmp_name"][$i], $BASE_DIR . 'images/articles/article_'. $articleId . '-' . $i . '.' . $imageTypes[$i]);
     chmod($BASE_DIR . 'images/articles/article_'. $articleId . '-' . $i . '.' . $imageTypes[$i], 0644);
    }
-  } catch (PDOException $e) {
+  } catch (Exception $e) {
   
     print $e->getMessage();
     $_SESSION['error_messages'][] = 'Ocorreu um erro ao guardar o artigo.';
@@ -33,6 +33,7 @@
     exit;
   }
   
-  $_SESSION['success_messages'][] = 'Artigo publicado.';  
-  header("Location: $BASE_URL" . 'pages/articles/view_article.php?id=' - $articleId);
+  $_SESSION['success_messages'][] = 'Artigo publicado.';
+  print 'ok';  
+  header("Location: $BASE_URL" . "pages/articles/view_article.php?id=$articleId");
 ?>

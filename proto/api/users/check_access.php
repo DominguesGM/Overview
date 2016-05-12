@@ -2,6 +2,14 @@
 
   include_once('../../config/init.php');  
   
+  function edition_access($articleId){
+    return isset($_SESSION['id']) &&
+    isset($_SESSION['email']) &&
+    (($_SESSION['type'] === 'Contributor' && $articleId === $_SESSION['id'])  
+    || $_SESSION['type'] === 'Moderator' || $_SESSION['type'] === 'Administrator' ) && 
+    ($_SESSION['status'] === 'Active' || $_SESSION['status'] === 'Warned');
+  }
+  
   function contributor_access(){
     return isset($_SESSION['id']) &&
     isset($_SESSION['email']) &&

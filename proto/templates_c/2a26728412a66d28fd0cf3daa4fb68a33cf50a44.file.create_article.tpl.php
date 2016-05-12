@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-05 17:04:34
+<?php /* Smarty version Smarty-3.1.15, created on 2016-05-11 16:57:48
          compiled from "C:\wamp\www\Overview\proto\templates\articles\create_article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11514572b601d378084-11401176%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2a26728412a66d28fd0cf3daa4fb68a33cf50a44' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\create_article.tpl',
-      1 => 1462460651,
+      1 => 1462978534,
       2 => 'file',
     ),
   ),
@@ -19,11 +19,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_572b601d5c2d58_68976611',
   'variables' => 
   array (
-    'BASE_DIR' => 0,
+    'BASE_URL' => 0,
     'PICTURE' => 0,
     'FIRST_NAME' => 0,
     'LAST_NAME' => 0,
-    'BASE_URL' => 0,
+    'FORM_VALUES' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -55,7 +55,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
   <div class="row">
     <div class="col-md-2 col-sm-12 col-xs-12">
-      <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_DIR']->value;?>
+      <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 <?php echo $_smarty_tpl->tpl_vars['PICTURE']->value;?>
 " class="img-circle" width="80px"/>
       <h4><?php echo $_smarty_tpl->tpl_vars['FIRST_NAME']->value;?>
@@ -67,15 +67,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       <form id="create-form" class="form-horizontal" role="form" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 actions/articles/create_article.php" method="post" enctype="multipart/form-data" onsubmit="return checkArticle();">
 
-        <div id="create-alert" style="display:none" class="alert alert-danger">
-          <span></span>
+        <div id="create-alert">
         </div>
 
         <div class="form-group">
           <label for="title">
             Título
           </label>
-          <input type="text" class="form-control" name="title" placeholder="Título" required/>
+          <input id="title" type="text" class="form-control" name="title" placeholder="Título" value="<?php echo $_smarty_tpl->tpl_vars['FORM_VALUES']->value['title'];?>
+"/>
         </div>
 
         <div class="form-group">
@@ -83,7 +83,7 @@ actions/articles/create_article.php" method="post" enctype="multipart/form-data"
             Categoria
           </label>
           <br>
-          <select name="category" id="category" required>
+          <select name="category" id="category">
             <option value="---">Selecione uma categoria</option>
           </select>
         </div>
@@ -92,14 +92,16 @@ actions/articles/create_article.php" method="post" enctype="multipart/form-data"
           <label for="summary">
             Sumário
           </label>
-          <textarea style="overflow:auto;resize:vertical" class="form-control" id="summary" name="summary" rows="5" placeholder="Insira um pequeno resumo da notícia..."></textarea>
+          <textarea style="overflow:auto;resize:vertical" class="form-control" id="summary" name="summary" rows="5" placeholder="Insira um pequeno resumo da notícia..."><?php echo $_smarty_tpl->tpl_vars['FORM_VALUES']->value['summary'];?>
+</textarea>
         </div>
 
         <div class="form-group">
           <label for="content">
             Conteúdo
           </label>
-          <textarea style="overflow:auto;resize:vertical" class="form-control" id="content" name="content" rows="10"></textarea>
+          <textarea style="overflow:auto;resize:vertical" class="form-control" id="content" name="content" rows="10"><?php echo $_smarty_tpl->tpl_vars['FORM_VALUES']->value['content'];?>
+</textarea>
         </div>
 
         <div class="form-group">

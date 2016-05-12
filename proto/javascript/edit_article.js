@@ -12,24 +12,35 @@ function deleteImage(id){
 }
 
 function warn(errorMessage){
-	$("#edit-form #edit-alert").find('span').html(errorMessage);
-    $("#edit-form #edit-alert").toggle(true);
-    window.scrollTo(0, 0);
-    return false;
+  $("#edit-form #edit-alert").html("<div \" class=\"alert alert-danger\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">\&times;</a>"
+      + errorMessage + "</div>");
+
+  window.scrollTo(0, 0);
+  return false;
+}
+
+function strip(html){
+   var tmp = document.implementation.createHTMLDocument("HTMLTemp").body;
+   tmp.innerHTML = html;
+   return tmp.textContent || tmp.innerText || "";
 }
 
 function checkArticle(){
   tinymce.triggerSave();
 
-  if($('#category').val() === "---"){
-    return warn("Selecione uma categoria."); 
+  if($('#title').val() == ""){
+    return warn("Introduza um título para a notícia."); 
   }
 
-  if($('#summary').val() == ""){
+  if($('#category').val() === "---"){
+    return warn("Selecione a categoria da notícia."); 
+  }
+
+  if(strip($('#summary').val()).trim() == ""){
    return warn("Insira um pequeno resumo da notícia."); 
   }
 
-  if($('#content').val() == ""){
+  if(strip($('#content').val()).trim() == ""){
     return warn("Elabore o conteúdo da notícia.");
   }
 
@@ -68,23 +79,27 @@ function save(){
 
 function discard(){
   window.location.replace(BASE_URL);
-  return false;
 }
 
 function eliminate(){
 	var articleId = $('#article-id').val();
+  if(articleId == undefined){
+      return;
+  }
 
-  	$.ajax({
-        type: "get",
-        url: "../../api/delete_article.php",
-        datatype: "json",
-        data: JSON.stringify({'id': articleId})
-      }).done(function(html){
-        var json = JSON.parse(html);
-        if("success" in json){
-          window.location.replace(BASE_URL);
-        }
-      });
+ 	$.ajax({
+      type: "post",
+      url: "../../api/articles/delete_article.php",
+      datatype: "json",
+      data: JSON.stringify({'id': articleId})
+    }).done(function(html){
+      var json = JSON.parse(html);
+      if("success" in json){
+        window.location.replace(BASE_URL);
+      }else if("error" in json){
+        warn(json['error']);
+      }
+    });
 }
 
 function main(){

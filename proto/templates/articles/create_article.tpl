@@ -24,22 +24,21 @@
 
   <div class="row">
     <div class="col-md-2 col-sm-12 col-xs-12">
-      <img src="{$BASE_DIR}{$PICTURE}" class="img-circle" width="80px"/>
+      <img src="{$BASE_URL}{$PICTURE}" class="img-circle" width="80px"/>
       <h4>{$FIRST_NAME} {$LAST_NAME}</h4>
     </div>
 
     <div class="col-md-8 col-sm-12 col-xs-12">
       <form id="create-form" class="form-horizontal" role="form" action="{$BASE_URL}actions/articles/create_article.php" method="post" enctype="multipart/form-data" onsubmit="return checkArticle();">
 
-        <div id="create-alert" style="display:none" class="alert alert-danger">
-          <span></span>
+        <div id="create-alert">
         </div>
 
         <div class="form-group">
           <label for="title">
             Título
           </label>
-          <input type="text" class="form-control" name="title" placeholder="Título" required/>
+          <input id="title" type="text" class="form-control" name="title" placeholder="Título" value="{$FORM_VALUES.title}"/>
         </div>
 
         <div class="form-group">
@@ -47,7 +46,7 @@
             Categoria
           </label>
           <br>
-          <select name="category" id="category" required>
+          <select name="category" id="category">
             <option value="---">Selecione uma categoria</option>
           </select>
         </div>
@@ -56,14 +55,14 @@
           <label for="summary">
             Sumário
           </label>
-          <textarea style="overflow:auto;resize:vertical" class="form-control" id="summary" name="summary" rows="5" placeholder="Insira um pequeno resumo da notícia..."></textarea>
+          <textarea style="overflow:auto;resize:vertical" class="form-control" id="summary" name="summary" rows="5" placeholder="Insira um pequeno resumo da notícia...">{$FORM_VALUES.summary}</textarea>
         </div>
 
         <div class="form-group">
           <label for="content">
             Conteúdo
           </label>
-          <textarea style="overflow:auto;resize:vertical" class="form-control" id="content" name="content" rows="10"></textarea>
+          <textarea style="overflow:auto;resize:vertical" class="form-control" id="content" name="content" rows="10">{$FORM_VALUES.content}</textarea>
         </div>
 
         <div class="form-group">

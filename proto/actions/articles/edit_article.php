@@ -23,7 +23,7 @@
   }
   
   try {
-   $nextImageId = updateArticle($articleId, $title, $_POST['summary'], $_POST['content'], $imageTypes);
+   $nextImageId = updateArticle($articleId, $title, $_POST['category'], $_POST['summary'], $_POST['content'], $imageTypes);
    
    var_dump($nextImageId);
     
@@ -31,11 +31,12 @@
     move_uploaded_file($images["tmp_name"][$i], $BASE_DIR . 'images/articles/article_'. $articleId . '-' . $nextImageId . '.' . $imageTypes[$i]);
     chmod($BASE_DIR . 'images/articles/article_'. $articleId . '-' . $nextImageId . '.' . $imageTypes[$i], 0644);
    }
-  } catch (PDOException $e) {
+  } catch (Exception $e) {
     print $e->getMessage();
     $_SESSION['error_messages'][] = 'Ocorreu um erro ao guardar o artigo.';
     $_SESSION['form_values'] = $_POST;
-    header("Location: $BASE_URL" . 'pages/articles/view_article.php?id=' . $articleId);
+    
+    header("Location: $BASE_URL" . 'pages/articles/edit_article.php?id=' . $articleId);
     exit;
   }
   
