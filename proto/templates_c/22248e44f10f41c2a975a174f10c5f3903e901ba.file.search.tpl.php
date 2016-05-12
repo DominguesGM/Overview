@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-12 01:24:56
+<?php /* Smarty version Smarty-3.1.15, created on 2016-05-12 11:51:34
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\search.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:111195728ca84ceb092-84415026%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '22248e44f10f41c2a975a174f10c5f3903e901ba' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\search.tpl',
-      1 => 1463009073,
+      1 => 1463046691,
       2 => 'file',
     ),
   ),
@@ -19,8 +19,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_5728ca85103a40_02867519',
   'variables' => 
   array (
-    'SEARCH_QUERY' => 0,
     'SEARCH_TYPE' => 0,
+    'SEARCH_QUERY' => 0,
     'SEARCH_CATEGORY' => 0,
     'BASE_URL' => 0,
   ),
@@ -51,7 +51,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     </div>
 </div>
 
-
+<?php if ($_smarty_tpl->tpl_vars['SEARCH_TYPE']->value=="Contributor"||$_smarty_tpl->tpl_vars['SEARCH_TYPE']->value=="Article") {?>
 <div class="container">
     <div class="col-md-12">
         <hgroup class="mb20">
@@ -69,7 +69,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         </section>
     </div>
 </div>
-
+<?php }?>
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/search_page.js"></script>
 

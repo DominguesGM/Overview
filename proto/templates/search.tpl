@@ -22,7 +22,7 @@
     </div>
 </div>
 
-
+{if $SEARCH_TYPE == "Contributor" || $SEARCH_TYPE == "Article"}
 <div class="container">
     <div class="col-md-12">
         <hgroup class="mb20">
@@ -37,7 +37,7 @@
         </section>
     </div>
 </div>
-
+{/if}
 <script src="{$BASE_URL}javascript/search_page.js"></script>
 
 {include file='common/footer.tpl'}

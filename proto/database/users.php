@@ -201,7 +201,7 @@
       $stmt = $conn->prepare("SELECT contributor.id, contributor.first_name, contributor.last_name,
                                       contributor.type, contributor.about, image.path
                               FROM contributor INNER JOIN image ON (contributor.picture = image.id)
-                              WHERE contributor.first_name || ' ' || contributor.last_name LIKE ?
+                              WHERE lower(contributor.first_name || ' ' || contributor.last_name) LIKE ?
                               AND contributor.status = 'Active'
                               LIMIT ? OFFSET ?");
 

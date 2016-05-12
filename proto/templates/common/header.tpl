@@ -75,7 +75,7 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a id="search-button"><i class="fa fa-search header-fa"></i></a>
+              <a id="search-button" href="{$BASE_URL}pages/search.php"><i class="fa fa-search header-fa"></i></a>
             </li>
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><i class="fa fa-user header-fa"></i></b> <span class="caret">{$FIRST_NAME} {$LAST_NAME}</span></a>

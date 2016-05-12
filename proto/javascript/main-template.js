@@ -23,27 +23,6 @@ $("#menu-toggle").click(function(e) {
     $("#wrapper").toggleClass("toggled");
 });
 
-$("#search-button").click(function(e){
-    e.preventDefault();
-    if(!searchbarTOGGLE) {
-        $('body').append(searchbarHTML);
-        $('#search-bar').focus();
-        searchbarTOGGLE = true;
-        $('#search-bar').keydown(function(e){
-            if(e.which == 13){
-                window.location.href = BASE_URL + "pages/search.php?type=Article&query=" + $('#search-bar').val();
-            }
-        });
-        $('#search-close').click(function(e){
-            $('#search-bar').val("");
-        });
-    }else {
-        $('#search-container').remove();
-        searchbarTOGGLE = false;
-    }
-});
-
-
 
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 

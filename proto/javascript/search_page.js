@@ -133,7 +133,7 @@ function prepareArticlesHtml(articlesArray){
         html += '</span></li><li><i class="glyphicon glyphicon-tags"></i> <span>';
         html += '<a href="' + BASE_URL + 'pages/search.php?type=Article&category=' + articlesArray[i]['name'] + '">' + articlesArray[i]['name'] + '</a>';
         html += '</span></li>';
-        html += '</ul></div><div class="col-xs-12 col-sm-12 col-md-7 excerpet"><h3><a href="#" title="">';
+        html += '</ul></div><div class="col-xs-12 col-sm-12 col-md-7 excerpet"><h3><a href="' + BASE_URL + 'pages/articles/view_article.php?id=' + articlesArray[i]['id'] +  '" title="">';
         html += articlesArray[i]['title'];
         html += '</a></h3><p>';
         html += articlesArray[i]['summary'];
