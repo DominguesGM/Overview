@@ -56,7 +56,7 @@ function prepareArticlesHtml(articlesArray){
         html += '"><img class="img-thumbnail" src="';
         html += BASE_URL + articlesArray[i]['path'];
         html += '" alt=""></span><div class="col-xs-12 col-sm-12 col-md-2"><ul class="meta-search"><li><i class="glyphicon glyphicon-calendar"></i> <span>';
-        html += articlesArray[i]['publication_date'];
+        html += articlesArray[i]['date'];
         html += '</span></li><li><i class="glyphicon glyphicon-tags"></i> <span>';
         html += '<span class="category-link">' + articlesArray[i]['name'] + '</span>';
         html += '</span></li>';

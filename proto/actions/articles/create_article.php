@@ -35,5 +35,5 @@
   
   $_SESSION['success_messages'][] = 'Artigo publicado.';
   print 'ok';  
-  header("Location: $BASE_URL" . "pages/articles/view_article.php?id=$articleId");
+  header("Location: $BASE_URL" . "pages/articles/article.php?id=$articleId");
 ?>

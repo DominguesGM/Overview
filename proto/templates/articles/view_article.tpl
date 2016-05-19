@@ -19,12 +19,14 @@
                            </div>
                            {/if}
                         </h2>
-                        <div id="article-score" class="article-score">{$article['score']}</div>
+                        <div id="article-score" class="article-score">{$article['score']} ponto{if $comment['score'] != 1}s{/if}</div>
+                        {if $ID}
                         <div class="article-scoring">
                           <a onclick="upvoteArticle({$ID})"><i id="article-up-vote" class="{if $article['vote'] == 'down'} text-muted {/if} fa fa-arrow-up"></i></a>
                           <br>
                           <a onclick="downvoteArticle({$ID})"><i id="article-down-vote" class="{if $article['vote'] == 'up'} text-muted {/if}fa fa-arrow-down"></i></a>
                         </div>
+                        {/if}
                     </div>
                      <div class="auhtor">
                        <em><a href="{$BASE_URL}users/profile.php?id={$article['author']}">{$article['first_name']} {$article['last_name']}</a></em>
@@ -33,12 +35,14 @@
                     <br>
                     <div class="article-summary">{$article['summary']}</div>
                 </div>
+                <br>
                 {include file='common/image_gallery.tpl'}
                 <div class="article-body">{$article['content']}</div>
             </div>
             <br>
-            <!-- TODO implement report description -->
-            <div class="report-article"><span data-placement="bottom" data-toggle="tooltip" title="Reportar artigo" class="report-article glyphicon glyphicon-flag"></span><a href="#" >Reportar artigo</a></div>
+            {if $ID}
+            <div class="report-article"><a data-id="article#{$article['id']}" data-toggle="modal" data-target="#report-form"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Reportar artigo</a></div>
+            {/if}
         </div>
         {include file='articles/related_articles.tpl'}
     </div>
@@ -56,6 +60,8 @@
 
     {include file='articles/article_comments.tpl'}
 </div>
+
+{include file='articles/report.tpl'}
 
 <script src="{$BASE_URL}javascript/view_article.js"></script>
 

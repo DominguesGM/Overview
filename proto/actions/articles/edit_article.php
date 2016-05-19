@@ -14,8 +14,6 @@
   $images = $_FILES['images-upload'];
   $imageTypes = array();
 
-   var_dump($images);
-
   foreach ($images['name'] as $filename) {
     if($filename){
       $imageTypes[] = strtolower(end(explode(".", $filename)));
@@ -24,8 +22,6 @@
   
   try {
    $nextImageId = updateArticle($articleId, $title, $_POST['category'], $_POST['summary'], $_POST['content'], $imageTypes);
-   
-   var_dump($nextImageId);
     
    for($i = 0; $i < count($imageTypes); $i++, $nextImageId++) {
     move_uploaded_file($images["tmp_name"][$i], $BASE_DIR . 'images/articles/article_'. $articleId . '-' . $nextImageId . '.' . $imageTypes[$i]);
@@ -41,5 +37,5 @@
   }
   
  $_SESSION['success_messages'][] = 'Alterações guardadas.';  
- header("Location: $BASE_URL" . 'pages/articles/view_article.php?id=' . $articleId);
+ header("Location: $BASE_URL" . 'pages/articles/article.php?id=' . $articleId);
 ?>

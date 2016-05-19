@@ -27,11 +27,12 @@
 
   $smarty->assign('ID', $_SESSION['id']);
   $smarty->assign('EMAIL', $_SESSION['email']);
+  $smarty->assign('PICTURE', $_SESSION['picture']);
   $smarty->assign('STATUS', $_SESSION['status']);
   $smarty->assign('TYPE', $_SESSION['type']);
   $smarty->assign('FIRST_NAME', $_SESSION['first_name']);
   $smarty->assign('LAST_NAME', $_SESSION['last_name']);
-
+  
   unset($_SESSION['success_messages']);
   unset($_SESSION['error_messages']);
   unset($_SESSION['field_errors']);

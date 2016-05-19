@@ -37,15 +37,10 @@
       $validationCode = bin2hex(openssl_random_pseudo_bytes(32));
       
       try{
-        $conn->beginTransaction();
-        $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY");
-        $stmt->execute();
-        
         $stmt = $conn->prepare("SELECT * 
                               FROM contributor 
                               WHERE validation_code = ?");
         $stmt->execute(array($validationCode));
-        $conn->commit();
       }catch (PDOException $e) {
         print $e->getMessage();
       }
@@ -59,10 +54,6 @@
     global $conn;
     
     try {
-    $conn->beginTransaction();
-    $stmt =$conn->prepare("SET TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY");
-    $stmt->execute();
-    
     $stmt = $conn->prepare("SELECT *
                             FROM contributor 
                             WHERE email = ?");
@@ -70,9 +61,7 @@
     $user = $stmt->fetch();
     
     $user['picture'] = getImagePath($user['picture']);
-    
-    $conn->commit();
-    
+        
     if(hash('sha256', $user['validation_code'] . $password) === $user['password']){
        return $user;
     }else{
@@ -146,15 +135,10 @@
     global $conn;
     
     try {
-    $conn->beginTransaction();
-    $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY");
-    $stmt->execute();
-    
     $stmt = $conn->prepare("SELECT id, email, picture, first_name, last_name, about
                             FROM contributor INNER JOIN follows ON follower = id
                             WHERE followee = ?");
     $stmt->execute(array($id));
-    $conn->commit();
      
     return $stmt->fetchAll();
     }catch (PDOException $e) {
@@ -167,15 +151,10 @@
     global $conn;
     
     try {
-    $conn->beginTransaction();
-    $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL READ COMMITTED READ ONLY");
-    $stmt->execute();
-    
     $stmt = $conn->prepare("SELECT id, email, picture, first_name, last_name, about
                             FROM contributor INNER JOIN follows follows ON followee = id
                             WHERE follower = ?");
     $stmt->execute(array($id));
-    $conn->commit();
      
     return $stmt->fetchAll();
     }catch (PDOException $e) {

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-11 19:41:31
+<?php /* Smarty version Smarty-3.1.15, created on 2016-05-12 11:52:25
          compiled from "C:\wamp\www\Overview\proto\templates\articles\edit_article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:24705729d53e7a7388-45458464%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bd9eaca5cf64b20c39a12d6eed98850cd025f038' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\edit_article.tpl',
-      1 => 1462988457,
+      1 => 1463046739,
       2 => 'file',
     ),
   ),
@@ -73,10 +73,7 @@ actions/articles/edit_article.php" method="post" enctype="multipart/form-data" o
         <input id="article-id" type="hidden" class="form-control" name="id" value="<?php echo $_smarty_tpl->tpl_vars['article']->value['id'];?>
 "/>
 
-        <div id="edit-alert" style="display:none" class="alert alert-danger">
-          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <span></span>
-        </div>
+        <div id="edit-alert"></div>
 
         <div class="form-group">
           <label for="title">

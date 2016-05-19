@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-12 00:53:10
+<?php /* Smarty version Smarty-3.1.15, created on 2016-05-12 19:06:22
          compiled from "C:\wamp\www\Overview\proto\templates\articles\view_article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11407572b49bd710566-11169283%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c224ebad81a3fe7e96512a49939cb8b7f216605b' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\view_article.tpl',
-      1 => 1463007187,
+      1 => 1463072780,
       2 => 'file',
     ),
   ),
@@ -21,6 +21,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'article' => 0,
     'editPermission' => 0,
+    'comment' => 0,
     'ID' => 0,
     'BASE_URL' => 0,
   ),
@@ -52,7 +53,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                            <?php }?>
                         </h2>
                         <div id="article-score" class="article-score"><?php echo $_smarty_tpl->tpl_vars['article']->value['score'];?>
-</div>
+ ponto<?php if ($_smarty_tpl->tpl_vars['comment']->value['score']!=1) {?>s<?php }?></div>
+                        <?php if ($_smarty_tpl->tpl_vars['ID']->value) {?>
                         <div class="article-scoring">
                           <a onclick="upvoteArticle(<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
 )"><i id="article-up-vote" class="<?php if ($_smarty_tpl->tpl_vars['article']->value['vote']=='down') {?> text-muted <?php }?> fa fa-arrow-up"></i></a>
@@ -60,6 +62,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                           <a onclick="downvoteArticle(<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
 )"><i id="article-down-vote" class="<?php if ($_smarty_tpl->tpl_vars['article']->value['vote']=='up') {?> text-muted <?php }?>fa fa-arrow-down"></i></a>
                         </div>
+                        <?php }?>
                     </div>
                      <div class="auhtor">
                        <em><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
@@ -74,14 +77,17 @@ users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['author
                     <div class="article-summary"><?php echo $_smarty_tpl->tpl_vars['article']->value['summary'];?>
 </div>
                 </div>
+                <br>
                 <?php echo $_smarty_tpl->getSubTemplate ('common/image_gallery.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
                 <div class="article-body"><?php echo $_smarty_tpl->tpl_vars['article']->value['content'];?>
 </div>
             </div>
             <br>
-            <!-- TODO implement report description -->
-            <div class="report-article"><span data-placement="bottom" data-toggle="tooltip" title="Reportar artigo" class="report-article glyphicon glyphicon-flag"></span><a href="#" >Reportar artigo</a></div>
+            <?php if ($_smarty_tpl->tpl_vars['ID']->value) {?>
+            <div class="report-article"><a data-id="article#<?php echo $_smarty_tpl->tpl_vars['article']->value['id'];?>
+" data-toggle="modal" data-target="#report-form"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Reportar artigo</a></div>
+            <?php }?>
         </div>
         <?php echo $_smarty_tpl->getSubTemplate ('articles/related_articles.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
@@ -101,6 +107,9 @@ users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['author
     <?php echo $_smarty_tpl->getSubTemplate ('articles/article_comments.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 </div>
+
+<?php echo $_smarty_tpl->getSubTemplate ('articles/report.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
 
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/view_article.js"></script>
