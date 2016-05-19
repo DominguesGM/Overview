@@ -28,3 +28,6 @@ hgroup h2.lead strong { font: bold normal 1.125em "Roboto",Arial,Verdana,sans-se
 
 #type-selector{width:49%; display: inline; margin-bottom: 10px;}
 #category-selector{width:50%; display:inline; margin-bottom: 10px;}
+
+.category-link{color:#248dc1}
+.category-link:hover{cursor: pointer}

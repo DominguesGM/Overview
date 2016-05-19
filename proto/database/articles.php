@@ -298,7 +298,9 @@
       $limit = NULL;
     }
 
-    $stmt = $conn->prepare("SELECT * FROM (SELECT article.id AS id, author, publication_date, title, summary, content, score, fts_article, first_name, last_name
+    $stmt = $conn->prepare("SELECT * FROM (SELECT article.id AS id, author, publication_date, title, summary, content, score, fts_article, first_name, last_name,
+                                          CASE WHEN score >= 0 AND score < 1 THEN 1 ELSE score END AS log_content,
+                                          CASE WHEN score >= 0 THEN 1 ELSE -1 END AS signal
                                           FROM lbaw.article INNER JOIN lbaw.contributor ON contributor.id = article.author
                                           GROUP BY article.id, contributor.first_name, contributor.last_name) a_search INNER JOIN
                                           (SELECT article_id, image.path FROM
@@ -308,7 +310,7 @@
                                           ON single_image.article_id = a_search.id
                                 INNER JOIN lbaw.category_article ON lbaw.category_article.article_id = a_search.id
                                 INNER JOIN lbaw.category ON (lbaw.category.id = lbaw.category_article.category_id" . $categoryString . ")
-                           " . $keywordString . " ORDER BY a_search.publication_date, a_search.score DESC
+                           " . $keywordString . " ORDER BY (log(abs(a_search.log_content)) + EXTRACT(EPOCH FROM age(a_search.publication_date, timestamp '2005-12-08 7:46:43'))*a_search.signal/45000) DESC
                            LIMIT ?  OFFSET ?");
 
     array_push($argumentArray, $limit, $offset);
