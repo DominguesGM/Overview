@@ -20,17 +20,20 @@
   
   $article['id'] = $_GET['id'];
   $article['author_picture'] = getImagePath($article['picture']);
-  $article['category'] = getArticleCategory($article['id'])['category_id'];
-  $article['vote'] = getArticleVote($article['id'], $_SESSION['id']); 
+  $article['category'] = getArticleCategory($article['id']);
+  $article['vote'] = getArticleVote($article['id'], $_SESSION['id']);
+  $article['report'] = getArticleReport($article['id'], $_SESSION['id']);
   
   $articleImages = getArticleImages($_GET['id']);
-  $articleComments = getArticleComments($_GET['id'], 10);
-  $article['nComments'] = getArticleCommentsCount($_GET['id']);
+  $articleComments = getArticleComments($_GET['id'], 10, 0, $_SESSION['id']);
+  $relatedArticles = searchArticle('', 0, 4, $article['category']['name']);
   
   $smarty->assign('article', $article);
   $smarty->assign('articleImages', $articleImages);
   $smarty->assign('articleComments', $articleComments);
+  $smarty->assign('relatedArticles', $relatedArticles);
   $smarty->assign('editPermission', edition_access($article['id']));
+  $smarty->assign('contributorAccess', contributor_access());
       
   $smarty->display('articles/view_article.tpl'); 
 ?>

@@ -26,13 +26,12 @@
       $_SESSION['type'] = $login['type'];
       $_SESSION['first_name'] = $login['first_name'];
       $_SESSION['last_name'] = $login['last_name'];
-      $_SESSION['success_messages'][] = 'Autenticação concluída.';
    //}  
   } else {
     $_SESSION['error_messages'][] = 'Email ou password incorretos.';
     header('Location: ' . $BASE_URL . 'pages/users/authentication.php?email=' . $_POST['email']);
     exit;  
   }
-  
- header('Location: ' . $BASE_URL);
+ 
+ header('Location:'.$_SERVER['HTTP_REFERER']);
 ?>

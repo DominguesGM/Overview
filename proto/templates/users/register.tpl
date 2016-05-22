@@ -1,7 +1,6 @@
 {include file='common/header.tpl'}
-
 <div class="container">
-  <div id="loginbox" style="{if !$email} display:none {/if} margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+  <div id="loginbox" style="{if !$email} display:none; {/if} margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
     <div class="panel panel-info" >
       <div class="panel-heading">
@@ -13,6 +12,8 @@
         <form id="loginform" class="form-horizontal" role="form" action="{$BASE_URL}actions/users/login.php" method="post">
 
           {include file='common/status_messages.tpl'}
+
+          <input type="hidden" name="redirect" value="true">
 
           <div style="margin-bottom: 25px" class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -47,7 +48,7 @@
     </div>
   </div>
 
-  <div id="signupbox" {if $email} style="display:none" {/if} style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+  <div id="signupbox" style="{if $email} display:none; {/if} margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
     <div class="panel panel-info">
       <div class="panel-heading">
         <div class="panel-title">Registar</div>
@@ -59,10 +60,7 @@
 
           {include file='common/status_messages.tpl'}
 
-          <div id="signupalert" style="display:none" class="alert alert-danger">
-            <p>Erro: </p>
-            <span></span>
-          </div>
+          <div id="signup-alert"></div>
 
           <div class="form-group">
             <label for="email" class="col-md-3 control-label">Email</label>
@@ -88,14 +86,14 @@
           <div class="form-group">
             <label for="password" class="col-md-3 control-label">Password</label>
             <div class="col-md-9">
-              <input type="password" class="form-control" name="password" placeholder="Password" required>
+              <input type="password" class="form-control" name="password" placeholder="Password" required data-toggle="tooltip" title="Introduza uma password com uma letra e um número e no mínimo 8 caracteres" data-placement="bottom">
             </div>
           </div>
 
           <div class="form-group">
             <label for="password_conf" class="col-md-3 control-label"></label>
             <div class="col-md-9">
-              <input type="password" class="form-control" name="password_conf" placeholder="Confirmar password" required>
+              <input type="password" class="form-control" name="password_conf" placeholder="Confirmar password" required data-toggle="tooltip" title="Introduza uma password com uma letra e um número e no mínimo 8 caracteres" data-placement="bottom">
             </div>
           </div>
 
@@ -124,7 +122,7 @@
           <div class="form-group">
             <div class="col-md-offset-3 col-md-9">
               <label class="control-label">
-                <input type="checkbox" id="terms" required> Li e aceito os
+                <input type="checkbox" id="terms"> Li e aceito os
                 <a href="{$BASE_URL}pages/users/terms_of_use.php" target="_blank" class="fancybox">Termos de Uso</a>.
               </label>
             </div>

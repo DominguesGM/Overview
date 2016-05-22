@@ -24,7 +24,7 @@
         </form>
       </div>
       <div class="bottom text-center">
-        Novo aqui? <a href="{$BASE_URL}pages/users/register.php"><b>Registar</b></a>
+        Novo aqui? <a href="{$BASE_URL}pages/users/authentication.php"><b>Registar</b></a>
       </div>
     </div>
   </li>

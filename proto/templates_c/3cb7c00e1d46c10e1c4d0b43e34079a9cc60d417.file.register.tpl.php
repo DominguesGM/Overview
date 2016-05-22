@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-05 21:07:51
+<?php /* Smarty version Smarty-3.1.15, created on 2016-05-22 13:02:40
          compiled from "C:\wamp\www\Overview\proto\templates\users\register.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:23265729f9162c5093-27712717%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3cb7c00e1d46c10e1c4d0b43e34079a9cc60d417' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\users\\register.tpl',
-      1 => 1462475267,
+      1 => 1463914954,
       2 => 'file',
     ),
   ),
@@ -27,9 +27,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5729f91730c7d7_14823075')) {function content_5729f91730c7d7_14823075($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
-
 <div class="container">
-  <div id="loginbox" style="<?php if (!$_smarty_tpl->tpl_vars['email']->value) {?> display:none <?php }?> margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+  <div id="loginbox" style="<?php if (!$_smarty_tpl->tpl_vars['email']->value) {?> display:none; <?php }?> margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
     <div class="panel panel-info" >
       <div class="panel-heading">
@@ -43,6 +42,8 @@ actions/users/login.php" method="post">
 
           <?php echo $_smarty_tpl->getSubTemplate ('common/status_messages.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
+
+          <input type="hidden" name="redirect" value="true">
 
           <div style="margin-bottom: 25px" class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -80,7 +81,7 @@ actions/users/login.php" method="post">
     </div>
   </div>
 
-  <div id="signupbox" <?php if ($_smarty_tpl->tpl_vars['email']->value) {?> style="display:none" <?php }?> style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+  <div id="signupbox" style="<?php if ($_smarty_tpl->tpl_vars['email']->value) {?> display:none; <?php }?> margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
     <div class="panel panel-info">
       <div class="panel-heading">
         <div class="panel-title">Registar</div>
@@ -94,10 +95,7 @@ actions/users/register.php" method="post" enctype="multipart/form-data" onsubmit
           <?php echo $_smarty_tpl->getSubTemplate ('common/status_messages.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 
-          <div id="signupalert" style="display:none" class="alert alert-danger">
-            <p>Erro: </p>
-            <span></span>
-          </div>
+          <div id="signup-alert"></div>
 
           <div class="form-group">
             <label for="email" class="col-md-3 control-label">Email</label>
@@ -126,14 +124,14 @@ actions/users/register.php" method="post" enctype="multipart/form-data" onsubmit
           <div class="form-group">
             <label for="password" class="col-md-3 control-label">Password</label>
             <div class="col-md-9">
-              <input type="password" class="form-control" name="password" placeholder="Password" required>
+              <input type="password" class="form-control" name="password" placeholder="Password" required data-toggle="tooltip" title="Introduza uma password com pelo menos uma letra e um número e no mínimo 8 caracteres." data-placement="bottom">
             </div>
           </div>
 
           <div class="form-group">
             <label for="password_conf" class="col-md-3 control-label"></label>
             <div class="col-md-9">
-              <input type="password" class="form-control" name="password_conf" placeholder="Confirmar password" required>
+              <input type="password" class="form-control" name="password_conf" placeholder="Confirmar password" required data-toggle="tooltip" title="Introduza uma password com pelo menos uma letra e um número e no mínimo 8 caracteres." data-placement="bottom">
             </div>
           </div>
 
@@ -162,7 +160,7 @@ actions/users/register.php" method="post" enctype="multipart/form-data" onsubmit
           <div class="form-group">
             <div class="col-md-offset-3 col-md-9">
               <label class="control-label">
-                <input type="checkbox" id="terms" required> Li e aceito os
+                <input type="checkbox" id="terms"> Li e aceito os
                 <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/users/terms_of_use.php" target="_blank" class="fancybox">Termos de Uso</a>.
               </label>

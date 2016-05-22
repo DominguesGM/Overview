@@ -24,19 +24,32 @@
   }
   
   try {
+   $action = 'new';
    
    if($request['type'] == 'up'){
-    $score = upvoteArticle($request['article_id'], $request['user_id']); 
+      $score = upvoteArticle($request['article_id'], $request['user_id']); 
    }else if($request['type'] == 'down'){
-    $score = downvoteArticle($request['article_id'], $request['user_id']);
+      $score = downvoteArticle($request['article_id'], $request['user_id']);
    }
    
-  } catch (Exception $e) {
-    print $e->getMessage();
-      
-    echo json_encode(array('error' => 'Erro desconhecido.'));
-    exit;
+  } catch (Exception $e) {    
+    if(strpos($e->getMessage(), 'duplicate')){
+      try{
+        $action = 'delete';
+        if($request['type'] == 'up'){
+          $score = deleteUpvoteArticle($request['article_id'], $request['user_id']); 
+        }else if($request['type'] == 'down'){
+          $score = deleteDownvoteArticle($request['article_id'], $request['user_id']);
+        }
+      }catch (Exception $e) {
+        echo json_encode(array('error' => 'Erro desconhecido.'));
+        exit;
+      } 
+    }else{
+      echo json_encode(array('error' => 'Erro desconhecido.'));
+      exit;
+    }
   }
     
-  echo json_encode(array('success' => $score));
+  echo json_encode(array('success' => $score, 'action' => $action));
 ?>

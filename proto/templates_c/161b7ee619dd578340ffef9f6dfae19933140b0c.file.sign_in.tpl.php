@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-04 12:50:09
+<?php /* Smarty version Smarty-3.1.15, created on 2016-05-20 02:28:19
          compiled from "C:\wamp\www\Overview\proto\templates\common\sign_in.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:54535729d3e17275b9-17245940%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '161b7ee619dd578340ffef9f6dfae19933140b0c' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\common\\sign_in.tpl',
-      1 => 1461784723,
+      1 => 1463704089,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_5729d3e17c0142_88462718',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_5729d3e17c0142_88462718',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5729d3e17c0142_88462718')) {function content_5729d3e17c0142_88462718($_smarty_tpl) {?><ul id="login-dp" class="dropdown-menu">
   <li>
@@ -51,7 +51,7 @@ actions/users/login.php" accept-charset="UTF-8" id="login-nav">
       </div>
       <div class="bottom text-center">
         Novo aqui? <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/users/register.php"><b>Registar</b></a>
+pages/users/authentication.php"><b>Registar</b></a>
       </div>
     </div>
   </li>

@@ -24,19 +24,36 @@
   }
   
   try {
-   
+   $action = 'new';
+    
    if($request['type'] == 'up'){
     $score = upvoteComment($request['comment_id'], $request['user_id']); 
    }else if($request['type'] == 'down'){
     $score = downvoteComment($request['comment_id'], $request['user_id']);
+   }else{
+     echo json_encode(array('error' => 'Erro desconhecido'));
+     exit;
    }
    
-  } catch (Exception $e) {
-    print $e->getMessage();
-      
-    echo json_encode(array('error' => 'Erro desconhecido.'));
-    exit;
+  } catch (Exception $e) {    
+    if(strpos($e->getMessage(), 'duplicate')){
+      try{
+        $action = 'delete';
+        
+        if($request['type'] == 'up'){
+          $score = deleteUpvoteComment($request['comment_id'], $request['user_id']); 
+        }else if($request['type'] == 'down'){
+          $score = deleteDownvoteComment($request['comment_id'], $request['user_id']);
+        }  
+      } catch (Exception $e) {
+        echo json_encode(array('error' => 'Erro desconhecido.', 'detail' => $e->getMessage()));
+        exit;
+      }
+    }else{ 
+      echo json_encode(array('error' => 'Erro desconhecido', 'detail' => $e->getMessage()));
+      exit;
+    }
   }
     
-  echo json_encode(array('success' => $score));
+  echo json_encode(array('success' => $score, 'action' => $action));
 ?>

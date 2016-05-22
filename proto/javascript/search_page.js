@@ -34,9 +34,8 @@ $(document).ready(function(){
         }
     });
 
-    if(!(/^[a-zA-Z]*$/.test(query)) || !(/^[a-zA-Z]*$/.test(queryType)))
+    if(!(/^[a-zA-Z1-9]*$/.test(query)) || !(/^[a-zA-Z]*$/.test(queryType)))
         return;
-
 
     if(queryType == "Contribuidor"){
         $("#type-selector option[value='Contribuidor']").attr("selected", true);

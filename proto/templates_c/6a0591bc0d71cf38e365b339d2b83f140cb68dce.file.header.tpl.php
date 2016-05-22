@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-12 02:36:32
+<?php /* Smarty version Smarty-3.1.15, created on 2016-05-19 11:53:34
          compiled from "C:\wamp\www\Overview\proto\templates\common\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:155885729d3e0c18dd1-75233695%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6a0591bc0d71cf38e365b339d2b83f140cb68dce' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\common\\header.tpl',
-      1 => 1463013126,
+      1 => 1463085624,
       2 => 'file',
     ),
   ),
@@ -77,7 +77,6 @@ lib/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
 lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
   <!-- image upload -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
   <link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 lib/fileinput/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
   <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
@@ -118,10 +117,11 @@ javascript/rich_text.js"></script>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a id="search-button"><i class="fa fa-search header-fa"></i></a>
+              <a id="search-button" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/search.php"><i class="fa fa-search header-fa"></i></a>
             </li>
             <li>
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><i class="fa fa-user header-fa"></i></b> <span class="caret"><?php echo $_smarty_tpl->tpl_vars['FIRST_NAME']->value;?>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><i class="fa fa-user header-fa"></i></b> <span><?php echo $_smarty_tpl->tpl_vars['FIRST_NAME']->value;?>
  <?php echo $_smarty_tpl->tpl_vars['LAST_NAME']->value;?>
 </span></a>
               <?php if ($_smarty_tpl->tpl_vars['ID']->value) {?>

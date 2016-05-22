@@ -23,11 +23,33 @@
     return 'none';    
   }
   
+   function getArticleReport($articleId, $contributorId) {
+    global $conn;
+    $stmt = $conn->prepare("SELECT id 
+                            FROM report 
+                            WHERE article_id = ? AND reported_by = ? AND is_resolved = FALSE");
+    $stmt->execute(array($articleId, $contributorId));
+    
+    if(!($result = $stmt->fetch()))
+      return null;
+    else return $result;
+  }
+  
   function upvoteArticle($articleId, $contributorId) {
     global $conn;
-    $stmt = $conn->prepare("INSERT INTO article_up_vote(article_id, voted_by)  
-                            VALUES(?,?)");
+    
+    $stmt = $conn->prepare("INSERT INTO article_up_vote(article_id, voted_by) VALUES(?,?)");
     $stmt->execute(array($articleId, $contributorId));
+    
+    return getArticleScore($articleId);
+  }
+  
+  function deleteUpvoteArticle($articleId, $contributorId) {
+    global $conn;
+    
+    $stmt = $conn->prepare("DELETE FROM article_up_vote WHERE article_id = ? AND voted_by = ?");
+    $stmt->execute(array($articleId, $contributorId));
+    
     return getArticleScore($articleId);
   }
   
@@ -36,6 +58,15 @@
     $stmt = $conn->prepare("INSERT INTO article_down_vote(article_id, voted_by)  
                             VALUES(?,?)");
     $stmt->execute(array($articleId, $contributorId));
+    return getArticleScore($articleId);
+  }
+  
+  function deleteDownvoteArticle($articleId, $contributorId) {
+    global $conn;
+    
+    $stmt = $conn->prepare("DELETE FROM article_down_vote WHERE article_id = ? AND voted_by = ?");
+    $stmt->execute(array($articleId, $contributorId));
+    
     return getArticleScore($articleId);
   }
  
@@ -48,18 +79,6 @@
     $stmt->execute();
     return $stmt->fetchAll();    
   }
-  
-  function getArticlesByCategory($id){
-    global $conn;
-    
-    $stmt = $conn->prepare("SELECT article.*, category_id, to_char(publication_date, 'DD-MM-YYYY, HH24:MI') AS publication_date
-                            FROM article INNER JOIN 
-                            category_article ON article.id= category_article.article_id 
-                            WHERE category_id = ? 
-                            ORDER BY publication_date DESC");
-    $stmt->execute(array($id));
-    return $stmt->fetchAll();
-  } 
     
   function getArticleById($id) {
     global $conn;
@@ -93,7 +112,7 @@
   function getArticleCategory($id) {
     global $conn;
     $stmt = $conn->prepare("SELECT * 
-                            FROM category_article  
+                            FROM category_article INNER JOIN category ON category_id = id  
                             WHERE article_id = ?");
     $stmt->execute(array($id));
     return $stmt->fetch();

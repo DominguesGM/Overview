@@ -5,7 +5,7 @@
   if (!$_POST['email'] || !$_POST['firstname'] || !$_POST['lastname'] || !$_POST['password'] || !$_POST['about']) {
     $_SESSION['error_messages'][] = 'Todos os campos são necessários.';
     $_SESSION['form_values'] = $_POST;
-    header("Location: $BASE_URL" . 'pages/users/register.php');
+    header("Location: $BASE_URL" . 'pages/users/authentication.php');
     exit;
   }
 
@@ -47,7 +47,7 @@
 
     print $e->getMessage();
     $_SESSION['form_values'] = $_POST;
-    header("Location: $BASE_URL" . 'pages/users/register.php');
+    header("Location: $BASE_URL" . 'pages/users/authentication.php');
     exit;
   }
   
@@ -56,5 +56,5 @@
   //print mail($email, 'Overview', "Bem-vindo ao Overview! \r\nFoi efetuado um registo associado a esta conta de e-mail. \r\nSiga o link abaixo para activar a conta: \r\n $BASE_URL/action/users/verify.php?email=$email&token=$validationCode\r\n\r\nObrigado,\r\nA equipa Overview.", $headers);
   
   $_SESSION['success_messages'][] = 'Registo efetuado.';  
-  header("Location: $BASE_URL" . "pages/users/register.php");
+  header("Location: $BASE_URL" . "pages/users/authentication.php");
 ?>
