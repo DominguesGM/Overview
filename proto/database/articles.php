@@ -158,7 +158,7 @@
     $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ");
     $stmt->execute();
     
-    $stmt = $conn->prepare("UPDATE article SET title = ?, summary = ?, content = ? 
+    $stmt = $conn->prepare("UPDATE article SET publication_date = current_timestamp, title = ?, summary = ?, content = ? 
                             WHERE id = ?");
     $stmt->execute(array($title, $summary, $content, $id));
     
