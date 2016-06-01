@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-12 11:58:16
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 22:15:10
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\common\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19135721e8855c30b4-28490158%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cda3dc005a1b1df499cec228d97388ea9129882c' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\common\\header.tpl',
-      1 => 1463047094,
+      1 => 1464809478,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'BASE_URL' => 0,
+    'ID' => 0,
     'FIRST_NAME' => 0,
     'LAST_NAME' => 0,
-    'ID' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5721e8856a3d16_38402794')) {function content_5721e8856a3d16_38402794($_smarty_tpl) {?><!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,10 +37,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
   <title>Overview</title>
 
-  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-
+  <!--<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>-->
+  <!-- jQuery -->
   <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/main.js"></script>
+javascript/jquery.js"></script>
 
   <!-- Bootstrap Core CSS -->
   <link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
@@ -83,11 +83,6 @@ lib/fileinput/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
 lib/fileinput/js/fileinput.js" type="text/javascript"></script>
   <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 lib/fileinput/js/fileinput_locale_pt.js"></script>
-
-  <!-- rich text -->
-  <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-  <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-javascript/rich_text.js"></script>
 </head>
 
 <body>
@@ -117,9 +112,15 @@ javascript/rich_text.js"></script>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a id="search-button" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+              <a data-placement="bottom" data-toggle="tooltip" title="Procuar" id="search-button" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/search.php"><i class="fa fa-search header-fa"></i></a>
             </li>
+            <?php if ($_smarty_tpl->tpl_vars['ID']->value) {?>
+            <li>
+              <a data-placement="bottom" data-toggle="tooltip" title="Criar artigo" id="new-article-button" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/articles/create_article.php"><i class="fa fa-plus header-fa"></i></a>
+            </li>
+            <?php }?>
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><i class="fa fa-user header-fa"></i></b> <span><?php echo $_smarty_tpl->tpl_vars['FIRST_NAME']->value;?>
  <?php echo $_smarty_tpl->tpl_vars['LAST_NAME']->value;?>
