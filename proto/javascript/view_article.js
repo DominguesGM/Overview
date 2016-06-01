@@ -59,7 +59,7 @@
     commentHtml += '</div>';
 
 	if(userId==postedBy){
-		commentHtml += '<div class="delete btn-simple pull-right text-muted"><small><span onclick="deleteComment(' + commentId + ')" data-placement="left" data-toggle="tooltip" title="Apagar" class="glyphicon glyphicon-remove"></span></small></div>';
+		commentHtml += '<div class="delete btn-simple pull-right text-muted"><small><span onclick="deleteComment(' + commentId + + ',' + postedBy+ ')" data-placement="left" data-toggle="tooltip" title="Apagar" class="glyphicon glyphicon-remove"></span></small></div>';
 	}
     
     commentHtml += '</div>';
@@ -172,24 +172,24 @@
     });
   }
 
-  function deleteComment(commentId){
+  function deleteComment(commentId, author){
     bootbox.confirm({
       message:"Tem a certeza que pretende eliminar este comentário?", 
       locale: "pt",
       callback: function(result){
         if(result){
-          deleteCommentConfirmed(commentId);
+          deleteCommentConfirmed(commentId, author);
         }
       }
     });
 }
 
-function deleteCommentConfirmed(commentId){
+function deleteCommentConfirmed(commentId, author){
     $.ajax({
       type: "post",
       url: "../../api/comments/delete_comment.php",
       datatype: "json",
-      data: JSON.stringify({'id': commentId})
+      data: JSON.stringify({'id': commentId, 'posted_by': author})
     }).done(function(html){
       var json = JSON.parse(html);
       if("success" in json){

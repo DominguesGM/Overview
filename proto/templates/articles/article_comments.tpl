@@ -46,7 +46,7 @@
           </div>
           {if $comment['posted_by'] == $ID}
           <div class="delete btn-simple pull-right text-muted">
-            <small><span onclick="deleteComment({$comment['id']})" data-placement="left" data-toggle="tooltip" title="Apagar" class="glyphicon glyphicon-remove"></span></small>
+            <small><span onclick="deleteComment({$comment['id']}, {$comment['posted_by']})" data-placement="left" data-toggle="tooltip" title="Apagar" class="glyphicon glyphicon-remove"></span></small>
           </div>
           {/if}
         </div>
