@@ -31,27 +31,27 @@
    */
 
    function getCommentHtml(commentId, commentDate, content, score, postedBy, firstName, lastName, path, vote, report){
-    var commentHtml = "<div class=\"media comment\">";
+    var commentHtml = '<div id="' + commentId + '" class=\"media comment\">';
     commentHtml += '<input class="comment-user" type="hidden" value="' + postedBy + '">';
     commentHtml += "<p class=\"pull-right\"><small>" + commentDate + "</small></p>";
 
     if(contributorAccess){
       commentHtml += '<div id="comment-' + commentId + '" class="comment-vote"><a onclick="upvoteComment(' + commentId + ')"><i id="comment-up-vote-' + commentId + '"';
-      commentHtml += 'class="' + (vote != 'up' ? 'text-muted' : '') + ' fa fa-arrow-up"></i></a><br>';
-      commentHtml += '<a onclick="downvoteComment('+ commentId + ')"><i id="comment-down-vote-' + commentId + '" class="' + (vote != 'up' ? 'text-muted' : '') + ' fa fa-arrow-down"></i></a></div>';
+      commentHtml += 'class="vote ' + (vote != 'up' ? 'text-muted' : '') + ' fa fa-arrow-up"></i></a><br>';
+      commentHtml += '<a onclick="downvoteComment('+ commentId + ')"><i id="comment-down-vote-' + commentId + '" class="vote ' + (vote != 'up' ? 'text-muted' : '') + ' fa fa-arrow-down"></i></a></div>';
     }
 
-    commentHtml += '<a class="media-left" href="{$BASE_URL}users/profile.php?id=' + postedBy + '"><img class="img-circle comment-user-picture" src="' + BASE_URL + path + '"></a>';
-    commentHtml += '<div class="media-body"><h4 class="media-heading user_name"><a href="' + BASE_URL + 'users/profile.php?id=' + postedBy + '">' + firstName + ' ' + lastName + '</a></h4>';
+    commentHtml += '<a class="media-left" href="' + BASE_URL + 'pages/users/profile.php?id=' + postedBy + '"><img alt="Autor do comentário" class="img-circle comment-user-picture" src="' + BASE_URL + path + '"></a>';
+    commentHtml += '<div class="media-body"><h4 class="media-heading user_name"><a href="' + BASE_URL + 'pages/users/profile.php?id=' + postedBy + '">' + firstName + ' ' + lastName + '</a></h4>';
     commentHtml += content;
     commentHtml += '<p><small id="comment-score-' + commentId + '" class="text-muted">' + score + ((score != 1 && score != -1) ? ' pontos' : ' ponto') + '</small></p>';
 
     if(contributorAccess){
-      commentHtml += '<div id="comment-report-' + commentId + '>';
+      commentHtml += '<div id="comment-report-' + commentId + '">';
       if(report){
         commentHtml += '<div class="report-comment text-muted"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Comentário reportado</div>';
       }else{
-        commentHtml += '<div class="report-comment"><small><a data-id="' + commentId + '" data-toggle="modal" data-target="#report-form"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Reportar comentário</a></small></div>';
+        commentHtml += '<div class="selectable report-comment"><small><a data-id="' + commentId + '" data-toggle="modal" data-target="#report-form"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Reportar comentário</a></small></div>';
       }
       commentHtml += '</div>';
     }
@@ -173,7 +173,7 @@
     if(reported){
       return "<div class=\"report-comment text-muted\"><small><span data-placement=\"bottom\" class=\"glyphicon glyphicon-flag\"></span>Comentário reportado</small></div>"
     }else{
-      return "<div class=\"report-comment\"><small><a data-id=\"comment#" + commentId + "\" data-toggle=\"modal\" data-target=\"#report-form\"><span data-placement=\"bottom\" class=\"glyphicon glyphicon-flag\"></span>Reportar comentário</a></small></div>";
+      return "<div class=\"selectable report-comment\"><small><a data-id=\"comment#" + commentId + "\" data-toggle=\"modal\" data-target=\"#report-form\"><span data-placement=\"bottom\" class=\"glyphicon glyphicon-flag\"></span>Reportar comentário</a></small></div>";
     }
   }
 
@@ -181,7 +181,7 @@
     if(reported){
       return "<div class=\"report-article text-muted\"><span data-placement=\"bottom\" class=\"glyphicon glyphicon-flag\"></span>Artigo reportado</div>"
     }else{
-      return "<div class=\"report-article\"><small><a data-id=\"article#" + articleId + "\" data-toggle=\"modal\" data-target=\"#article-form\"><span data-placement=\"bottom\" class=\"glyphicon glyphicon-flag\"></span>Reportar artigo</a></small></div>";
+      return "<div class=\"selectable report-article\"><small><a data-id=\"article#" + articleId + "\" data-toggle=\"modal\" data-target=\"#article-form\"><span data-placement=\"bottom\" class=\"glyphicon glyphicon-flag\"></span>Reportar artigo</a></small></div>";
     }
   }
 

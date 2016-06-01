@@ -22,13 +22,13 @@
           {$comment['comment_date']}</small></p>
           {if $contributorAccess}
           <div class="comment-vote">
-            <a onclick="upvoteComment({$comment['id']})"><i id="comment-up-vote-{$comment['id']}" class="{if $comment['vote'] != 'up' } text-muted {/if} fa fa-arrow-up"></i></a>
+            <a onclick="upvoteComment({$comment['id']})"><i id="comment-up-vote-{$comment['id']}" class="vote {if $comment['vote'] != 'up' } text-muted {/if} fa fa-arrow-up"></i></a>
             <br>
-            <a onclick="downvoteComment({$comment['id']})"><i id="comment-down-vote-{$comment['id']}" class="{if $comment['vote'] != 'down'} text-muted {/if}fa fa-arrow-down"></i></a>
+            <a onclick="downvoteComment({$comment['id']})"><i id="comment-down-vote-{$comment['id']}" class="vote {if $comment['vote'] != 'down'} text-muted {/if}fa fa-arrow-down"></i></a>
           </div>
           {/if}
-          <a class="media-left" href="{$BASE_URL}users/profile.php?id={$comment['posted_by']}">
-            <img class="img-circle comment-user-picture" src="{$BASE_URL}{$comment['path']}">
+          <a class="media-left" href="{$BASE_URL}pages/users/profile.php?id={$comment['posted_by']}">
+            <img alt="Autor do comentário" class="img-circle comment-user-picture" src="{$BASE_URL}{$comment['path']}">
           </a>
           <div class="media-body">
             <h4 class="media-heading user_name"><a href="{$BASE_URL}users/profile.php?id={$comment['posted_by']}">{$comment['first_name']} {$comment['last_name']}</a></h4>
@@ -39,7 +39,7 @@
               {if $comment['report']}
               <div class="report-comment text-muted"><small><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Comentário reportado</small></div>
               {else}
-              <div class="report-comment"><small><a data-id="comment#{$comment['id']}" data-toggle="modal" data-target="#report-form"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Reportar comentário</a></small></div>
+              <div class="selectable report-comment"><small><a data-id="comment#{$comment['id']}" data-toggle="modal" data-target="#report-form"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Reportar comentário</a></small></div>
               {/if}
             </div>
             {/if}

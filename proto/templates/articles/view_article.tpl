@@ -49,7 +49,7 @@
         {if $article['report']}
         <div class="pull-right text-muted"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Artigo reportado</div>
         {else}
-        <div class="pull-right"><a data-id="article#{$article['id']}" data-toggle="modal" data-target="#report-form"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Reportar artigo</a></div>
+        <div class="selectable pull-right"><a data-id="article#{$article['id']}" data-toggle="modal" data-target="#report-form"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Reportar artigo</a></div>
         {/if}
       </div>
       {/if}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 17:16:58
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 17:36:00
          compiled from "C:\wamp\www\Overview\proto\templates\articles\view_article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11407572b49bd710566-11169283%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c224ebad81a3fe7e96512a49939cb8b7f216605b' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\view_article.tpl',
-      1 => 1464794214,
+      1 => 1464795321,
       2 => 'file',
     ),
   ),
@@ -95,7 +95,7 @@ users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['author
         <?php if ($_smarty_tpl->tpl_vars['article']->value['report']) {?>
         <div class="pull-right text-muted"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Artigo reportado</div>
         <?php } else { ?>
-        <div class="pull-right"><a data-id="article#<?php echo $_smarty_tpl->tpl_vars['article']->value['id'];?>
+        <div class="selectable pull-right"><a data-id="article#<?php echo $_smarty_tpl->tpl_vars['article']->value['id'];?>
 " data-toggle="modal" data-target="#report-form"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Reportar artigo</a></div>
         <?php }?>
       </div>
