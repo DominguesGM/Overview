@@ -28,11 +28,15 @@ body {
     margin-bottom: 25px;
 }
 
-.short_news_item{
+.short_category_item{
     padding-left: 15px;
     padding-right: 15px;
     margin-left: 0px;
     margin-right: 0px;
+}
+
+.short_news_item{
+    clear:left;
 }
 
 .news-row{
@@ -49,6 +53,7 @@ img.img-thumbnail{
     float: left;
     width:85px;
     height:85px;
+    margin-bottom: 15px;
 }
 
 p.summary{
