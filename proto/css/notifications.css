@@ -1,0 +1,28 @@
+.notification {
+	border-bottom:solid 1px lightgrey;
+	padding: 15px;
+}
+
+.nav-stacked>li+li {
+	margin-top: 0px;
+}
+
+.notification:hover {
+	background-color: lightgrey;
+}
+
+.delete {
+	line-height: 20px;
+}
+
+.delete:hover {
+	font-size: 20px;
+}
+
+.unread-notification {
+	background-color: #f5f5f0;
+}
+
+#list-notifications {
+	border: solid 1px lightgrey;
+}

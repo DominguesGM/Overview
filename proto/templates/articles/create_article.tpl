@@ -30,9 +30,7 @@
 
     <div class="col-md-8 col-sm-12 col-xs-12">
       <form id="create-form" class="form-horizontal" role="form" action="{$BASE_URL}actions/articles/create_article.php" method="post" enctype="multipart/form-data" onsubmit="return checkArticle();">
-
-        <div id="create-alert"></div>
-
+          <div id="create-alert"></div>
         <div class="form-group">
           <label for="title">
             Título

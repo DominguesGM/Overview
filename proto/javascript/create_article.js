@@ -11,7 +11,7 @@ function loadArticleCategories(){
 }
 
 function warn(errorMessage){
-  $("#create-form #create-alert").html("<div \" class=\"alert alert-danger\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">\&times;</a>"
+  $("#create-alert").html("<div \" class=\"alert alert-danger\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">\&times;</a>"
       + errorMessage + "</div>");
 
   window.scrollTo(0, 0);

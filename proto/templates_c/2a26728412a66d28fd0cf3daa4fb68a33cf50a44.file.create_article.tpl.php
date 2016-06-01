@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 20:05:54
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 00:04:18
          compiled from "C:\wamp\www\Overview\proto\templates\articles\create_article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11514572b601d378084-11401176%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2a26728412a66d28fd0cf3daa4fb68a33cf50a44' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\create_article.tpl',
-      1 => 1464803182,
+      1 => 1464818654,
       2 => 'file',
     ),
   ),
@@ -66,9 +66,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <div class="col-md-8 col-sm-12 col-xs-12">
       <form id="create-form" class="form-horizontal" role="form" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 actions/articles/create_article.php" method="post" enctype="multipart/form-data" onsubmit="return checkArticle();">
-
-        <div id="create-alert"></div>
-
+          <div id="create-alert"></div>
         <div class="form-group">
           <label for="title">
             Título

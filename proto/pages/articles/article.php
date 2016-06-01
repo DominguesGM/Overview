@@ -32,7 +32,7 @@
   $smarty->assign('articleImages', $articleImages);
   $smarty->assign('articleComments', $articleComments);
   $smarty->assign('relatedArticles', $relatedArticles);
-  $smarty->assign('editPermission', edition_access($article['id']));
+  $smarty->assign('editPermission', edition_access($article['author']));
   $smarty->assign('contributorAccess', contributor_access());
       
   $smarty->display('articles/view_article.tpl'); 

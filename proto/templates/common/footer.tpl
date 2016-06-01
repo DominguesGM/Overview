@@ -31,7 +31,9 @@
 <script>BASE_URL = "{$BASE_URL}"</script>
 
 <!-- Register Script -->
+{if !$ID}
 <script src="{$BASE_URL}javascript/register.js"></script>
+{/if}
 
 <script src="{$BASE_URL}javascript/main.js"></script>
 

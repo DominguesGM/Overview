@@ -9,7 +9,7 @@
   }
   
   if(!isset($_GET['type']) || !isset($_GET['offset']) || !isset($_GET['limit'])){
-    echo json_encode(array('error' => 'Erro ao obter itens2.'));
+    echo json_encode(array('error' => 'Erro ao obter itens.'));
     exit;
   }
   

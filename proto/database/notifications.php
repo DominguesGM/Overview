@@ -22,14 +22,14 @@
     return $stmt->fetchAll();
   }
   
-  function getNotificationsCount($userId) {
+  function getNotificationCount($userId) {
     global $conn;
     
     $stmt = $conn->prepare("SELECT COUNT(*) AS n_notifications 
                            FROM notification
                            WHERE receiver = ? AND is_read = FALSE");
                            
-    $stmt->execute();
+    $stmt->execute(array($userId));
     return $stmt->fetch()['n_notifications'];
   }
   

@@ -1,6 +1,6 @@
 function init(){
   tinymce.init({
-    selector:'#content, #summary',
+    selector:'#content',
     paste_data_images: false,
     menubar: false
   });

@@ -120,7 +120,8 @@
   
   function createArticle($author, $title, $category, $summary, $content, $imageTypes) {
     global $conn;
-        
+    
+    $conn->beginTransaction();        
     $stmt = $conn->prepare("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ");
     $stmt->execute();
     

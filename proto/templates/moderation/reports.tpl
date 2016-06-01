@@ -33,10 +33,10 @@
           <li id="report-{$article['id']}" class="report button-link" onclick="displayReport('article','{$BASE_URL}',{$article['id']}, {$article['article_id']})">
             <div class="media">
               <p class="pull-right text-muted"><small>{$article['report_date']}</small></p>
-              <a class="media-left" href="{$BASE_URL}users/profile.php?id={$article['reported_by']}">
+              <a class="media-left" href="{$BASE_URL}pages/users/profile.php?id={$article['reported_by']}">
                 <img class="img-circle" height="40" width="40" src="{$BASE_URL}{$article['reporter_picture']}" alt="{$article['reporter_first_name']} {$article['reporter_last_name']}">
               </a>
-              <span><h5 class="user_name"><a href="{$BASE_URL}users/profile.php?id={$article['reported_by']}">{$article['reporter_first_name']} {$article['reporter_last_name']}</a></h5></span>
+              <span><h5 class="user_name"><a href="{$BASE_URL}pages/users/profile.php?id={$article['reported_by']}">{$article['reporter_first_name']} {$article['reporter_last_name']}</a></h5></span>
               <p>{$article['description']}</p>
               <div class="delete btn-simple pull-right text-muted">
                 <small><span onclick="deleteReport({$article['id']})" data-placement="left" data-toggle="tooltip" title="Descartar" class="glyphicon glyphicon-remove"></span></small>
@@ -60,10 +60,10 @@
           <li id="report-{$comment['id']}" class="report button-link" onclick="displayReport('comment','{$BASE_URL}',{$comment['id']}, {$comment['article_id']}, {$comment['comment_id']})">
             <div class="media">
               <p class="pull-right text-muted"><small>{$comment['report_date']}</small></p>
-              <a class="media-left" href="{$BASE_URL}users/profile.php?id={$comment['reported_by']}">
+              <a class="media-left" href="{$BASE_URL}pages/users/profile.php?id={$comment['reported_by']}">
                 <img class="img-circle" height="40" width="40" src="{$BASE_URL}{$comment['reporter_picture']}" alt="{$comment['reporter_first_name']} {$comment['reporter_last_name']}">
               </a>
-              <span><h5 class="user_name"><a href="{$BASE_URL}users/profile.php?id={$comment['reported_by']}">{$comment['reporter_first_name']} {$comment['reporter_last_name']}</a></h5></span>
+              <span><h5 class="user_name"><a href="{$BASE_URL}pages/users/profile.php?id={$comment['reported_by']}">{$comment['reporter_first_name']} {$comment['reporter_last_name']}</a></h5></span>
               <p>{$comment['description']}</p>
               <div class="delete btn-simple pull-right text-muted">
                 <small><span onclick="deleteReport({$comment['id']})" data-placement="left" data-toggle="tooltip" title="Descartar" class="glyphicon glyphicon-remove"></span></small>
