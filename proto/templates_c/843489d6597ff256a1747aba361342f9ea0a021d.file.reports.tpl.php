@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 16:00:14
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 19:47:48
          compiled from "C:\wamp\www\Overview\proto\templates\moderation\reports.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3093574bf8247de052-08716750%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '843489d6597ff256a1747aba361342f9ea0a021d' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\moderation\\reports.tpl',
-      1 => 1464789526,
+      1 => 1464803182,
       2 => 'file',
     ),
   ),
@@ -150,7 +150,6 @@ users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['comment']->value['report
           <?php } ?>
         </ul>
       </div>
-
       <section id="content-comment" sytle="overflow: auto;" class="h-scroll col-md-9"></section>
     </div>
   </div>

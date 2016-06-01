@@ -486,3 +486,14 @@ a#menu-toggle{
     -moz-border-radius: 6px 0 6px 6px;
     border-radius: 6px 0 6px 6px;
 }
+
+.delete {
+    line-height: 20px;
+
+}
+
+.delete:hover {
+    font-size: 20px;
+    cursor: pointer;
+    color: #428BCA;
+}

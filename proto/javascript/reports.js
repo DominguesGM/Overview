@@ -168,6 +168,8 @@ function displayReport(typeP, baseAddressP, reportIdP, articleIdP, commentIdP){
             $("#report-" + reportIdTemp).remove();
           return;
         }
+
+        userId = $("#user-id").val();
         
         reportSelected = true;
 
@@ -192,7 +194,7 @@ function displayReport(typeP, baseAddressP, reportIdP, articleIdP, commentIdP){
           
           reportedId = $("#comment-" + commentId + ' .comment-user').val();
         }else if(type=='article') {
-          reportedId = $("#user-id").val();
+          reportedId = $("#author-id").val();
         }
           
           // load moderator tools

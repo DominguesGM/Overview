@@ -4,6 +4,7 @@
       <div class="blog-stripe">
         <div>
           <input type="hidden" id="article-id" value="{$article['id']}">
+          <input type="hidden" id="author-id" value="{$article['author']}">
           <input type="hidden" id="user-id" value="{$ID}">
           <div class="page-header">
             <h2>{$article['title']}</h2>

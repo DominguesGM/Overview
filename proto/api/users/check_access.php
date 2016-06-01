@@ -2,12 +2,12 @@
 
   include_once('../../config/init.php');  
   
-  function edition_access($articleId){
+  function edition_access($authorId){
     return isset($_SESSION['id']) &&
     isset($_SESSION['email']) &&
-    (($_SESSION['type'] === 'Contributor' && $articleId === $_SESSION['id'])  
-    || $_SESSION['type'] === 'Moderator' || $_SESSION['type'] === 'Administrator' ) && 
-    ($_SESSION['status'] === 'Active' || $_SESSION['status'] === 'Warned');
+    (($_SESSION['type'] === 'Contributor' && $authorId === $_SESSION['id'])  
+    || ($_SESSION['type'] === 'Moderator' || $_SESSION['type'] === 'Administrator' ) && 
+    ($_SESSION['status'] === 'Active' || $_SESSION['status'] === 'Warned'));
   }
   
   function contributor_access(){

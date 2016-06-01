@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 17:36:00
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 20:30:37
          compiled from "C:\wamp\www\Overview\proto\templates\articles\view_article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11407572b49bd710566-11169283%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c224ebad81a3fe7e96512a49939cb8b7f216605b' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\view_article.tpl',
-      1 => 1464795321,
+      1 => 1464805668,
       2 => 'file',
     ),
   ),
@@ -41,6 +41,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       <div class="blog-stripe">
         <div>
           <input type="hidden" id="article-id" value="<?php echo $_smarty_tpl->tpl_vars['article']->value['id'];?>
+">
+          <input type="hidden" id="author-id" value="<?php echo $_smarty_tpl->tpl_vars['article']->value['author'];?>
 ">
           <input type="hidden" id="user-id" value="<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
 ">
@@ -124,6 +126,8 @@ users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['author
 <?php echo $_smarty_tpl->getSubTemplate ('articles/report.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 
+<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+lib/bootbox/bootbox.min.js"></script>
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/view_article.js"></script>
 

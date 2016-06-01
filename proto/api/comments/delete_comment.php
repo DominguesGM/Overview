@@ -18,7 +18,7 @@
     exit;
   }
 
-  if(!contributor_access()){
+  if(!edition_access($request['posted_by'])){
     echo json_encode(array('error' => "Acesso negado."));
     exit;   
   }

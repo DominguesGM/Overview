@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 17:37:27
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 20:25:21
          compiled from "C:\wamp\www\Overview\proto\templates\articles\article_comments.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:10004572baa6f6ea626-33934860%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '668b6c94f32f90f32a359581e7182cd12b3b76a8' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\article_comments.tpl',
-      1 => 1464795424,
+      1 => 1464805470,
       2 => 'file',
     ),
   ),
@@ -103,6 +103,12 @@ users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['comment']->value['posted
             </div>
             <?php }?>
           </div>
+          <?php if ($_smarty_tpl->tpl_vars['comment']->value['posted_by']==$_smarty_tpl->tpl_vars['ID']->value) {?>
+          <div class="delete btn-simple pull-right text-muted">
+            <small><span onclick="deleteComment(<?php echo $_smarty_tpl->tpl_vars['comment']->value['id'];?>
+)" data-placement="left" data-toggle="tooltip" title="Apagar" class="glyphicon glyphicon-remove"></span></small>
+          </div>
+          <?php }?>
         </div>
         <?php } ?>
       </div>
