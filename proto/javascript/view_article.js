@@ -59,7 +59,7 @@
     commentHtml += '</div>';
 
 	if(userId==postedBy){
-		commentHtml += '<div class="delete btn-simple pull-right text-muted"><small><span onclick="deleteComment(' + commentId + '" data-placement="left" data-toggle="tooltip" title="Apagar" class="glyphicon glyphicon-remove"></span></small></div>';
+		commentHtml += '<div class="delete btn-simple pull-right text-muted"><small><span onclick="deleteComment(' + commentId + ')" data-placement="left" data-toggle="tooltip" title="Apagar" class="glyphicon glyphicon-remove"></span></small></div>';
 	}
     
     commentHtml += '</div>';
