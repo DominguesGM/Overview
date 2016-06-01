@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +9,9 @@
 
   <title>Overview</title>
 
-  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-
-  <script src="{$BASE_URL}javascript/main.js"></script>
+  <!--<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>-->
+  <!-- jQuery -->
+  <script src="{$BASE_URL}javascript/jquery.js"></script>
 
   <!-- Bootstrap Core CSS -->
   <link href="{$BASE_URL}css/bootstrap.min.css" rel="stylesheet">
@@ -42,10 +42,6 @@
   <link href="{$BASE_URL}lib/fileinput/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
   <script src="{$BASE_URL}lib/fileinput/js/fileinput.js" type="text/javascript"></script>
   <script src="{$BASE_URL}lib/fileinput/js/fileinput_locale_pt.js"></script>
-
-  <!-- rich text -->
-  <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-  <script src="{$BASE_URL}javascript/rich_text.js"></script>
 </head>
 
 <body>
@@ -74,8 +70,13 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a id="search-button" href="{$BASE_URL}pages/search.php"><i class="fa fa-search header-fa"></i></a>
+              <a data-placement="bottom" data-toggle="tooltip" title="Procuar" id="search-button" href="{$BASE_URL}pages/search.php"><i class="fa fa-search header-fa"></i></a>
             </li>
+            {if $ID}
+            <li>
+              <a data-placement="bottom" data-toggle="tooltip" title="Criar artigo" id="new-article-button" href="{$BASE_URL}pages/articles/create_article.php"><i class="fa fa-plus header-fa"></i></a>
+            </li>
+            {/if}
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><i class="fa fa-user header-fa"></i></b> <span>{$FIRST_NAME} {$LAST_NAME}</span></a>
               {if $ID}

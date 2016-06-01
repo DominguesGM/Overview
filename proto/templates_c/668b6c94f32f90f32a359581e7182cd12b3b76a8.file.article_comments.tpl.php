@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-22 16:42:24
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 17:37:27
          compiled from "C:\wamp\www\Overview\proto\templates\articles\article_comments.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:10004572baa6f6ea626-33934860%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '668b6c94f32f90f32a359581e7182cd12b3b76a8' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\article_comments.tpl',
-      1 => 1463928120,
+      1 => 1464795424,
       2 => 'file',
     ),
   ),
@@ -55,7 +55,10 @@ foreach ($_from as $_smarty_tpl->tpl_vars['comment']->key => $_smarty_tpl->tpl_v
 $_smarty_tpl->tpl_vars['comment']->_loop = true;
 ?>
 
-      <div class="media comment">
+      <div id="comment-<?php echo $_smarty_tpl->tpl_vars['comment']->value['id'];?>
+" class="media comment">
+        <input class="comment-user" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['comment']->value['posted_by'];?>
+">
         <p class="pull-right"><small>
           <?php echo $_smarty_tpl->tpl_vars['comment']->value['comment_date'];?>
 </small></p>
@@ -63,17 +66,17 @@ $_smarty_tpl->tpl_vars['comment']->_loop = true;
           <div class="comment-vote">
             <a onclick="upvoteComment(<?php echo $_smarty_tpl->tpl_vars['comment']->value['id'];?>
 )"><i id="comment-up-vote-<?php echo $_smarty_tpl->tpl_vars['comment']->value['id'];?>
-" class="<?php if ($_smarty_tpl->tpl_vars['comment']->value['vote']!='up') {?> text-muted <?php }?> fa fa-arrow-up"></i></a>
+" class="vote <?php if ($_smarty_tpl->tpl_vars['comment']->value['vote']!='up') {?> text-muted <?php }?> fa fa-arrow-up"></i></a>
             <br>
             <a onclick="downvoteComment(<?php echo $_smarty_tpl->tpl_vars['comment']->value['id'];?>
 )"><i id="comment-down-vote-<?php echo $_smarty_tpl->tpl_vars['comment']->value['id'];?>
-" class="<?php if ($_smarty_tpl->tpl_vars['comment']->value['vote']!='down') {?> text-muted <?php }?>fa fa-arrow-down"></i></a>
+" class="vote <?php if ($_smarty_tpl->tpl_vars['comment']->value['vote']!='down') {?> text-muted <?php }?>fa fa-arrow-down"></i></a>
           </div>
           <?php }?>
           <a class="media-left" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['comment']->value['posted_by'];?>
+pages/users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['comment']->value['posted_by'];?>
 ">
-            <img class="img-circle comment-user-picture" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+            <img alt="Autor do comentário" class="img-circle comment-user-picture" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 <?php echo $_smarty_tpl->tpl_vars['comment']->value['path'];?>
 ">
           </a>
@@ -87,14 +90,14 @@ users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['comment']->value['posted
 
             <p><small id="comment-score-<?php echo $_smarty_tpl->tpl_vars['comment']->value['id'];?>
 " class="text-muted"><?php echo $_smarty_tpl->tpl_vars['comment']->value['score'];?>
- ponto<?php if ($_smarty_tpl->tpl_vars['comment']->value['score']!=1) {?>s<?php }?> </small></p>
+ ponto<?php if ($_smarty_tpl->tpl_vars['comment']->value['score']!=1&&$_smarty_tpl->tpl_vars['comment']->value['score']!=-1) {?>s<?php }?> </small></p>
             <?php if ($_smarty_tpl->tpl_vars['contributorAccess']->value) {?>
             <div id="comment-report-<?php echo $_smarty_tpl->tpl_vars['comment']->value['id'];?>
 ">
               <?php if ($_smarty_tpl->tpl_vars['comment']->value['report']) {?>
               <div class="report-comment text-muted"><small><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Comentário reportado</small></div>
               <?php } else { ?>
-              <div class="report-comment"><small><a data-id="comment#<?php echo $_smarty_tpl->tpl_vars['comment']->value['id'];?>
+              <div class="selectable report-comment"><small><a data-id="comment#<?php echo $_smarty_tpl->tpl_vars['comment']->value['id'];?>
 " data-toggle="modal" data-target="#report-form"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Reportar comentário</a></small></div>
               <?php }?>
             </div>

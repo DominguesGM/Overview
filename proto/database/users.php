@@ -113,15 +113,15 @@
     return true;
   }
   
-  function updateUserAccess($id, $type, $status) {
+  function updateUserAccess($id, $type) {
     global $conn;
     
     try{
       $stmt = $conn->prepare("UPDATE contributor 
-      SET type = ?, status = ?
+      SET type = ?
       WHERE id = ?");
                 
-      $stmt->execute(array($id, $type, $status));
+      $stmt->execute(array($type, $id));
       
     }catch (PDOException $e) {
       print $e->getMessage();
@@ -130,21 +130,41 @@
     
     return true;
   }
+  
+  function updateUserStatus($id, $status) {
+    global $conn;
+   
+    $stmt = $conn->prepare("UPDATE contributor SET
+    status = ?
+    WHERE id = ?");
+                
+    $stmt->execute(array($status, $id));
+  }
+   
+  function getUserStatus($id) {
+    global $conn;
+    
+    $stmt = $conn->prepare("SELECT status FROM contributor WHERE id = ?");
+    $stmt->execute(array($id));
+    return $stmt->fetch()['status'];
+  }
+  
+  function getUserType($id) {
+    global $conn;
+    
+    $stmt = $conn->prepare("SELECT type FROM contributor WHERE id = ?");
+    $stmt->execute(array($id));
+    return $stmt->fetch()['type'];
+   }
     
   function getFollowers($id) {
     global $conn;
     
-    try {
     $stmt = $conn->prepare("SELECT id, email, picture, first_name, last_name, about
                             FROM contributor INNER JOIN follows ON follower = id
                             WHERE followee = ?");
     $stmt->execute(array($id));
-     
     return $stmt->fetchAll();
-    }catch (PDOException $e) {
-      print $e->getMessage();
-      return false;
-    }
   }
   
   function getFollowing($id) {

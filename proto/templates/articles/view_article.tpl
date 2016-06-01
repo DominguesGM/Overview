@@ -14,20 +14,20 @@
           <div class="page-header">
             <h2>{$article['title']}
               {if $editPermission}
-              <div class="small btn-simple pull-right text-muted" id="delete">
+              <div class="selectable small btn-simple pull-right text-muted" id="delete">
                 <span onclick="eliminate()" data-placement="bottom" data-toggle="tooltip" title="Eliminar" class="glyphicon glyphicon-trash"></span>
               </div>
-              <div class="small btn-simple pull-right text-muted" id="edit">
+              <div class="selectable small btn-simple pull-right text-muted" id="edit">
                 <span onclick="edit()" data-placement="bottom" data-toggle="tooltip" title="Editar" class="glyphicon glyphicon-pencil">&nbsp</span>
               </div>
               {/if}
             </h2>
-            <div id="article-score" class="article-score">{$article['score']} ponto{if $comment['score'] != 1}s{/if}</div>
+            <div id="article-score" class="article-score">{$article['score']} ponto{if $article['score'] != 1 && $article['score'] != -1}s{/if}</div>
             {if $contributorAccess}
             <div class="article-scoring">
-              <a onclick="upvoteArticle({$ID})"><i id="article-up-vote" class="{if $article['vote'] != 'up' } text-muted {/if} fa fa-arrow-up"></i></a>
+              <a onclick="upvoteArticle({$ID})"><i id="article-up-vote" class="vote {if $article['vote'] != 'up' } text-muted {/if} fa fa-arrow-up"></i></a>
               <br>
-              <a onclick="downvoteArticle({$ID})"><i id="article-down-vote" class="{if $article['vote'] != 'down'} text-muted {/if}fa fa-arrow-down"></i></a>
+              <a onclick="downvoteArticle({$ID})"><i id="article-down-vote" class="vote {if $article['vote'] != 'down'} text-muted {/if}fa fa-arrow-down"></i></a>
             </div>
             {/if}
           </div>
@@ -47,9 +47,9 @@
       {if $contributorAccess}
       <div id="article-report">
         {if $article['report']}
-        <div class="report-article text-muted"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Artigo reportado</div>
+        <div class="pull-right text-muted"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Artigo reportado</div>
         {else}
-        <div class="report-article"><a data-id="article#{$article['id']}" data-toggle="modal" data-target="#report-form"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Reportar artigo</a></div>
+        <div class="selectable pull-right"><a data-id="article#{$article['id']}" data-toggle="modal" data-target="#report-form"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Reportar artigo</a></div>
         {/if}
       </div>
       {/if}
@@ -74,6 +74,7 @@
 
 {include file='articles/report.tpl'}
 
+<script src="{$BASE_URL}lib/bootbox/bootbox.min.js"></script>
 <script src="{$BASE_URL}javascript/view_article.js"></script>
 
 {include file='common/footer.tpl'}

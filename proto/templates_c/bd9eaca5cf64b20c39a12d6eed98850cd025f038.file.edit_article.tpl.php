@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-12 11:52:25
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 17:50:14
          compiled from "C:\wamp\www\Overview\proto\templates\articles\edit_article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:24705729d53e7a7388-45458464%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bd9eaca5cf64b20c39a12d6eed98850cd025f038' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\edit_article.tpl',
-      1 => 1463046739,
+      1 => 1464795963,
       2 => 'file',
     ),
   ),
@@ -40,15 +40,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <h2>
       <div class="btn-simple pull-right text-muted" id="delete">
-         <span onclick="eliminate()" data-placement="bottom" data-toggle="tooltip" title="Eliminar" class="glyphicon glyphicon-trash"></span>
+         <span onclick="eliminate()" data-placement="bottom" data-toggle="tooltip" title="Eliminar" class="selectable glyphicon glyphicon-trash"></span>
        </div>
 
       <div class="btn-simple pull-right text-muted" id="discard">
-        <span onclick="discard()" data-placement="bottom" data-toggle="tooltip" title="Cancelar" class="glyphicon glyphicon-remove">&nbsp</span>
+        <span onclick="discard()" data-placement="bottom" data-toggle="tooltip" title="Cancelar" class="selectable glyphicon glyphicon-remove">&nbsp</span>
       </div>
 
       <div class="btn-simple pull-right text-muted" id="save">
-        <span onclick="save()" data-placement="bottom" data-toggle="tooltip" title="Guardar" class="glyphicon glyphicon-ok">&nbsp</span>
+        <span onclick="save()" data-placement="bottom" data-toggle="tooltip" title="Guardar" class="selectable glyphicon glyphicon-ok">&nbsp</span>
       </div>
     </h2>
   </div>
@@ -58,9 +58,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
   <div class="row">
     <div class="col-md-2 col-sm-12 col-xs-12">
-      <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+      <img alt="Autor do artigo" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 <?php echo $_smarty_tpl->tpl_vars['article']->value['author_picture'];?>
-" class="img-circle" width="80px"/>
+" class="img-circle" height="80px" width="80px"/>
       <h4><?php echo $_smarty_tpl->tpl_vars['article']->value['first_name'];?>
  <?php echo $_smarty_tpl->tpl_vars['article']->value['last_name'];?>
 </h4>
@@ -156,6 +156,13 @@ $_smarty_tpl->tpl_vars['category']->_loop = true;
 </div>
 </div>
 
+<!-- rich text -->
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/rich_text.js"></script>
+
+<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+lib/bootbox/bootbox.min.js"></script>
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/edit_article.js"></script>
 

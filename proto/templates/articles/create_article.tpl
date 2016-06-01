@@ -9,11 +9,11 @@
     </h1>
 
     <h2>
-      <div class="btn-simple pull-right text-muted" id="discard">
+      <div class="button-link btn-simple pull-right text-muted" id="discard">
         <span onclick="discard()" data-placement="bottom" data-toggle="tooltip" title="Cancelar" class="glyphicon glyphicon-remove"></span>
       </div>
 
-      <div class="btn-simple pull-right text-muted" id="save">
+      <div class="button-link btn-simple pull-right text-muted" id="save">
         <span onclick="save()" data-placement="bottom" data-toggle="tooltip" title="Guardar" class="glyphicon glyphicon-ok">&nbsp</span>
       </div>
     </h2>
@@ -92,6 +92,10 @@
   </div>
 </div>
 </div>
+
+<!-- rich text -->
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script src="{$BASE_URL}javascript/rich_text.js"></script>
 
 <script src="{$BASE_URL}javascript/create_article.js"></script>
 
