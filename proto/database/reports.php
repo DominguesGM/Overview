@@ -72,4 +72,11 @@
     $stmt = $conn->prepare("UPDATE report SET is_resolved = true WHERE id = ?");
     $stmt->execute(array($id));
   }
+  
+  function deleteReport($id) {
+    global $conn;
+    
+    $stmt = $conn->prepare("DELETE FROM report WHERE id = ?");
+    $stmt->execute(array($id));
+  }
 ?>

@@ -29,7 +29,7 @@
         <br>
         <ul id="list-article-reports" class="nav nav-pills nav-stacked">
           {foreach $articleReports as $article}
-          <li id="article-report-{$article['id']}" class="report button-link" onclick="displayReport('article','{$BASE_URL}',{$article['id']}, {$article['article_id']})">
+          <li id="report-{$article['id']}" class="report button-link" onclick="displayReport('article','{$BASE_URL}',{$article['id']}, {$article['article_id']})">
             <div class="media">
               <p class="pull-right text-muted"><small>{$article['report_date']}</small></p>
               <a class="media-left" href="{$BASE_URL}users/profile.php?id={$article['reported_by']}">
@@ -55,7 +55,7 @@
         <br>
         <ul id="list-comment-reports" class="nav nav-pills nav-stacked">
           {foreach $commentReports as $comment}
-          <li id="comment-report-{$comment['id']}" class="report button-link" onclick="displayReport('comment','{$BASE_URL}',{$comment['id']}, {$comment['article_id']}, {$comment['comment_id']})">
+          <li id="report-{$comment['id']}" class="report button-link" onclick="displayReport('comment','{$BASE_URL}',{$comment['id']}, {$comment['article_id']}, {$comment['comment_id']})">
             <div class="media">
               <p class="pull-right text-muted"><small>{$comment['report_date']}</small></p>
               <a class="media-left" href="{$BASE_URL}users/profile.php?id={$comment['reported_by']}">

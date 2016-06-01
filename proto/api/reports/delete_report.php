@@ -6,28 +6,28 @@
   $body = file_get_contents('php://input');
   
   if(!isset($body)){
-    echo json_encode(array('error' => 'Erro ao rever o item.'));
+    echo json_encode(array('error' => 'Erro ao eliminar o item.'));
     exit;
   }
   
   if(!moderator_access()){
-    echo json_encode(array('error' => 'Erro ao rever o item: Acesso negado.'));
+    echo json_encode(array('error' => 'Erro ao eliminar o item: Acesso negado.'));
     exit;   
   }
   
   $request = json_decode($body, true);
   
   if(!isset($request['report_id'])){
-    echo json_encode(array('error' => 'Erro ao rever o item.'));
+    echo json_encode(array('error' => 'Erro ao eliminar o item.'));
     exit;
   }
   
   try {
-    setReportReviewed($request['report_id']);
+    deleteReport($request['report_id']);
   } catch (Exception $e) {        
-    echo json_encode(array('error' => 'Erro ao rever o item.', 'detail' => $e->getMessage()));
+    echo json_encode(array('error' => 'Erro ao eliminar o item.', 'detail' => $e->getMessage()));
     exit;
   }
     
-  echo json_encode(array('success' => "Item revisto."));
+  echo json_encode(array('success' => "Item eliminado."));
 ?>
