@@ -229,7 +229,7 @@
         if(commentId){
           $("#comment-report-" + commentId).html(getCommentReportLink(commentId, true));
         }else{
-          $("#article-report-" + articleId).html(getArticleReportLink(articleId, true));
+          $("#article-report").html(getArticleReportLink(articleId, true));
         }
 
       }else{

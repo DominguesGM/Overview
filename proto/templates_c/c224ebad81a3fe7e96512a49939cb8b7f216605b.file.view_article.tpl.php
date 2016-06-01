@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-31 01:02:36
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 17:16:58
          compiled from "C:\wamp\www\Overview\proto\templates\articles\view_article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11407572b49bd710566-11169283%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c224ebad81a3fe7e96512a49939cb8b7f216605b' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\view_article.tpl',
-      1 => 1464649352,
+      1 => 1464794214,
       2 => 'file',
     ),
   ),
@@ -48,10 +48,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <h2><?php echo $_smarty_tpl->tpl_vars['article']->value['title'];?>
 
               <?php if ($_smarty_tpl->tpl_vars['editPermission']->value) {?>
-              <div class="small btn-simple pull-right text-muted" id="delete">
+              <div class="selectable small btn-simple pull-right text-muted" id="delete">
                 <span onclick="eliminate()" data-placement="bottom" data-toggle="tooltip" title="Eliminar" class="glyphicon glyphicon-trash"></span>
               </div>
-              <div class="small btn-simple pull-right text-muted" id="edit">
+              <div class="selectable small btn-simple pull-right text-muted" id="edit">
                 <span onclick="edit()" data-placement="bottom" data-toggle="tooltip" title="Editar" class="glyphicon glyphicon-pencil">&nbsp</span>
               </div>
               <?php }?>
@@ -61,10 +61,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <?php if ($_smarty_tpl->tpl_vars['contributorAccess']->value) {?>
             <div class="article-scoring">
               <a onclick="upvoteArticle(<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
-)"><i id="article-up-vote" class="<?php if ($_smarty_tpl->tpl_vars['article']->value['vote']!='up') {?> text-muted <?php }?> fa fa-arrow-up"></i></a>
+)"><i id="article-up-vote" class="vote <?php if ($_smarty_tpl->tpl_vars['article']->value['vote']!='up') {?> text-muted <?php }?> fa fa-arrow-up"></i></a>
               <br>
               <a onclick="downvoteArticle(<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
-)"><i id="article-down-vote" class="<?php if ($_smarty_tpl->tpl_vars['article']->value['vote']!='down') {?> text-muted <?php }?>fa fa-arrow-down"></i></a>
+)"><i id="article-down-vote" class="vote <?php if ($_smarty_tpl->tpl_vars['article']->value['vote']!='down') {?> text-muted <?php }?>fa fa-arrow-down"></i></a>
             </div>
             <?php }?>
           </div>

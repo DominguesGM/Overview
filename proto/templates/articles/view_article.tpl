@@ -14,10 +14,10 @@
           <div class="page-header">
             <h2>{$article['title']}
               {if $editPermission}
-              <div class="small btn-simple pull-right text-muted" id="delete">
+              <div class="selectable small btn-simple pull-right text-muted" id="delete">
                 <span onclick="eliminate()" data-placement="bottom" data-toggle="tooltip" title="Eliminar" class="glyphicon glyphicon-trash"></span>
               </div>
-              <div class="small btn-simple pull-right text-muted" id="edit">
+              <div class="selectable small btn-simple pull-right text-muted" id="edit">
                 <span onclick="edit()" data-placement="bottom" data-toggle="tooltip" title="Editar" class="glyphicon glyphicon-pencil">&nbsp</span>
               </div>
               {/if}
@@ -25,9 +25,9 @@
             <div id="article-score" class="article-score">{$article['score']} ponto{if $article['score'] != 1 && $article['score'] != -1}s{/if}</div>
             {if $contributorAccess}
             <div class="article-scoring">
-              <a onclick="upvoteArticle({$ID})"><i id="article-up-vote" class="{if $article['vote'] != 'up' } text-muted {/if} fa fa-arrow-up"></i></a>
+              <a onclick="upvoteArticle({$ID})"><i id="article-up-vote" class="vote {if $article['vote'] != 'up' } text-muted {/if} fa fa-arrow-up"></i></a>
               <br>
-              <a onclick="downvoteArticle({$ID})"><i id="article-down-vote" class="{if $article['vote'] != 'down'} text-muted {/if}fa fa-arrow-down"></i></a>
+              <a onclick="downvoteArticle({$ID})"><i id="article-down-vote" class="vote {if $article['vote'] != 'down'} text-muted {/if}fa fa-arrow-down"></i></a>
             </div>
             {/if}
           </div>

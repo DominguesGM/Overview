@@ -421,10 +421,19 @@ a#menu-toggle{
    padding-top: 5px;  
 }
 
-.selectable { cursor: pointer;}
-.button-link { cursor: pointer;}
+.selectable:hover {
+ cursor: pointer;
+ color: #428BCA;
+}
 
-.button-link:hover { color: #428BCA;}
+.vote:hover { 
+    cursor: pointer;
+    color: #428BCA;
+}
+
+.button-link:hover {
+ cursor: pointer;
+ color: #428BCA;}
 
 
 /**

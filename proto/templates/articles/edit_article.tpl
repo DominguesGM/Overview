@@ -10,15 +10,15 @@
 
     <h2>
       <div class="btn-simple pull-right text-muted" id="delete">
-         <span onclick="eliminate()" data-placement="bottom" data-toggle="tooltip" title="Eliminar" class="glyphicon glyphicon-trash"></span>
+         <span onclick="eliminate()" data-placement="bottom" data-toggle="tooltip" title="Eliminar" class="selectable glyphicon glyphicon-trash"></span>
        </div>
 
       <div class="btn-simple pull-right text-muted" id="discard">
-        <span onclick="discard()" data-placement="bottom" data-toggle="tooltip" title="Cancelar" class="glyphicon glyphicon-remove">&nbsp</span>
+        <span onclick="discard()" data-placement="bottom" data-toggle="tooltip" title="Cancelar" class="selectable glyphicon glyphicon-remove">&nbsp</span>
       </div>
 
       <div class="btn-simple pull-right text-muted" id="save">
-        <span onclick="save()" data-placement="bottom" data-toggle="tooltip" title="Guardar" class="glyphicon glyphicon-ok">&nbsp</span>
+        <span onclick="save()" data-placement="bottom" data-toggle="tooltip" title="Guardar" class="selectable glyphicon glyphicon-ok">&nbsp</span>
       </div>
     </h2>
   </div>
@@ -28,7 +28,7 @@
 
   <div class="row">
     <div class="col-md-2 col-sm-12 col-xs-12">
-      <img src="{$BASE_URL}{$article['author_picture']}" class="img-circle" width="80px"/>
+      <img src="{$BASE_URL}{$article['author_picture']}" class="img-circle" height="80px" width="80px"/>
       <h4>{$article['first_name']} {$article['last_name']}</h4>
     </div>
 
