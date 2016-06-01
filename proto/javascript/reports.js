@@ -1,5 +1,7 @@
+  var selectNewReport = '<h4 class="text-muted">Selecione um item para rever.</h4>';
   var reportSelected = false;
   var reportedId;
+  var userId;
   var reportId;
   var articleId;
   var commentId;
@@ -35,6 +37,7 @@
  */
  function reportsScroll(){
   offset['article'] += limit;
+  offset['comment'] += limit;
 
   $('#content-article').slimScroll({
     height: '70vh',
@@ -77,7 +80,7 @@ function scrollReports(type){
   }
 }
 
-function scrollTo(container, target){
+function scrollToById(container, target){
   var aTag = $('#' + target);
 
   $("#" + container).animate({scrollTop: aTag.offset().top},'slow');
@@ -85,19 +88,25 @@ function scrollTo(container, target){
 
 function getReports(type, userRequest){
   console.log('requested');
+
   $.ajax({
     url: "../../api/reports/get_reports.php",
     method: "get",
     datatype: "json",
-    data: {'type': type, 'offset': offset[type], 'limit': limit[type]}
+    data: {'type': type, 'offset': offset[type], 'limit': limit}
   }).done(function (html) {
 
     var jsonResponse = JSON.parse(html);
     if('error' in jsonResponse){
       return;
     }
+    jsonResponse = jsonResponse['success'];
+    currentResultCount[type] = jsonResponse['reports'].length;
 
-    currentResultCount[type] = jsonResponse['nReports'];
+    if(currentResultCount[type]==0){
+      return;
+    }
+
     newReports = prepareReportsHtml(jsonResponse['reports']);
 
     if(userRequest){
@@ -124,18 +133,16 @@ function prepareReportsHtml(reports){
 }
 
 function getReportSummary(reportId, reportDate, description, reportedBy, reporterPicture, reporterFirstName, reporterLastName, articleId, commentId){
-  var html = '<li id="report-' + reportId + '" class="report button-link" onclick="displayReport(' + (commentId != null ? 'article' : 'report') + ','+ BASE_URL +'pages/articles/view_article.php?id=' + articleId + ',' + reportId + ',' + article_id +')">'
+  var html = '<li id="report-' + reportId + '" class="report button-link" onclick="displayReport(' + (commentId != null ? '"article"' : '"report"') + ', "'+ BASE_URL +'pages/articles/view_article.php?id=' + articleId + '",' + reportId + ',' + articleId +')">'
   html += '<div class="media">';
   html += '<p class="pull-right text-muted"><small>' + reportDate + '</small></p>';
   html += '<a class="media-left" href="' + BASE_URL +'/pages/users/profile.php?id=' + reportedBy + '">';
   html += '<img class="img-circle" height="40" width="40" src="' + BASE_URL + reporterPicture + '" alt="' + reporterFirstName + ' ' + reporterLastName + '"></a>';
   html += '<span><h5 class="user_name"><a href="' + BASE_URL +'/pages/users/profile.php?id=' + reportedBy + '">' + reporterFirstName + ' ' + reporterLastName + '</a></h5></span>';
-  html += '<p>' + description + '</p></div>';
-  html +=  '<div class="btn-simple pull-right text-muted"><small><span onclick="deleteReport(' + reportId + ')" data-placement="left" data-toggle="tooltip" title="Descartar" class="glyphicon glyphicon-remove"></span></small></div></li>';
-
+  html += '<p>' + description + '</p>';
+  html += '<div class="delete btn-simple pull-right text-muted"><small><span onclick="deleteReport(' + reportId + ')" data-placement="left" data-toggle="tooltip" title="Descartar" class="glyphicon glyphicon-remove"></span></small></div></div>';
   return html;
 }
-
 
 function displayReport(typeP, baseAddressP, reportIdP, articleIdP, commentIdP){
     // update info on current report
@@ -145,11 +152,20 @@ function displayReport(typeP, baseAddressP, reportIdP, articleIdP, commentIdP){
     articleId = articleIdP;
     commentId = commentIdP;
 
+    console.log(commentId + ' ,' + articleId);
+
     $( "#content-" + type ).load(baseAddress + 'pages/articles/view_article.php?id=' + articleId, 
       function( response, status, xhr ) {
         
         if( status == "error" ){
-          warn("Não foi possível encontrar o artigo.");
+          var typeTemp = type;
+          var reportIdTemp = reportId;
+          resetSelectedItem();
+            $("#content-" + typeTemp).html("<div \" class=\"alert alert-success\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">\&times;</a>O item já foi revisto.</div>");
+            $("#content-" + typeTemp + ' .alert-success').show().delay(5000).fadeOut(function() {
+                $("#content-" + typeTemp).html(selectNewReport);
+            });
+            $("#report-" + reportIdTemp).remove();
           return;
         }
         
@@ -157,14 +173,30 @@ function displayReport(typeP, baseAddressP, reportIdP, articleIdP, commentIdP){
 
         // if the reported item is a comment, scroll to it
         if(type=='comment'){
-          $("#"+ type +'-' + commentId).css("background-color", "#ff8080");
-          scrollTo("content-" + type,type +'-' + commentId);
+
+          // if the comment is not found
+          if($("#comment-" + commentId).length==0){
+            var typeTemp = type;
+            var reportIdTemp = reportId;
+            resetSelectedItem();
+            $("#content-" + typeTemp).html("<div \" class=\"alert alert-success\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">\&times;</a>O item já foi revisto.</div>");
+            $("#content-" + typeTemp + ' .alert-success').show().delay(5000).fadeOut(function() {
+                $("#content-" + typeTemp).html(selectNewReport);
+            });
+            $("#report-" + reportIdTemp).remove();
+            return;
+          }
+
+          $("#comment-" + commentId).css("background-color", "#ff8080");
+          scrollToById("content-comment", 'comment-' + commentId);
           
-          // TODO select user id
-          userId = $("#user-id").val();
-        }else if(type=='comment') {
-          userId = $("#user-id").val();
+          reportedId = $("#comment-" + commentId + ' .comment-user').val();
+        }else if(type=='article') {
+          reportedId = $("#user-id").val();
         }
+          
+          // load moderator tools
+          toggleModeratorTools();
       });
 
     // highlight new selected report
@@ -174,10 +206,6 @@ function displayReport(typeP, baseAddressP, reportIdP, articleIdP, commentIdP){
     // wait for loading
     $( "#content-" + type ).html('<img class="center-block" height="80" widht="80" alt="Waiting..." src="' + baseAddress + 'images/assets/loading.gif">');
 
-    // load moderator tools
-    var moderatorTools = (type === 'article' ? getArticleControl() : getCommentControl());
-    $( "#moderator-tools" ).html(moderatorTools);
-    $('[data-toggle=tooltip]').tooltip();
 
     console.log(baseAddress + 'pages/articles/view_article.php?id=' + articleId);
   }
@@ -186,9 +214,25 @@ function displayReport(typeP, baseAddressP, reportIdP, articleIdP, commentIdP){
     displayReport(type, baseAddress, reportId, articleId, commentId);
   }
 
-  function resetSelectedItem(){
+  function toggleModeratorTools(){
+    var toolsHtml = "";
+    if(type=='article'){
+      toolsHtml = getArticleControl();
+    }else if(type=='comment'){
+      toolsHtml = getCommentControl();
+    }
+ 
+    $( "#moderator-tools" ).html(toolsHtml);
+    $('[data-toggle=tooltip]').tooltip();
+  }
+
+  function resetSelectedItem(newType){
+    newType = (newType!=undefined ? newType : type);
     reportSelected = false;
+    $( "#list-" + type +"-reports li").removeClass('active-report');
+    $("#content-" + newType).html(selectNewReport);
     type = null;
+    toggleModeratorTools();
     baseAddress = null;
     reportId = null;
     articleId = null;
@@ -200,17 +244,17 @@ function displayReport(typeP, baseAddressP, reportIdP, articleIdP, commentIdP){
     html += '<button onclick="finishReview()" data-placement="bottom" data-toggle="tooltip" title="Marcar como revisto" type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-ok"></span> Revisto</button>';
     html += '<button onclick="refreshReport()" data-placement="bottom" data-toggle="tooltip" title="Recarregar o artigo" type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-refresh"></span> Atualizar</button>';
     html += '<button onclick="editArticle()" data-placement="bottom" data-toggle="tooltip" title="Editar o artigo" type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-pencil"></span> Editar</button>';
-    html += '<button onclick="finishReview(' + articleId + ')" data-placement="bottom" data-toggle="tooltip" title="Eliminar o artigo" type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-remove"></span> Eliminar</button></div>';
-    html += '<button onclick="setUserStatus("Blocked")" data-placement="bottom" data-toggle="tooltip" title="Bloquear o autor" type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-ban-circle"></span> Bloquear</button>';    
+    html += '<button onclick="finishReview(' + articleId + ')" data-placement="bottom" data-toggle="tooltip" title="Eliminar o artigo" type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-remove"></span> Eliminar</button>';
+    html += '<button onclick="blockUser()" data-placement="bottom" data-toggle="tooltip" title="Bloquear o autor" type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-ban-circle"></span> Bloquear</button></div>';    
 
     return html;
   }
 
   function getCommentControl(){
     var html = '<div class="btn-group pull-right" role="group" aria-label="Ferramentas de moderação">';
-    html += '<button onclick="newReportFeedback()" data-placement="bottom" data-toggle="tooltip" title="Marcar como revisto" type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-ok"></span> Revisto</button>';
-    html += '<button onclick="removeComment(' + commentId + ')" data-placement="bottom" data-toggle="tooltip" title="Eliminar o comentário" type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-remove"></span> Eliminar</button></div>';
-    html += '<button onclick="setUserStatus("Blocked")" data-placement="bottom" data-toggle="tooltip" title="Bloquear o autor" type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-ban-circle"></span> Bloquear</button>';
+    html += '<button onclick="finishReview()" data-placement="bottom" data-toggle="tooltip" title="Marcar como revisto" type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-ok"></span> Revisto</button>';
+    html += '<button onclick="finishReview(' + commentId + ')" data-placement="bottom" data-toggle="tooltip" title="Eliminar o comentário" type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-remove"></span> Eliminar</button>';
+    html += '<button onclick="blockUser()" data-placement="bottom" data-toggle="tooltip" title="Bloquear o autor" type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-ban-circle"></span> Bloquear</button></div>';
 
     return html;
   }
@@ -221,7 +265,7 @@ function displayReport(typeP, baseAddressP, reportIdP, articleIdP, commentIdP){
     }
   }
 
-  function deleteArticle(){
+  function deleteArticle(message){
     if(!reportSelected){
       return;
     }
@@ -234,16 +278,53 @@ function displayReport(typeP, baseAddressP, reportIdP, articleIdP, commentIdP){
     }).done(function(html){
       var json = JSON.parse(html);
       if("success" in json){
-        $("#alert").html("<div \" class=\"alert alert-success\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">\&times;</a>Item revisto.</div>");
-        $("#alert").show().delay(5000).fadeOut();
+        console.log('article deleted');
+        submitReview(message);
       }else if("error" in json){
         warn(json['error']);
       }
     });
   }
 
-  function setUserStatus(userId, newStatus){
+   function deleteComment(message){
     if(!reportSelected){
+      return;
+    }
+
+    $.ajax({
+      type: "post",
+      url: "../../api/comments/delete_comment.php",
+      datatype: "json",
+      data: JSON.stringify({'id': commentId})
+    }).done(function(html){
+      var json = JSON.parse(html);
+      if("success" in json){
+        console.log('comment deleted');
+        submitReview(message);
+      }else if("error" in json){
+        warn(json['error']);
+      }
+    });
+  }
+
+  function blockUser(){
+    bootbox.confirm({
+      message:"Tem a certeza que pretende bloquear o autor deste " + (commentId != null ? 'comentário?' : 'artigo?'), 
+      locale: "pt",
+      callback: function(result){
+        if(result){
+          setUserStatus('Blocked');
+        }
+      }
+    });
+  }
+
+  function setUserStatus(newStatus){
+    if(!reportSelected){
+      return;
+    }
+
+    if(userId == reportedId){
       return;
     }
 
@@ -251,14 +332,10 @@ function displayReport(typeP, baseAddressP, reportIdP, articleIdP, commentIdP){
       type: "post",
       url: "../../api/users/update_user_status.php",
       datatype: "json",
-      data: JSON.stringify({'user_id': userId, 'new_status': newStatus})
+      data: JSON.stringify({'user_id': reportedId, 'new_status': newStatus})
     }).done(function(html){
       var json = JSON.parse(html);
-      if("success" in json){
-      // TODO check if it works
-      $("#alert").html("<div \" class=\"alert alert-success\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">\&times;</a>Item revisto.</div>");
-      $("#alert").show().delay(5000).fadeOut();
-    }else if("error" in json){
+    if("error" in json){
       warn(json['error']);
     }
   });
@@ -268,7 +345,7 @@ function displayReport(typeP, baseAddressP, reportIdP, articleIdP, commentIdP){
 /**
  *  Terminate the review
  */ 
- function finishReview(deleteItem){
+ function finishReview(deleteItemRequest){
   if(!reportSelected){
     return;
   }
@@ -303,13 +380,13 @@ function displayReport(typeP, baseAddressP, reportIdP, articleIdP, commentIdP){
        callback: function (){}
      },
      success: {
-      label: (deleteItem ? 'Apagar o item e terminar' : 'Terminar revisão'),
+      label: (deleteItemRequest ? 'Apagar o item e terminar' : 'Terminar revisão'),
       className: "btn-primary",
       callback: function (){
         var message = $('#message').val();
-        var transgression = $("input[name='transgression']:checked").val();
+        var transgression = ($("input[name='transgression']:checked").val()=='true');
 
-        if(deleteItem){
+        if(deleteItemRequest){
           deleteItem(message, transgression);
         }else{
           submitReview(message, transgression);                            
@@ -320,62 +397,118 @@ function displayReport(typeP, baseAddressP, reportIdP, articleIdP, commentIdP){
 });
 }
 
+function deleteItem(message, transgression){
+  console.log('type');
+  if(type=='article'){
+    deleteArticle(message, transgression);
+  }else if(type=='comment'){
+    deleteComment(message, transgression);
+  }
+}
+
 function submitReview(message, transgression){    
   console.log(message);
-  console.log(transgression);
+
+  if(transgression){
+    setUserStatus('Warned');
+
+    if(message.trim() != ""){
+        message = 'Um ' + (commentId != null ? 'comentário.' : 'artigo.') + ' que publicou foi alvo de uma ação de moderação.';
+    }
+  }
 
   if(message.trim() != ""){
     sendNotification(message);
+    return;
+  }
+
+  setReportReviewed();
+}
+
+function setReportReviewed(){
+   if(!reportSelected){
+    return;
   }
 
   $.ajax({
     type: "post",
     url: "../../api/reports/set_reviewed.php",
     datatype: "json",
-    data: JSON.stringify({'reportId': reportId})
+    data: JSON.stringify({'report_id': reportId})
   }).done(function(html){
     var json = JSON.parse(html);
 
     if("success" in json){
-      ok(json['success']);
+      var typeTemp = type;
+      var reportIdTemp = reportId;
       resetSelectedItem();
+      $("#content-" + typeTemp).html("<div \" class=\"alert alert-success\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">\&times;</a>O item foi revisto.</div>");
+      $("#content-" + typeTemp + ' .alert-success').show().delay(5000).fadeOut(function() {
+                $("#content-" + typeTemp).html(selectNewReport);
+            });
+      $("#report-" + reportIdTemp).remove();      
     }else{
       warn("Ocorreu um erro ao completar a revisão do " + (commentId != null ? 'comentário.' : 'artigo.'));
     }
   });
-
-  return true;
 }
 
 function sendNotification(message){
+  if(!reportSelected){
+    return;
+  }
+
+  if(userId == reportedId){
+    setReportReviewed();
+  }
+
   $.ajax({
     type: "post",
     url: "../../api/notifications/create_notification.php",
     datatype: "json",
-    data: JSON.stringify({'sender': userId, 'receiver': , 'message': message})
+    data: JSON.stringify({'sender': userId, 'receiver': reportedId, 'message': message})
   }).done(function(html){
     var json = JSON.parse(html);
 
     if("success" in json){
-      ok(json['success']);
+      setReportReviewed();
     }else{
       warn("Ocorreu um erro ao enviar a notificação.");
     }
   });
 }
 
+function updateReportCount(){
+  $.ajax({
+    type: "get",
+    url: "../../api/reports/get_report_count.php",
+    datatype: "json"
+  }).done(function(html){
+    var json = JSON.parse(html);
+    if("success" in json){
+      $("#report-count").html(json['success']);
+    }
+  });
+}
+
 function deleteReport(reportId){
+  console.log('deleting');
+
+  event.cancelBubble = true;
+  if(event.stopPropagation) event.stopPropagation();
+
   $.ajax({
     type: "post",
     url: "../../api/reports/delete_report.php",
     datatype: "json",
-    data: JSON.stringify({'id': reportId})
+    data: JSON.stringify({'report_id': reportId})
   }).done(function(html){
     var json = JSON.parse(html);
     if("success" in json){
-      $("#" + reportId).remove();
-    }else if("error" in json){
-      warn(json['error']);
+      updateReportCount();
+      resetSelectedItem();
+      $("#report-" + reportId).after("<div \" class=\"alert alert-success\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">\&times;</a>Item descartado.</div>");    
+      $("#report-" + reportId).remove();
     }
   });
 }
@@ -385,6 +518,7 @@ $(document).ready(function(){
   offset.comment = 0;
   currentResultCount.article = limit;
   currentResultCount.comment = limit;
-
+  
+  resetSelectedItem('article');
   reportsScroll();
 });

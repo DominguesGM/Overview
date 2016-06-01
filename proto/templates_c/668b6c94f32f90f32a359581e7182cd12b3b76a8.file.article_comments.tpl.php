@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-31 18:27:37
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 11:23:20
          compiled from "C:\wamp\www\Overview\proto\templates\articles\article_comments.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:10004572baa6f6ea626-33934860%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '668b6c94f32f90f32a359581e7182cd12b3b76a8' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\article_comments.tpl',
-      1 => 1464712022,
+      1 => 1464772939,
       2 => 'file',
     ),
   ),
@@ -57,6 +57,8 @@ $_smarty_tpl->tpl_vars['comment']->_loop = true;
 
       <div id="comment-<?php echo $_smarty_tpl->tpl_vars['comment']->value['id'];?>
 " class="media comment">
+        <input class="comment-user" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['comment']->value['posted_by'];?>
+">
         <p class="pull-right"><small>
           <?php echo $_smarty_tpl->tpl_vars['comment']->value['comment_date'];?>
 </small></p>

@@ -152,8 +152,8 @@ CREATE TABLE report(
   is_resolved boolean NOT NULL DEFAULT false,
   report_date timestamp NOT NULL DEFAULT current_timestamp,
   reported_by serial REFERENCES Contributor(id) NOT NULL,
-  article_id integer REFERENCES Article(id),
-  comment_id integer REFERENCES Comment(id),
+  article_id integer REFERENCES Article(id) ON DELETE CASCADE,
+  comment_id integer REFERENCES Comment(id) ON DELETE CASCADE,
   description text NOT NULL,
   CONSTRAINT ck_report_unique UNIQUE (reported_by, article_id, comment_id),
   CONSTRAINT ck_report_type CHECK 
@@ -393,14 +393,13 @@ CREATE OR REPLACE FUNCTION single_admin() RETURNS TRIGGER AS $$
     
       IF (TG_OP != 'UPDATE' AND
         NEW.type='Administrator'
-        AND NEW.id IN (SELECT id FROM contributor WHERE type = 'Administrator'))
+        AND EXISTS (SELECT id FROM contributor WHERE type = 'Administrator'))
         THEN
           RAISE EXCEPTION 'the system must have a single administrator';
           RETURN NULL;
       END IF;
       
       RETURN NEW;
-    
   END;
 $$ LANGUAGE plpgsql;
 

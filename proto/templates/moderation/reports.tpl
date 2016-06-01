@@ -10,14 +10,14 @@
     <hgroup class="mb20">
       <br>
       <h1><span class="glyphicon glyphicon-flag"></span> Itens reportados</h1>
-      <h2 class="lead"><strong id="report-count">{$nReports}</strong> {if $nReportsitens == 1} item foi reportado e requer{else} itens foram reportados e requerem{/if} revisão</h2>
+      <h2 class="lead"><strong id="report-count">{$nReports}</strong> {if $nReports == 1} item foi reportado e requer{else} itens foram reportados e requerem{/if} revisão</h2>
     </hgroup>
   </div>
 
     <div class="all-reports tab-content col-md-3">
       <ul class="nav nav-pills btn-group pull-right">
-        <li class="active"><a data-toggle="pill" href="#article-reports"><span class="glyphicon glyphicon-duplicate"></span> Artigos</a></li>
-        <li><a data-toggle="pill" href="#comment-reports"><span class="glyphicon glyphicon-comment  "></span> Comentários</a></li>
+        <li class="active"><a onclick="resetSelectedItem('article')" data-toggle="pill" href="#article-reports"><span class="glyphicon glyphicon-duplicate"></span> Artigos</a></li>
+        <li><a onclick="resetSelectedItem('comment')" data-toggle="pill" href="#comment-reports"><span class="glyphicon glyphicon-comment"></span> Comentários</a></li>
       </ul>
     </div>
 
@@ -28,6 +28,7 @@
       <div id="all-article-reports" sytle="overflow-y: auto;" class="h-scroll col-md-3">
         <br>
         <ul id="list-article-reports" class="nav nav-pills nav-stacked">
+          {if $articleReports|count == 0} <li class="report button-link" onclick="getReports('article', true)">Nenhum artigo requer a atenção.</li>{/if}
           {foreach $articleReports as $article}
           <li id="report-{$article['id']}" class="report button-link" onclick="displayReport('article','{$BASE_URL}',{$article['id']}, {$article['article_id']})">
             <div class="media">
@@ -37,7 +38,7 @@
               </a>
               <span><h5 class="user_name"><a href="{$BASE_URL}users/profile.php?id={$article['reported_by']}">{$article['reporter_first_name']} {$article['reporter_last_name']}</a></h5></span>
               <p>{$article['description']}</p>
-              <div class="btn-simple pull-right text-muted">
+              <div class="delete btn-simple pull-right text-muted">
                 <small><span onclick="deleteReport({$article['id']})" data-placement="left" data-toggle="tooltip" title="Descartar" class="glyphicon glyphicon-remove"></span></small>
               </div>
             </div>
@@ -54,6 +55,7 @@
       <div id="all-comment-reports" sytle="overflow-y: auto;" class="h-scroll col-md-3">
         <br>
         <ul id="list-comment-reports" class="nav nav-pills nav-stacked">
+          {if $commentReports|count == 0} <li class="report button-link" onclick="getReports('comment', true)">Nenhum comentário requer a atenção.</li>{/if}
           {foreach $commentReports as $comment}
           <li id="report-{$comment['id']}" class="report button-link" onclick="displayReport('comment','{$BASE_URL}',{$comment['id']}, {$comment['article_id']}, {$comment['comment_id']})">
             <div class="media">
@@ -63,9 +65,9 @@
               </a>
               <span><h5 class="user_name"><a href="{$BASE_URL}users/profile.php?id={$comment['reported_by']}">{$comment['reporter_first_name']} {$comment['reporter_last_name']}</a></h5></span>
               <p>{$comment['description']}</p>
-            </div>
-            <div class="btn-simple pull-right text-muted">
-              <small><span onclick="deleteReport({$comment['id']})" data-placement="left" data-toggle="tooltip" title="Descartar" class="glyphicon glyphicon-remove"></span></small>
+              <div class="delete btn-simple pull-right text-muted">
+                <small><span onclick="deleteReport({$comment['id']})" data-placement="left" data-toggle="tooltip" title="Descartar" class="glyphicon glyphicon-remove"></span></small>
+              </div>
             </div>
           </li>
           {/foreach}

@@ -17,6 +17,7 @@
       {foreach $articleComments as $comment}
 
       <div id="comment-{$comment['id']}" class="media comment">
+        <input class="comment-user" type="hidden" value="{$comment['posted_by']}">
         <p class="pull-right"><small>
           {$comment['comment_date']}</small></p>
           {if $contributorAccess}

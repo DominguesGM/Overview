@@ -32,6 +32,7 @@
 
    function getCommentHtml(commentId, commentDate, content, score, postedBy, firstName, lastName, path, vote, report){
     var commentHtml = "<div class=\"media comment\">";
+    commentHtml += '<input class="comment-user" type="hidden" value="' + postedBy + '">';
     commentHtml += "<p class=\"pull-right\"><small>" + commentDate + "</small></p>";
 
     if(contributorAccess){

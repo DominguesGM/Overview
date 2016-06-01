@@ -37,7 +37,7 @@
     global $conn;
     
     $stmt = $conn->prepare("INSERT INTO notification(sender, receiver, message) 
-                            VALUES (?, ?, ?, ?) RETURNING id");
+                            VALUES (?, ?, ?) RETURNING id");
     $stmt->execute(array($senderId, $userId, $message));
     return $stmt->fetch()['id'];
   }

@@ -10,7 +10,7 @@
     exit;
   }
   
-  if(!contributor_access()){
+  if(!moderator_access()){
     echo json_encode(array('error' => 'Erro ao reportar o item: Acesso negado.'));
     exit;   
   }
