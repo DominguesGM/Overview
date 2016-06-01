@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-12 11:52:25
+<?php /* Smarty version Smarty-3.1.15, created on 2016-05-30 22:34:37
          compiled from "C:\wamp\www\Overview\proto\templates\articles\edit_article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:24705729d53e7a7388-45458464%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bd9eaca5cf64b20c39a12d6eed98850cd025f038' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\edit_article.tpl',
-      1 => 1463046739,
+      1 => 1464633079,
       2 => 'file',
     ),
   ),
@@ -155,6 +155,11 @@ $_smarty_tpl->tpl_vars['category']->_loop = true;
   </div>
 </div>
 </div>
+
+<!-- rich text -->
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/rich_text.js"></script>
 
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/edit_article.js"></script>

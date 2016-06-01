@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-22 15:37:41
+<?php /* Smarty version Smarty-3.1.15, created on 2016-05-31 01:02:36
          compiled from "C:\wamp\www\Overview\proto\templates\articles\view_article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11407572b49bd710566-11169283%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c224ebad81a3fe7e96512a49939cb8b7f216605b' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\view_article.tpl',
-      1 => 1463924181,
+      1 => 1464649352,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'article' => 0,
     'ID' => 0,
     'editPermission' => 0,
-    'comment' => 0,
     'contributorAccess' => 0,
     'BASE_URL' => 0,
   ),
@@ -58,7 +57,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
               <?php }?>
             </h2>
             <div id="article-score" class="article-score"><?php echo $_smarty_tpl->tpl_vars['article']->value['score'];?>
- ponto<?php if ($_smarty_tpl->tpl_vars['comment']->value['score']!=1) {?>s<?php }?></div>
+ ponto<?php if ($_smarty_tpl->tpl_vars['article']->value['score']!=1&&$_smarty_tpl->tpl_vars['article']->value['score']!=-1) {?>s<?php }?></div>
             <?php if ($_smarty_tpl->tpl_vars['contributorAccess']->value) {?>
             <div class="article-scoring">
               <a onclick="upvoteArticle(<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
@@ -94,9 +93,9 @@ users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['author
       <?php if ($_smarty_tpl->tpl_vars['contributorAccess']->value) {?>
       <div id="article-report">
         <?php if ($_smarty_tpl->tpl_vars['article']->value['report']) {?>
-        <div class="report-article text-muted"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Artigo reportado</div>
+        <div class="pull-right text-muted"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Artigo reportado</div>
         <?php } else { ?>
-        <div class="report-article"><a data-id="article#<?php echo $_smarty_tpl->tpl_vars['article']->value['id'];?>
+        <div class="pull-right"><a data-id="article#<?php echo $_smarty_tpl->tpl_vars['article']->value['id'];?>
 " data-toggle="modal" data-target="#report-form"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Reportar artigo</a></div>
         <?php }?>
       </div>

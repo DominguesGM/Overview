@@ -8,10 +8,10 @@
     header("Location: $BASE_URL");
     exit;
   }
-  
-  $reports = getReports();
-  
-  $smarty->assign('reports', $reports);
+     
+  $smarty->assign('articleReports', getArticleReports(false, 5, 0));
+  $smarty->assign('commentReports', getCommentReports(false, 5, 0));
+  $smarty->assign('nReports', getReportCount());
       
   $smarty->display('moderation/reports.tpl'); 
 ?>

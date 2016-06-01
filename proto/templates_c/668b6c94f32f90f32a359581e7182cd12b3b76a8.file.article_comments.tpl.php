@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-22 16:42:24
+<?php /* Smarty version Smarty-3.1.15, created on 2016-05-31 18:27:37
          compiled from "C:\wamp\www\Overview\proto\templates\articles\article_comments.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:10004572baa6f6ea626-33934860%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '668b6c94f32f90f32a359581e7182cd12b3b76a8' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\article_comments.tpl',
-      1 => 1463928120,
+      1 => 1464712022,
       2 => 'file',
     ),
   ),
@@ -55,7 +55,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['comment']->key => $_smarty_tpl->tpl_v
 $_smarty_tpl->tpl_vars['comment']->_loop = true;
 ?>
 
-      <div class="media comment">
+      <div id="comment-<?php echo $_smarty_tpl->tpl_vars['comment']->value['id'];?>
+" class="media comment">
         <p class="pull-right"><small>
           <?php echo $_smarty_tpl->tpl_vars['comment']->value['comment_date'];?>
 </small></p>
@@ -87,7 +88,7 @@ users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['comment']->value['posted
 
             <p><small id="comment-score-<?php echo $_smarty_tpl->tpl_vars['comment']->value['id'];?>
 " class="text-muted"><?php echo $_smarty_tpl->tpl_vars['comment']->value['score'];?>
- ponto<?php if ($_smarty_tpl->tpl_vars['comment']->value['score']!=1) {?>s<?php }?> </small></p>
+ ponto<?php if ($_smarty_tpl->tpl_vars['comment']->value['score']!=1&&$_smarty_tpl->tpl_vars['comment']->value['score']!=-1) {?>s<?php }?> </small></p>
             <?php if ($_smarty_tpl->tpl_vars['contributorAccess']->value) {?>
             <div id="comment-report-<?php echo $_smarty_tpl->tpl_vars['comment']->value['id'];?>
 ">

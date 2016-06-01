@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-20 02:42:41
+<?php /* Smarty version Smarty-3.1.15, created on 2016-05-30 10:51:12
          compiled from "C:\wamp\www\Overview\proto\templates\search.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:40685733d1918a4ab0-85526022%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8930a03245f7c1b4543757cbf3e980ed56b0522d' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\search.tpl',
-      1 => 1463085624,
+      1 => 1463929352,
       2 => 'file',
     ),
   ),
@@ -19,9 +19,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_5733d191a8e9b8_79919755',
   'variables' => 
   array (
-    'SEARCH_TYPE' => 0,
-    'SEARCH_QUERY' => 0,
-    'SEARCH_CATEGORY' => 0,
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
@@ -32,15 +29,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-xs-offset-3">
-            <form id="search-form" method="get" action="">
+            <form id="search-form">
                 <div class="selectors">
                     <select id="type-selector" class="form-control" name="type">
-                        <option value="Contribuidor">Contribuidor</option>
                         <option value="Artigo">Artigo</option>
+                        <option value="Contribuidor">Contribuidor</option>
                     </select>
                 </div>
                 <div class="input-group">
-                    <input type="text" class="form-control" name="query" placeholder="Search on Overview...">
+                    <input id="search-box" type="text" class="form-control" name="query" placeholder="Search on Overview...">
 
                     <span class="input-group-btn">
                       <button id="search-form-button" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
@@ -51,25 +48,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     </div>
 </div>
 
-<?php if ($_smarty_tpl->tpl_vars['SEARCH_TYPE']->value=="Contribuidor"||$_smarty_tpl->tpl_vars['SEARCH_TYPE']->value=="Artigo") {?>
-<div class="container">
-    <div class="col-md-12">
-        <hgroup class="mb20">
-            <br>
-            <h1>Search results</h1>
-            <h2 class="lead">Showing results for "<strong id="query-string" class="text-danger"><?php echo $_smarty_tpl->tpl_vars['SEARCH_QUERY']->value;?>
-</strong>" in <strong id="query-type" class="text-danger"><?php echo $_smarty_tpl->tpl_vars['SEARCH_TYPE']->value;?>
-</strong> <?php if ($_smarty_tpl->tpl_vars['SEARCH_TYPE']->value=="Artigo"&&$_smarty_tpl->tpl_vars['SEARCH_CATEGORY']->value!='') {?>of category <strong id="query-category" class="text-danger"><?php echo $_smarty_tpl->tpl_vars['SEARCH_CATEGORY']->value;?>
-</strong><?php }?></h2>
-        </hgroup>
-    </div>
+<div id="result-container" class="container">
 
-    <div class="col-md-12">
-        <section id="item-container" class="col-md-12 col-sm-6 col-md-18">
-        </section>
-    </div>
 </div>
-<?php }?>
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/search_page.js"></script>
 

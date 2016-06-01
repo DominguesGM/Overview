@@ -22,7 +22,7 @@
               </div>
               {/if}
             </h2>
-            <div id="article-score" class="article-score">{$article['score']} ponto{if $comment['score'] != 1}s{/if}</div>
+            <div id="article-score" class="article-score">{$article['score']} ponto{if $article['score'] != 1 && $article['score'] != -1}s{/if}</div>
             {if $contributorAccess}
             <div class="article-scoring">
               <a onclick="upvoteArticle({$ID})"><i id="article-up-vote" class="{if $article['vote'] != 'up' } text-muted {/if} fa fa-arrow-up"></i></a>
@@ -47,9 +47,9 @@
       {if $contributorAccess}
       <div id="article-report">
         {if $article['report']}
-        <div class="report-article text-muted"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Artigo reportado</div>
+        <div class="pull-right text-muted"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Artigo reportado</div>
         {else}
-        <div class="report-article"><a data-id="article#{$article['id']}" data-toggle="modal" data-target="#report-form"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Reportar artigo</a></div>
+        <div class="pull-right"><a data-id="article#{$article['id']}" data-toggle="modal" data-target="#report-form"><span data-placement="bottom" class="glyphicon glyphicon-flag"></span>Reportar artigo</a></div>
         {/if}
       </div>
       {/if}

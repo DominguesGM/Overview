@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-11 16:57:48
+<?php /* Smarty version Smarty-3.1.15, created on 2016-05-31 15:46:56
          compiled from "C:\wamp\www\Overview\proto\templates\articles\create_article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11514572b601d378084-11401176%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2a26728412a66d28fd0cf3daa4fb68a33cf50a44' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\create_article.tpl',
-      1 => 1462978534,
+      1 => 1464633062,
       2 => 'file',
     ),
   ),
@@ -40,11 +40,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     </h1>
 
     <h2>
-      <div class="btn-simple pull-right text-muted" id="discard">
+      <div class="button-link btn-simple pull-right text-muted" id="discard">
         <span onclick="discard()" data-placement="bottom" data-toggle="tooltip" title="Cancelar" class="glyphicon glyphicon-remove"></span>
       </div>
 
-      <div class="btn-simple pull-right text-muted" id="save">
+      <div class="button-link btn-simple pull-right text-muted" id="save">
         <span onclick="save()" data-placement="bottom" data-toggle="tooltip" title="Guardar" class="glyphicon glyphicon-ok">&nbsp</span>
       </div>
     </h2>
@@ -67,8 +67,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       <form id="create-form" class="form-horizontal" role="form" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 actions/articles/create_article.php" method="post" enctype="multipart/form-data" onsubmit="return checkArticle();">
 
-        <div id="create-alert">
-        </div>
+        <div id="create-alert"></div>
 
         <div class="form-group">
           <label for="title">
@@ -133,6 +132,11 @@ actions/articles/create_article.php" method="post" enctype="multipart/form-data"
   </div>
 </div>
 </div>
+
+<!-- rich text -->
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/rich_text.js"></script>
 
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/create_article.js"></script>

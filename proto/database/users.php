@@ -113,16 +113,64 @@
     return true;
   }
   
-  function updateUserAccess($id, $type, $status) {
+  function updateUserAccess($id, $type) {
     global $conn;
     
     try{
       $stmt = $conn->prepare("UPDATE contributor 
-      SET type = ?, status = ?
+      SET type = ?
       WHERE id = ?");
                 
-      $stmt->execute(array($id, $type, $status));
+      $stmt->execute(array($id, $type));
       
+    }catch (PDOException $e) {
+      print $e->getMessage();
+      return false;
+    }
+    
+    return true;
+  }
+  
+  function updateUserStatus($id, $status) {
+    global $conn;
+    
+    try{
+      $stmt = $conn->prepare("UPDATE contributor 
+      status = ?
+      WHERE id = ?");
+                
+      $stmt->execute(array($id, $status));
+      
+    }catch (PDOException $e) {
+      print $e->getMessage();
+      return false;
+    }
+    
+    return true;
+  }
+   
+  function getUserStatus($id) {
+    global $conn;
+    
+    try{
+      $stmt = $conn->prepare("SELECT status FROM contributor WHERE id = ?");
+      $stmt->execute(array($id));
+      $stmt->fetch()['status'];
+    }catch (PDOException $e) {
+      print $e->getMessage();
+      return false;
+    }
+    
+    return true;
+  }
+  
+  function getUserType($id) {
+    global $conn;
+    
+    try{
+      $stmt = $conn->prepare("SELECT type FROM contributor WHERE id = ?");
+      $stmt->execute(array($id));
+      $stmt->fetch()['type'];
     }catch (PDOException $e) {
       print $e->getMessage();
       return false;

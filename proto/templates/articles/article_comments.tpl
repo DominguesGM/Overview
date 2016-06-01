@@ -16,7 +16,7 @@
     <div id="comments-list" class="comments-list">
       {foreach $articleComments as $comment}
 
-      <div class="media comment">
+      <div id="comment-{$comment['id']}" class="media comment">
         <p class="pull-right"><small>
           {$comment['comment_date']}</small></p>
           {if $contributorAccess}
@@ -32,7 +32,7 @@
           <div class="media-body">
             <h4 class="media-heading user_name"><a href="{$BASE_URL}users/profile.php?id={$comment['posted_by']}">{$comment['first_name']} {$comment['last_name']}</a></h4>
             {$comment['content']}
-            <p><small id="comment-score-{$comment['id']}" class="text-muted">{$comment['score']} ponto{if $comment['score'] != 1}s{/if} </small></p>
+            <p><small id="comment-score-{$comment['id']}" class="text-muted">{$comment['score']} ponto{if $comment['score'] != 1 && $comment['score'] != -1}s{/if} </small></p>
             {if $contributorAccess}
             <div id="comment-report-{$comment['id']}">
               {if $comment['report']}
