@@ -74,6 +74,7 @@
 
 {include file='articles/report.tpl'}
 
+<script src="{$BASE_URL}lib/bootbox/bootbox.min.js"></script>
 <script src="{$BASE_URL}javascript/view_article.js"></script>
 
 {include file='common/footer.tpl'}

@@ -73,7 +73,6 @@
           {/foreach}
         </ul>
       </div>
-
       <section id="content-comment" sytle="overflow: auto;" class="h-scroll col-md-9"></section>
     </div>
   </div>

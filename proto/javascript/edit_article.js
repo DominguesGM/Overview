@@ -87,6 +87,18 @@ function eliminate(){
       return;
   }
 
+  bootbox.confirm({
+      message:"Tem a certeza que pretende eliminar este artigo?", 
+      locale: "pt",
+      callback: function(result){
+        if(result){
+          eliminateConfirmed(articleId);
+        }
+      }
+    });
+}
+
+function eliminateConfirmed(articleId){
  	$.ajax({
       type: "post",
       url: "../../api/articles/delete_article.php",

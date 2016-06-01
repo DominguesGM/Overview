@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 17:23:51
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 17:50:14
          compiled from "C:\wamp\www\Overview\proto\templates\articles\edit_article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:24705729d53e7a7388-45458464%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bd9eaca5cf64b20c39a12d6eed98850cd025f038' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\edit_article.tpl',
-      1 => 1464794630,
+      1 => 1464795963,
       2 => 'file',
     ),
   ),
@@ -58,7 +58,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
   <div class="row">
     <div class="col-md-2 col-sm-12 col-xs-12">
-      <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+      <img alt="Autor do artigo" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 <?php echo $_smarty_tpl->tpl_vars['article']->value['author_picture'];?>
 " class="img-circle" height="80px" width="80px"/>
       <h4><?php echo $_smarty_tpl->tpl_vars['article']->value['first_name'];?>
@@ -161,6 +161,8 @@ $_smarty_tpl->tpl_vars['category']->_loop = true;
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/rich_text.js"></script>
 
+<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+lib/bootbox/bootbox.min.js"></script>
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/edit_article.js"></script>
 

@@ -113,6 +113,7 @@
 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 <script src="{$BASE_URL}javascript/rich_text.js"></script>
 
+<script src="{$BASE_URL}lib/bootbox/bootbox.min.js"></script>
 <script src="{$BASE_URL}javascript/edit_article.js"></script>
 
 {include file='common/footer.tpl'}
