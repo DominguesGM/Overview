@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-12 11:45:19
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 11:48:47
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\common\image_gallery.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:31465573450af09d059-72968851%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7fa426b38661919abe744b9c2a0d82ea366c4400' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\common\\image_gallery.tpl',
-      1 => 1462549008,
+      1 => 1464860754,
       2 => 'file',
     ),
   ),
@@ -15,16 +15,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_573450af265896_97847364',
   'variables' => 
   array (
     'articleImages' => 0,
     'i' => 0,
+    'article' => 0,
     'BASE_URL' => 0,
     'image' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_573450af265896_97847364',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_573450af265896_97847364')) {function content_573450af265896_97847364($_smarty_tpl) {?><div class="carousel slide article-slide" id="article-photo-carousel">
 
@@ -37,7 +38,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['image']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['image']->_loop = true;
 ?>
     <div class="item <?php if ($_smarty_tpl->tpl_vars['i']->value++==0) {?> active <?php }?>">
-      <img title="" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+      <img alt="<?php echo $_smarty_tpl->tpl_vars['article']->value['title'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['article']->value['title'];?>
+" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 <?php echo $_smarty_tpl->tpl_vars['image']->value['path'];?>
 ">
     </div>
