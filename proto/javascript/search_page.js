@@ -36,7 +36,7 @@ function prepareUsersHtml(usersArray){
     for(var i = 0; i < usersArray.length; i++){
         html += '<article class="search-result row"><span class="image-box-Contribuidor" data-score="';
         html += 0;
-        html += '"><img class="img-thumbnail" src="';
+        html += '"><img class="img-thumbnail" alt="Imagem do artigo" src="';
         html += BASE_URL + usersArray[i]['path'];
         html += '" alt=""></span><div class="col-xs-12 col-sm-12 col-md-7 excerpet"><h3><a href="#">';
         html += usersArray[i]['first_name'] + " " + usersArray[i]['last_name'];
@@ -53,7 +53,7 @@ function prepareArticlesHtml(articlesArray){
     for(var i = 0; i < articlesArray.length; i++){
         html += '<article class="search-result row"><span class="image-box" data-score="';
         html += articlesArray[i]['score'];
-        html += '"><img class="img-thumbnail" src="';
+        html += '"><img class="img-thumbnail" alt="Imagem do artigo" src="';
         html += BASE_URL + articlesArray[i]['path'];
         html += '" alt=""></span><div class="col-xs-12 col-sm-12 col-md-2"><ul class="meta-search"><li><i class="glyphicon glyphicon-calendar"></i> <span>';
         html += articlesArray[i]['date'];
