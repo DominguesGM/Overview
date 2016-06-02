@@ -11,14 +11,14 @@
     $articles_per_line = array();
 
     if(isset($_SESSION['id'])){
-        $articles_per_category = getFolloweeArticles($_SESSION['id'], 0, 2);
-        if(isset($articles_per_category)){
+        $followee_articles = getFolloweeArticles($_SESSION['id'], 0, 2);
+        if(isset($followee_articles)){
             $i = 1;
-            array_push($articles_per_line, $articles_per_category);
+            array_push($articles_per_line, $followee_articles);
             array_unshift($categories, array('id' => -1, 'name' => "Follow Feed"));
         }
     } else {
-        $id = 0;
+        $i = 0;
     }
 
     for(; $i < count($categories); $i++){
