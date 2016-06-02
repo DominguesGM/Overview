@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 22:48:36
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 11:48:59
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\articles\view_article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:26035573450aea87dc4-76291576%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '12c4e4026cfa1e65e3f3dde4e38e3828e246b83d' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\articles\\view_article.tpl',
-      1 => 1464809478,
+      1 => 1464860754,
       2 => 'file',
     ),
   ),
@@ -54,7 +54,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <span onclick="eliminate()" data-placement="bottom" data-toggle="tooltip" title="Eliminar" class="glyphicon glyphicon-trash"></span>
               </div>
               <div class="selectable small btn-simple pull-right text-muted" id="edit">
-                <span onclick="edit()" data-placement="bottom" data-toggle="tooltip" title="Editar" class="glyphicon glyphicon-pencil">&nbsp</span>
+                <span onclick="edit()" data-placement="bottom" data-toggle="tooltip" title="Editar" class="glyphicon glyphicon-pencil">&nbsp;</span>
               </div>
               <?php }?>
             </h2>
@@ -78,7 +78,7 @@ users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['author
 "><?php echo $_smarty_tpl->tpl_vars['article']->value['first_name'];?>
  <?php echo $_smarty_tpl->tpl_vars['article']->value['last_name'];?>
 </a></em>
-            <span class="article-date">&nbsp<?php echo $_smarty_tpl->tpl_vars['article']->value['publication_date'];?>
+            <span class="article-date">&nbsp;<?php echo $_smarty_tpl->tpl_vars['article']->value['publication_date'];?>
 </span>
           </div>
           <br>
