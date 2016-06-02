@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-12 21:43:48
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 04:04:54
          compiled from "C:\wamp\www\Overview\proto\templates\articles\report.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:171545734569e343d83-27486864%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1fc3e732c7f40ccecc8c3d60296f47247b227dbe' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\report.tpl',
-      1 => 1463082171,
+      1 => 1464832964,
       2 => 'file',
     ),
   ),
@@ -28,7 +28,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title"></h4>
+        <h4 class="modal-title">Reportar</h4>
       </div>
       <div class="modal-body">
         <input type="hidden" id="report-item-id">
@@ -38,7 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       <div class="modal-footer">
         <button onclick="submitReport(<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
 );" type="button" class="pull-right btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-flag"></span>Reportar</button>
-        <span class="pull-right">&nbsp</span>
+        <span class="pull-right">&nbsp;</span>
         <button type="button" class="pull-right btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Cancelar</button>
       </div>
     </div>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 01:51:30
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 03:54:24
          compiled from "C:\wamp\www\Overview\proto\templates\users\notifications.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:22474574f4c9ec607b8-67172373%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'db303f153ad8e8f13e7a2597e7e056fdb76b713c' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\users\\notifications.tpl',
-      1 => 1464825087,
+      1 => 1464832459,
       2 => 'file',
     ),
   ),
@@ -52,13 +52,13 @@ css/notifications.css">
   <div class="text-center col-md-2 col-sm-12 col-xs-12">
     <img alt="Imagem de perfil" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 <?php echo $_smarty_tpl->tpl_vars['PICTURE']->value;?>
-" class="img-circle" height="80px" width="80px"/>
+" class="img-circle" height="80" width="80"/>
     <h4><?php echo $_smarty_tpl->tpl_vars['FIRST_NAME']->value;?>
  <?php echo $_smarty_tpl->tpl_vars['LAST_NAME']->value;?>
 </h4>
   </div>
 
-  <div id="all-notifications" sytle="overflow-y: auto;" class="h-scroll col-md-9">
+  <div id="all-notifications" class="col-md-9">
     <br>
     <ul id="list-notifications" class="nav nav-pills nav-stacked">
       <?php if (count($_smarty_tpl->tpl_vars['notifications']->value)==0) {?> <li class="notification button-link" onclick="getNotifications()">Não tem notificações.</li><?php }?>
@@ -82,11 +82,11 @@ pages/users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['notification']->va
  <?php echo $_smarty_tpl->tpl_vars['notification']->value['sender_last_name'];?>
 ">
           </a>
-          <span><h5 class="user_name"><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+          <span class="sender-name"><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['notification']->value['sender'];?>
 "><?php echo $_smarty_tpl->tpl_vars['notification']->value['sender_first_name'];?>
  <?php echo $_smarty_tpl->tpl_vars['notification']->value['sender_last_name'];?>
-</a></h5></span>
+</a></span>
           <p><?php echo $_smarty_tpl->tpl_vars['notification']->value['message'];?>
 </p>
           <div class="btn-simple pull-right text-muted">
@@ -97,7 +97,7 @@ pages/users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['notification']->va
             <small><span onclick="toggleNotificationRead(<?php echo $_smarty_tpl->tpl_vars['notification']->value['id'];?>
 )" data-placement="left" data-toggle="tooltip" title="Marcar como não lida" class="notification-read delete glyphicon glyphicon-envelope"></span></small>
             <?php }?>
-            <span>&nbsp&nbsp</span>
+            <span>&nbsp;&nbsp;</span>
             <small><span onclick="deleteNotification(<?php echo $_smarty_tpl->tpl_vars['notification']->value['id'];?>
 )" data-placement="left" data-toggle="tooltip" title="Apagar" class="delete glyphicon glyphicon-remove"></span></small>
           </div>

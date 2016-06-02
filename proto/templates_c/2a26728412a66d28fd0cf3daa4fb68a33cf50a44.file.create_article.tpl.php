@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 00:46:31
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 03:30:35
          compiled from "C:\wamp\www\Overview\proto\templates\articles\create_article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11514572b601d378084-11401176%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2a26728412a66d28fd0cf3daa4fb68a33cf50a44' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\create_article.tpl',
-      1 => 1464821168,
+      1 => 1464831000,
       2 => 'file',
     ),
   ),
@@ -39,15 +39,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       <span class="glyphicon glyphicon-pencil"></span> Criar artigo
     </h1>
 
-    <h2>
+    <div class="option-buttons">
       <div class="button-link btn-simple pull-right text-muted" id="discard">
         <span onclick="discard()" data-placement="bottom" data-toggle="tooltip" title="Cancelar" class="glyphicon glyphicon-remove"></span>
       </div>
 
       <div class="button-link btn-simple pull-right text-muted" id="save">
-        <span onclick="save()" data-placement="bottom" data-toggle="tooltip" title="Guardar" class="glyphicon glyphicon-ok">&nbsp</span>
+        <span onclick="save()" data-placement="bottom" data-toggle="tooltip" title="Guardar" class="glyphicon glyphicon-ok">&nbsp;</span>
       </div>
-    </h2>
+    </div>
   </div>
 </div>
 
@@ -55,16 +55,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
   <div class="row">
     <div class="text-center col-md-2 col-sm-12 col-xs-12">
-      <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+      <img alt="Autor do artigo" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 <?php echo $_smarty_tpl->tpl_vars['PICTURE']->value;?>
-" class="img-circle" width="80px"/>
+" class="img-circle" height="80" width="80"/>
       <h4><?php echo $_smarty_tpl->tpl_vars['FIRST_NAME']->value;?>
  <?php echo $_smarty_tpl->tpl_vars['LAST_NAME']->value;?>
 </h4>
     </div>
 
     <div class="col-md-8 col-sm-12 col-xs-12">
-      <form id="create-form" class="form-horizontal" role="form" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+      <form id="create-form" class="form-horizontal" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 actions/articles/create_article.php" method="post" enctype="multipart/form-data" onsubmit="return checkArticle();">
           <div id="create-alert"></div>
         <div class="form-group">
@@ -117,7 +117,7 @@ actions/articles/create_article.php" method="post" enctype="multipart/form-data"
             <span class="glyphicon glyphicon-ok"></span> Guardar
           </button>
 
-          <span class="pull-right">&nbsp</span>
+          <span class="pull-right">&nbsp;</span>
 
           <button type="button" onclick="discard()" class="pull-right btn btn-primary">
             <span class="glyphicon glyphicon-remove"></span> Cancelar
@@ -128,7 +128,6 @@ actions/articles/create_article.php" method="post" enctype="multipart/form-data"
       </form>
     </div>
   </div>
-</div>
 </div>
 
 <!-- rich text -->

@@ -100,11 +100,14 @@
   
   function getArticlesByAuthor($id) {
     global $conn;
-    $stmt = $conn->prepare("SELECT contributor.*, article.*, to_char(publication_date, 'DD-MM-YYYY, HH24:MI') AS publication_date
-                            FROM article INNER JOIN
-                            contributor ON artcile.author = contributor.id 
-                            WHERE contributor.id = ? 
-                            ORDER BY publication_date DESC");
+    $stmt = $conn->prepare("SELECT article.*, to_char(publication_date, 'DD-MM-YYYY, HH24:MI') AS publication_date, image_article
+                            FROM article INNER JOIN 
+                            (SELECT article_id, image.path AS image_article FROM
+                            (SELECT article_id, MIN(image_id) AS first FROM article_image GROUP BY article_id) foo INNER JOIN
+                            image ON (first = image.id)) single_image 
+                            ON single_image.article_id = article.id
+                            WHERE article.author = ?
+                            ORDER BY article.publication_date DESC");
     $stmt->execute(array($id));
     return $stmt->fetchAll();
   }

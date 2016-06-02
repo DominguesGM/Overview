@@ -497,3 +497,7 @@ a#menu-toggle{
     cursor: pointer;
     color: #428BCA;
 }
+
+.option-buttons {
+    font-size: 30px;
+}

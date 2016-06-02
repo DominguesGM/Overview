@@ -19,7 +19,7 @@
                 <span onclick="eliminate()" data-placement="bottom" data-toggle="tooltip" title="Eliminar" class="glyphicon glyphicon-trash"></span>
               </div>
               <div class="selectable small btn-simple pull-right text-muted" id="edit">
-                <span onclick="edit()" data-placement="bottom" data-toggle="tooltip" title="Editar" class="glyphicon glyphicon-pencil">&nbsp</span>
+                <span onclick="edit()" data-placement="bottom" data-toggle="tooltip" title="Editar" class="glyphicon glyphicon-pencil">&nbsp;</span>
               </div>
               {/if}
             </h2>
@@ -35,7 +35,7 @@
           <div class="auhtor">
             <input id="access-level" type="hidden" value="{$contributorAccess}">
             <em><a href="{$BASE_URL}users/profile.php?id={$article['author']}">{$article['first_name']} {$article['last_name']}</a></em>
-            <span class="article-date">&nbsp{$article['publication_date']}</span>
+            <span class="article-date">&nbsp;{$article['publication_date']}</span>
           </div>
           <br>
           <div class="article-summary">{$article['summary']}</div>

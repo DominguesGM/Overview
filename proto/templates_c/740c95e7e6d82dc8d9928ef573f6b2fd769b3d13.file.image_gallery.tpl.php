@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-06 00:55:17
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 04:04:52
          compiled from "C:\wamp\www\Overview\proto\templates\common\image_gallery.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:20916572bbee44554d7-64807944%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '740c95e7e6d82dc8d9928ef573f6b2fd769b3d13' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\common\\image_gallery.tpl',
-      1 => 1462488901,
+      1 => 1464832968,
       2 => 'file',
     ),
   ),
@@ -21,6 +21,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'articleImages' => 0,
     'i' => 0,
+    'article' => 0,
     'BASE_URL' => 0,
     'image' => 0,
   ),
@@ -37,7 +38,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['image']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['image']->_loop = true;
 ?>
     <div class="item <?php if ($_smarty_tpl->tpl_vars['i']->value++==0) {?> active <?php }?>">
-      <img title="" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+      <img alt="<?php echo $_smarty_tpl->tpl_vars['article']->value['title'];?>
+" title="<?php echo $_smarty_tpl->tpl_vars['article']->value['title'];?>
+" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 <?php echo $_smarty_tpl->tpl_vars['image']->value['path'];?>
 ">
     </div>

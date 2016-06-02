@@ -75,14 +75,22 @@ function prepareNotificationsHtml(notifications){
 }
 
 function getNotificaitonSummary(notificationId, sentDate, message, sentBy, senderPicture, senderFirstName, senderLastName){
-  var html = '<li id="notification-' + notificationId + '" class="notification button-link" onclick="displayNotification("' + notificationId +')">';
-  html += '<div class="media">';
-  html += '<p class="pull-right text-muted"><small>' + senttDate + '</small></p>';
-  html += '<a class="media-left" href="' + BASE_URL +'/pages/users/profile.php?id=' + sentBy + '">';
-  html += '<img class="img-circle" height="40" width="40" src="' + BASE_URL + senderPicture + '" alt="' + senderFirstName + ' ' + senderLastName + '"></a>';
-  html += '<span><h5 class="user_name"><a href="' + BASE_URL +'/pages/users/profile.php?id=' + sentBy + '">' + senderFirstName + ' ' + senderLastName + '</a></h5></span>';
-  html += '<p>' + message + '</p>';
-  html += '<div class="delete btn-simple pull-right text-muted"><small><span onclick="deleteNotification(' + notificationId + ')" data-placement="left" data-toggle="tooltip" title="Apagar" class="glyphicon glyphicon-remove"></span></small></div></div>';
+  var html = '<li id="notification-' + notificationId + '" class="' + (!isRead ? 'unread-notification' : '') + ' notification button-link" onclick="setNotificationRead(' + notificationId + ')">';
+  html += '<div class="media"><p class="pull-right text-muted"><small>' + sentDate + '</small></p>';
+  html += '<a class="media-left" href="' + BASE_URL + 'pages/users/profile.php?id=' + sentBy + '">';
+  html += '<img class="img-circle" height="40" width="40" src="' + BASE_URL + senderPicture + '" alt="' + senderFirstName + ' ' + senderLastName + '">';
+  html += '</a><span class="sender-name"><a href="'+ BASE_URL + 'pages/users/profile.php?id=' + sentBy + '">' + senderFirstName + ' ' + senderLastName + '</a></span>';
+  html += '<p>' + message + '</p><div class="btn-simple pull-right text-muted">';
+
+  if(isRead){
+    html += '<small><span onclick="toggleNotificationRead(' + notificationId + ')" data-placement="left" data-toggle="tooltip" title="Marcar como lida" class="notification-read delete glyphicon glyphicon-envelope"></span></small>';
+  }else{
+    html += '<small><span onclick="toggleNotificationRead(' + notificationId + ')" data-placement="left" data-toggle="tooltip" title="Marcar como não lida" class="notification-read delete glyphicon glyphicon-envelope"></span></small>';
+  }
+  html += '<span>&nbsp&nbsp</span>';
+  html += '<small><span onclick="deleteNotification(' + notificationId + ')" data-placement="left" data-toggle="tooltip" title="Apagar" class="delete glyphicon glyphicon-remove"></span></small>';
+  html += '</div></div></li>';
+  
   return html;
 }
 

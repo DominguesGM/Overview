@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 03:12:41
-         compiled from "C:\wamp\www\Overview\proto\templates\moderation\reports.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:3093574bf8247de052-08716750%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 02:13:29
+         compiled from "C:\wamp\www\Overview\proto\templates\users\articles.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:197574f7a29075e33-59822517%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '843489d6597ff256a1747aba361342f9ea0a021d' => 
+    '1cf8dc071b2d55a8e56af5c7f47d76f804e83ad4' => 
     array (
-      0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\moderation\\reports.tpl',
+      0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\users\\articles.tpl',
       1 => 1464808882,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3093574bf8247de052-08716750',
+  'nocache_hash' => '197574f7a29075e33-59822517',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_574bf8248cf760_41452005',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -27,8 +25,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'comment' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_574f7a299ca9b5_62292277',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_574bf8248cf760_41452005')) {function content_574bf8248cf760_41452005($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_574f7a299ca9b5_62292277')) {function content_574f7a299ca9b5_62292277($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 
 <?php echo $_smarty_tpl->getSubTemplate ('common/status_messages.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>

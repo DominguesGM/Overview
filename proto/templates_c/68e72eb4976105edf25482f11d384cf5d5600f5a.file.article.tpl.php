@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 19:50:01
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 03:56:10
          compiled from "C:\wamp\www\Overview\proto\templates\articles\article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:615574ca54e08e325-65238273%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '68e72eb4976105edf25482f11d384cf5d5600f5a' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\article.tpl',
-      1 => 1464803182,
+      1 => 1464805806,
       2 => 'file',
     ),
   ),
@@ -32,6 +32,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       <div class="blog-stripe">
         <div>
           <input type="hidden" id="article-id" value="<?php echo $_smarty_tpl->tpl_vars['article']->value['id'];?>
+">
+          <input type="hidden" id="author-id" value="<?php echo $_smarty_tpl->tpl_vars['article']->value['author'];?>
 ">
           <input type="hidden" id="user-id" value="<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
 ">

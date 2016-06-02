@@ -15,11 +15,11 @@
   </div>
 
   <div class="text-center col-md-2 col-sm-12 col-xs-12">
-    <img alt="Imagem de perfil" src="{$BASE_URL}{$PICTURE}" class="img-circle" height="80px" width="80px"/>
+    <img alt="Imagem de perfil" src="{$BASE_URL}{$PICTURE}" class="img-circle" height="80" width="80"/>
     <h4>{$FIRST_NAME} {$LAST_NAME}</h4>
   </div>
 
-  <div id="all-notifications" sytle="overflow-y: auto;" class="h-scroll col-md-9">
+  <div id="all-notifications" class="col-md-9">
     <br>
     <ul id="list-notifications" class="nav nav-pills nav-stacked">
       {if $notifications|count == 0} <li class="notification button-link" onclick="getNotifications()">Não tem notificações.</li>{/if}
@@ -30,7 +30,7 @@
           <a class="media-left" href="{$BASE_URL}pages/users/profile.php?id={$notification['sender']}">
             <img class="img-circle" height="40" width="40" src="{$BASE_URL}{$notification['sender_picture']}" alt="{$notification['sender_first_name']} {$notification['sender_last_name']}">
           </a>
-          <span><h5 class="user_name"><a href="{$BASE_URL}pages/users/profile.php?id={$notification['sender']}">{$notification['sender_first_name']} {$notification['sender_last_name']}</a></h5></span>
+          <span class="sender-name"><a href="{$BASE_URL}pages/users/profile.php?id={$notification['sender']}">{$notification['sender_first_name']} {$notification['sender_last_name']}</a></span>
           <p>{$notification['message']}</p>
           <div class="btn-simple pull-right text-muted">
             {if !$notification['is_read']}
@@ -38,7 +38,7 @@
             {else}
             <small><span onclick="toggleNotificationRead({$notification['id']})" data-placement="left" data-toggle="tooltip" title="Marcar como não lida" class="notification-read delete glyphicon glyphicon-envelope"></span></small>
             {/if}
-            <span>&nbsp&nbsp</span>
+            <span>&nbsp;&nbsp;</span>
             <small><span onclick="deleteNotification({$notification['id']})" data-placement="left" data-toggle="tooltip" title="Apagar" class="delete glyphicon glyphicon-remove"></span></small>
           </div>
         </div>

@@ -1,10 +1,10 @@
-<ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+<ul class="dropdown-menu multi-level" role="menu">
   <li><a class="text-center" href="{$BASE_URL}pages/users/profile.php?id={$ID}">
     <img class="img-circle" height="50" width="50" alt="Imagem de perfil" src="{$BASE_URL}{$PICTURE}">
   </a></li>
 
   <li><a href="#"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
-  <li><a href="{$BASE_URL}pages/users/articles.php?id={$ID}"><span class="glyphicon glyphicon-duplicate"></span> Artigos</a></li>
+  <li><a href="{$BASE_URL}pages/users/articles.php"><span class="glyphicon glyphicon-duplicate"></span> Artigos</a></li>
   <li><a href="{$BASE_URL}pages/users/notifications.php"><span class="glyphicon glyphicon-envelope"></span> Notificações</a></li>
 
   {if $TYPE != 'Contributor' && ($STATUS == 'Active' || $STATUS == 'Warned')}

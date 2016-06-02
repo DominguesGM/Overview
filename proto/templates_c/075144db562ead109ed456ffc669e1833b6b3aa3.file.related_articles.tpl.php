@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-20 01:34:17
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 04:04:52
          compiled from "C:\wamp\www\Overview\proto\templates\articles\related_articles.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:23846572baa34563c76-57843384%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '075144db562ead109ed456ffc669e1833b6b3aa3' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\related_articles.tpl',
-      1 => 1463700854,
+      1 => 1464833076,
       2 => 'file',
     ),
   ),
@@ -48,7 +48,8 @@ $_smarty_tpl->tpl_vars['relatedArticle']->_loop = true;
       <a class="pull-left" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/articles/article.php?id=<?php echo $_smarty_tpl->tpl_vars['relatedArticle']->value['article_id'];?>
 ">
-        <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+        <img alt="<?php echo $_smarty_tpl->tpl_vars['relatedArticle']->value['title'];?>
+" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 <?php echo $_smarty_tpl->tpl_vars['relatedArticle']->value['path'];?>
 " width="100" height="100">
       </a>
@@ -63,7 +64,7 @@ pages/users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['relatedArticle']->
 "><?php echo $_smarty_tpl->tpl_vars['relatedArticle']->value['first_name'];?>
  <?php echo $_smarty_tpl->tpl_vars['relatedArticle']->value['last_name'];?>
 </a></em>
-          <span class="article-date">&nbsp<?php echo $_smarty_tpl->tpl_vars['relatedArticle']->value['date'];?>
+          <span class="article-date">&nbsp;<?php echo $_smarty_tpl->tpl_vars['relatedArticle']->value['date'];?>
 </span>
         </div>
       </div>

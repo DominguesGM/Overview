@@ -5,7 +5,7 @@
     {$i=0}
     {foreach $articleImages as $image}
     <div class="item {if $i++==0} active {/if}">
-      <img title="" src="{$BASE_URL}{$image['path']}">
+      <img alt="{$article['title']}" title="{$article['title']}" src="{$BASE_URL}{$image['path']}">
     </div>
     {/foreach}
   </div>

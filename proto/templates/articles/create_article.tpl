@@ -8,15 +8,15 @@
       <span class="glyphicon glyphicon-pencil"></span> Criar artigo
     </h1>
 
-    <h2>
+    <div class="option-buttons">
       <div class="button-link btn-simple pull-right text-muted" id="discard">
         <span onclick="discard()" data-placement="bottom" data-toggle="tooltip" title="Cancelar" class="glyphicon glyphicon-remove"></span>
       </div>
 
       <div class="button-link btn-simple pull-right text-muted" id="save">
-        <span onclick="save()" data-placement="bottom" data-toggle="tooltip" title="Guardar" class="glyphicon glyphicon-ok">&nbsp</span>
+        <span onclick="save()" data-placement="bottom" data-toggle="tooltip" title="Guardar" class="glyphicon glyphicon-ok">&nbsp;</span>
       </div>
-    </h2>
+    </div>
   </div>
 </div>
 
@@ -24,12 +24,12 @@
 
   <div class="row">
     <div class="text-center col-md-2 col-sm-12 col-xs-12">
-      <img src="{$BASE_URL}{$PICTURE}" class="img-circle" width="80px"/>
+      <img alt="Autor do artigo" src="{$BASE_URL}{$PICTURE}" class="img-circle" height="80" width="80"/>
       <h4>{$FIRST_NAME} {$LAST_NAME}</h4>
     </div>
 
     <div class="col-md-8 col-sm-12 col-xs-12">
-      <form id="create-form" class="form-horizontal" role="form" action="{$BASE_URL}actions/articles/create_article.php" method="post" enctype="multipart/form-data" onsubmit="return checkArticle();">
+      <form id="create-form" class="form-horizontal" action="{$BASE_URL}actions/articles/create_article.php" method="post" enctype="multipart/form-data" onsubmit="return checkArticle();">
           <div id="create-alert"></div>
         <div class="form-group">
           <label for="title">
@@ -77,7 +77,7 @@
             <span class="glyphicon glyphicon-ok"></span> Guardar
           </button>
 
-          <span class="pull-right">&nbsp</span>
+          <span class="pull-right">&nbsp;</span>
 
           <button type="button" onclick="discard()" class="pull-right btn btn-primary">
             <span class="glyphicon glyphicon-remove"></span> Cancelar
@@ -88,7 +88,6 @@
       </form>
     </div>
   </div>
-</div>
 </div>
 
 <!-- rich text -->

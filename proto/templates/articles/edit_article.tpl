@@ -8,19 +8,19 @@
       <span class="glyphicon glyphicon-pencil"></span> Editar artigo
     </h1>
 
-    <h2>
+    <div class="option-buttons">
       <div class="btn-simple pull-right text-muted" id="delete">
          <span onclick="eliminate()" data-placement="bottom" data-toggle="tooltip" title="Eliminar" class="selectable glyphicon glyphicon-trash"></span>
        </div>
 
       <div class="btn-simple pull-right text-muted" id="discard">
-        <span onclick="discard()" data-placement="bottom" data-toggle="tooltip" title="Cancelar" class="selectable glyphicon glyphicon-remove">&nbsp</span>
+        <span onclick="discard()" data-placement="bottom" data-toggle="tooltip" title="Cancelar" class="selectable glyphicon glyphicon-remove">&nbsp;</span>
       </div>
 
       <div class="btn-simple pull-right text-muted" id="save">
-        <span onclick="save()" data-placement="bottom" data-toggle="tooltip" title="Guardar" class="selectable glyphicon glyphicon-ok">&nbsp</span>
+        <span onclick="save()" data-placement="bottom" data-toggle="tooltip" title="Guardar" class="selectable glyphicon glyphicon-ok">&nbsp;</span>
       </div>
-    </h2>
+    </div>
   </div>
 </div>
 
@@ -28,12 +28,12 @@
 
   <div class="row">
     <div class="text-center col-md-2 col-sm-12 col-xs-12">
-      <img alt="Autor do artigo" src="{$BASE_URL}{$article['author_picture']}" class="img-circle" height="80px" width="80px"/>
+      <img alt="Autor do artigo" src="{$BASE_URL}{$article['author_picture']}" class="img-circle" height="80" width="80"/>
       <h4>{$article['first_name']} {$article['last_name']}</h4>
     </div>
 
     <div class="col-md-8 col-sm-12 col-xs-12">
-      <form id="edit-form" class="form-horizontal" role="form" action="{$BASE_URL}actions/articles/edit_article.php" method="post" enctype="multipart/form-data" onsubmit="return save();">
+      <form id="edit-form" class="form-horizontal" action="{$BASE_URL}actions/articles/edit_article.php" method="post" enctype="multipart/form-data" onsubmit="return save();">
 
         <input id="article-id" type="hidden" class="form-control" name="id" value="{$article['id']}"/>
 
@@ -89,13 +89,13 @@
             <span class="glyphicon glyphicon-ok"></span> Guardar
           </button>
 
-          <span class="pull-right">&nbsp</span>
+          <span class="pull-right">&nbsp;</span>
 
           <button type="button" onclick="discard()" class="pull-right btn btn-primary">
             <span class="glyphicon glyphicon-remove"></span> Cancelar
           </button>
 
-          <span class="pull-right">&nbsp</span>
+          <span class="pull-right">&nbsp;</span>
 
           <button type="submit" onclick="eliminate()" class="pull-right btn btn-primary">
            <span class="glyphicon glyphicon-trash"></span> Eliminar
@@ -106,7 +106,6 @@
       </form>
     </div>
   </div>
-</div>
 </div>
 
 <!-- rich text -->

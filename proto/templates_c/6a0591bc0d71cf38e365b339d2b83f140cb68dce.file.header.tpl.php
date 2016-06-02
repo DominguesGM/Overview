@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 19:47:26
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 03:18:43
          compiled from "C:\wamp\www\Overview\proto\templates\common\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:155885729d3e0c18dd1-75233695%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6a0591bc0d71cf38e365b339d2b83f140cb68dce' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\common\\header.tpl',
-      1 => 1464803182,
+      1 => 1464830168,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5729d3e1305cf2_36928665')) {function content_5729d3e1305cf2_36928665($_smarty_tpl) {?><!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -101,7 +101,7 @@ lib/fileinput/js/fileinput_locale_pt.js"></script>
 
     <div id="page-content-wrapper">
       <!-- Navigation -->
-      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
           <a id="menu-toggle"><i class="fa fa-bars"></i></a>
           <!-- Brand and toggle get grouped for better mobile display -->

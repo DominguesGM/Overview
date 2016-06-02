@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,7 +60,7 @@
 
     <div id="page-content-wrapper">
       <!-- Navigation -->
-      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
           <a id="menu-toggle"><i class="fa fa-bars"></i></a>
           <!-- Brand and toggle get grouped for better mobile display -->

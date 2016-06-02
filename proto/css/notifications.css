@@ -26,3 +26,7 @@
 #list-notifications {
 	border: solid 1px lightgrey;
 }
+
+.sender-name {
+	font-size: 18px;
+}
