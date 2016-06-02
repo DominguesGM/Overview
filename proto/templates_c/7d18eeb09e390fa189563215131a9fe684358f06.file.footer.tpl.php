@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 22:15:10
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 00:36:33
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\common\footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:289595721e88570d9f5-09750137%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7d18eeb09e390fa189563215131a9fe684358f06' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\common\\footer.tpl',
-      1 => 1464809478,
+      1 => 1464820511,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'BASE_URL' => 0,
+    'ID' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -59,8 +60,10 @@ javascript/bootstrap.min.js"></script>
 "</script>
 
 <!-- Register Script -->
+<?php if (!$_smarty_tpl->tpl_vars['ID']->value) {?>
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/register.js"></script>
+<?php }?>
 
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/main.js"></script>

@@ -271,4 +271,31 @@
     return $stmt->fetchAll();
   }
 
+
+  function getFolloweeArticles($userId, $offset, $limit){
+    global $conn;
+
+    if($offset == NULL || !isset($offset) || $offset == ""){
+      $offset = 0;
+    }
+
+    if(!isset($limit) || $limit == ""){
+      $limit = NULL;
+    }
+
+    $stmt = $conn->prepare("SELECT *
+                            FROM (SELECT *, CASE WHEN score >= 0 AND score < 1 THEN 1 ELSE score END AS log_content,
+                                          CASE WHEN score >= 0 THEN 1 ELSE -1 END AS signal FROM article INNER JOIN follows
+                                        ON follows.followee = article.author
+                                        WHERE follows.follower = ?) AS subquery
+                            ORDER BY (log(abs(subquery.log_content)) + EXTRACT(EPOCH FROM age(subquery.publication_date, timestamp '2005-12-08 7:46:43'))*subquery.signal/45000) DESC
+                            LIMIT ? OFFSET ?");
+
+    $params = array($userId, $limit, $offset);
+
+    $stmt->execute($params);
+
+    return $stmt->fetchAll();
+  }
+
 ?>
