@@ -15,7 +15,7 @@
                         {foreach from=$category item=article}
                             <!-- Article Display -->
                             <div class="short_news_item">
-                                <a href="{$BASE_URL}pages/articles/article.php?id={$article.id|@print_r}"><h4>{$article.title}</h4></a>
+                                <a href="{$BASE_URL}pages/articles/article.php?id={$article.article_id}"><h4>{$article.title}</h4></a>
                                 <span class="image-box" data-score="{$article.score}"><img class="img-thumbnail" src="{$BASE_URL}{$article.path}" alt="{$article.title}"></span>
                                 <p class="summary">{$article.summary}</p>
                             </div>
