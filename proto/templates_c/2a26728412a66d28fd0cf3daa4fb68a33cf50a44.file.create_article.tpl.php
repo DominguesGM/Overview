@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 00:04:18
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 00:46:31
          compiled from "C:\wamp\www\Overview\proto\templates\articles\create_article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11514572b601d378084-11401176%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2a26728412a66d28fd0cf3daa4fb68a33cf50a44' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\create_article.tpl',
-      1 => 1464818654,
+      1 => 1464821168,
       2 => 'file',
     ),
   ),
@@ -54,7 +54,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <div class="container-fluid">
 
   <div class="row">
-    <div class="col-md-2 col-sm-12 col-xs-12">
+    <div class="text-center col-md-2 col-sm-12 col-xs-12">
       <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 <?php echo $_smarty_tpl->tpl_vars['PICTURE']->value;?>
 " class="img-circle" width="80px"/>

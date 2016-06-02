@@ -1,30 +1,6 @@
-  var reportSelected = false;
-  var senderId;
-  var userId;
-
   var limit = 5;
   var offset;
   var currentResultCount;
-
-  /**
-   * Alerts management.
-   */
-
-   function warn(message){
-    $("#alert").html("<div \" class=\"alert alert-danger\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">\&times;</a>"
-      + message + "</div>");
-
-    window.scrollTo(0, 0);
-    return false;
-  }
-
-  function ok(message){
-    $("#alert").html("<div \" class=\"alert alert-success\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">\&times;</a>"
-      + message + "</div>");
-
-    window.scrollTo(0, 0);
-    return false;
-  }
 
 /**
  * Scroll management.
@@ -110,55 +86,32 @@ function getNotificaitonSummary(notificationId, sentDate, message, sentBy, sende
   return html;
 }
 
-function displayNotification(notificationIdP){
-    // update info on current notification
-    notificationId = notificationIdP;
-  }
-
-  function toggleReaderTools(){
-    var toolsHtml = "";
-    if(notificationSelected){
-      toolsHtml = getArticleControl();
-    }
- 
-    $( "#reader-tools" ).html(toolsHtml);
-    $('[data-toggle=tooltip]').tooltip();
-  }
-
-  function resetSelectedItem(){
-    notificationSelected = false;
-    $("#list-notifications li").removeClass('active-notification');
-    
-    //$("#content-" + newType).html(selectNewReport);
-
-    toggleReaderTools();
-    baseAddress = null;
-    notidicationId = null;
-  }
-
-  function getMessageControl(){
-    var html = '<div class="btn-group pull-right" role="group" aria-label="Ferramentas de moderação">';
-    html += '<button onclick="finishReview()" data-placement="bottom" data-toggle="tooltip" title="Marcar como lida" type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-ok"></span> Lida</button>';
-    html += '<button onclick="finishReview(' + commentId + ')" data-placement="bottom" data-toggle="tooltip" title="Apagar" type="button" class="btn btn-secondary"><span class="glyphicon glyphicon-remove"></span> Apagar</button>';
-
-    return html;
-  }
-
 function setNotificationRead(notificationId){
-   if(!notificationSelected){
-    return;
+  if($('#notification-' + notificationId).hasClass('unread-notification')){
+    toggleNotificationRead(notificationId);
   }
+}
+
+function toggleNotificationRead(notificationId){
+
+  event.cancelBubble = true;
+  if(event.stopPropagation) event.stopPropagation();
+
+  var isRead = $('#notification-' + notificationId).hasClass('unread-notification');
 
   $.ajax({
     type: "post",
     url: "../../api/notifications/set_read.php",
     datatype: "json",
-    data: JSON.stringify({'id': notificationId})
+    data: JSON.stringify({'id': notificationId, 'is_read': isRead.toString()})
   }).done(function(html){
+    console.log(html);
     var json = JSON.parse(html);
 
     if("success" in json){
-      //TOOD change color
+      $('#notification-' + notificationId).toggleClass('unread-notification');
+      $('#notification-' + notificationId).find('.unread-notification').attr('title', "Marcar como " + (isRead ? 'não ' : '') + "lida");
+      updateNotificationCount();
     }
   });
 }
@@ -172,6 +125,10 @@ function updateNotificationCount(){
     var json = JSON.parse(html);
     if("success" in json){
       $("#notification-count").html(json['success']);
+
+      if(json['success']==0){
+        $("#list-notifications").html('<li class="notification button-link" onclick="getNotifications()">Não tem notificações.</li>');
+      }
     }
   });
 }
@@ -191,7 +148,6 @@ function deleteNotification(notificationId){
     var json = JSON.parse(html);
     if("success" in json){
       updateNotificationCount();
-      resetSelectedItem();
       $("#notification-" + notificationId).after("<div \" class=\"alert alert-success\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">\&times;</a>Notificação apagada.</div>");    
       $("#notification-" + notificationId).remove();
     }
@@ -202,6 +158,5 @@ $(document).ready(function(){
   offset = 0;
   currentResultCount = limit;
   
-  resetSelectedItem();
   notificationsScroll();
 });

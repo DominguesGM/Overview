@@ -8,7 +8,7 @@
     exit;
   }
   
-   if(!isset($_GET['offset']) || !isset($_GET['limit'])){
+  if(!isset($_GET['offset']) || !isset($_GET['limit'])){
     echo json_encode(array('error' => 'Erro ao obter notificações.'));
     exit;
   }

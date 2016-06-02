@@ -23,7 +23,7 @@
 <div class="container-fluid">
 
   <div class="row">
-    <div class="col-md-2 col-sm-12 col-xs-12">
+    <div class="text-center col-md-2 col-sm-12 col-xs-12">
       <img src="{$BASE_URL}{$PICTURE}" class="img-circle" width="80px"/>
       <h4>{$FIRST_NAME} {$LAST_NAME}</h4>
     </div>

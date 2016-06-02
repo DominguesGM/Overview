@@ -27,7 +27,7 @@
 <div class="container-fluid">
 
   <div class="row">
-    <div class="col-md-2 col-sm-12 col-xs-12">
+    <div class="text-center col-md-2 col-sm-12 col-xs-12">
       <img alt="Autor do artigo" src="{$BASE_URL}{$article['author_picture']}" class="img-circle" height="80px" width="80px"/>
       <h4>{$article['first_name']} {$article['last_name']}</h4>
     </div>

@@ -42,11 +42,11 @@
     return $stmt->fetch()['id'];
   }
   
-  function setNotificationRead($id) {
+  function setNotificationRead($id, $isRead) {
     global $conn;
     
-    $stmt = $conn->prepare("UPDATE notification SET is_read = true WHERE id = ?");
-    $stmt->execute(array($id));
+    $stmt = $conn->prepare("UPDATE notification SET is_read = ? WHERE id = ?");
+    $stmt->execute(array($isRead, $id));
   }
   
   function deleteNotification($id) {
