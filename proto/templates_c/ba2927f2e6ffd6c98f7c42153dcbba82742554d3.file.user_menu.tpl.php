@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 03:28:55
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 09:50:02
          compiled from "C:\wamp\www\Overview\proto\templates\common\user_menu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:170475729f94e1814f9-54439382%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ba2927f2e6ffd6c98f7c42153dcbba82742554d3' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\common\\user_menu.tpl',
-      1 => 1464830930,
+      1 => 1464838635,
       2 => 'file',
     ),
   ),
@@ -37,8 +37,8 @@ pages/users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
   </a></li>
 
   <li><a href="#"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
-  <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/users/articles.php"><span class="glyphicon glyphicon-duplicate"></span> Artigos</a></li>
+  <!--<li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/users/articles.php"><span class="glyphicon glyphicon-duplicate"></span> Artigos</a></li>-->
   <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/users/notifications.php"><span class="glyphicon glyphicon-envelope"></span> Notificações</a></li>
 
@@ -48,8 +48,8 @@ pages/users/notifications.php"><span class="glyphicon glyphicon-envelope"></span
         <ul class="dropdown-menu">
           <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/moderation/reports.php"><span class="glyphicon glyphicon-flag"></span> Itens reportados</a></li>
-          <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/moderation/contributors.php"><span class="fa fa-users"></span> Contribuidores</a></li>
+        <!--  <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/moderation/contributors.php"><span class="fa fa-users"></span> Contribuidores</a></li>-->
         </ul>
     </li>
   <?php }?>

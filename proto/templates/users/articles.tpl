@@ -3,36 +3,29 @@
 {include file='common/status_messages.tpl'}
 
 <!-- image_gallery CSS-->
-<link rel="stylesheet" href="{$BASE_URL}css/reports.css">
+<link rel="stylesheet" href="{$BASE_URL}css/articles.css">
 
 <div class="container">
   <div class="col-md-12">
     <hgroup class="mb20">
       <br>
-      <h1><span class="glyphicon glyphicon-flag"></span> Itens reportados</h1>
-      <h2 class="lead"><strong id="report-count">{$nReports}</strong> {if $nReports == 1} item foi reportado e requer{else} itens foram reportados e requerem{/if} revisão</h2>
+      <h1><span class="glyphicon glyphicon-duplicate"></span> Artigos</h1>
+      <h2 class="lead"><strong id="article-count">{$nArticles}</strong> {if $nArticles == 1} artigo {/if}</h2>
     </hgroup>
   </div>
 
-    <div class="all-reports tab-content col-md-3">
-      <ul class="nav nav-pills btn-group pull-right">
-        <li class="active"><a onclick="resetSelectedItem('article')" data-toggle="pill" href="#article-reports"><span class="glyphicon glyphicon-duplicate"></span> Artigos</a></li>
-        <li><a onclick="resetSelectedItem('comment')" data-toggle="pill" href="#comment-reports"><span class="glyphicon glyphicon-comment"></span> Comentários</a></li>
-      </ul>
-    </div>
-
-    <div id="moderator-tools" class="col-md-9"></div>
+    <div id="article-tools" class="col-md-9"></div>
 
     <div class="tab-content col-md-12">
-    <div id="article-reports" class="tab-pane fade in active">
-      <div id="all-article-reports" sytle="overflow-y: auto;" class="h-scroll col-md-3">
+    <div id="articles" class="tab-pane fade in active">
+      <div id="all-articles" class="col-md-3">
         <br>
-        <ul id="list-article-reports" class="nav nav-pills nav-stacked">
-          {if $articleReports|count == 0} <li class="report button-link" onclick="getReports('article', true)">Nenhum artigo requer a atenção.</li>{/if}
-          {foreach $articleReports as $article}
-          <li id="report-{$article['id']}" class="report button-link" onclick="displayReport('article','{$BASE_URL}',{$article['id']}, {$article['article_id']})">
+        <ul id="list-articles" class="nav nav-pills nav-stacked">
+          {if $articles|count == 0} <li class="button-link" onclick="getArticles()">Nenhum artigo.</li>{/if}
+          {foreach $articles as $article}
+          <li id="article-{$article['id']}" class="report button-link" onclick="displayArticle('{$BASE_URL}',{$article['id']})">
             <div class="media">
-              <p class="pull-right text-muted"><small>{$article['report_date']}</small></p>
+              <p class="pull-right text-muted"><small>{$article['publication_date']}</small></p>
               <a class="media-left" href="{$BASE_URL}pages/users/profile.php?id={$article['reported_by']}">
                 <img class="img-circle" height="40" width="40" src="{$BASE_URL}{$article['reporter_picture']}" alt="{$article['reporter_first_name']} {$article['reporter_last_name']}">
               </a>
