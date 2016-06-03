@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-03 03:47:18
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-03 15:33:07
          compiled from "C:\wamp\www\Overview\proto\templates\users\contributors.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:6259575095b6b23322-68123135%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0d6aea6e2c131c0752113a8726c3230750fae027' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\users\\contributors.tpl',
-      1 => 1464918435,
+      1 => 1464943953,
       2 => 'file',
     ),
   ),
@@ -35,7 +35,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <hgroup class="mb20">
       <br>
       <h1><span class="fa fa-users"></span> Contribuidores</h1>
-      <input id="user-type" type="hidden" value="contributors">
+      <input id="user-type" type="hidden" value="Contributor">
     </hgroup>
   </div>
 

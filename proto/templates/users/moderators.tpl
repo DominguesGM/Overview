@@ -7,7 +7,10 @@
     <hgroup class="mb20">
       <br>
       <h1><span class="fa fa-users"></span> Moderadores</h1>
-      <input id="user-type" type="hidden" value="moderators">
+      <input id="user-type" type="hidden" value="Moderator">
+      <input id="user-id" type="hidden" value="{$ID}">
+      <input id="moderator-access" type="hidden" value="{$moderatorAccess}">
+      <input id="administrator-access" type="hidden" value="{$administratorAccess}">
     </hgroup>
   </div>
 
@@ -22,5 +25,4 @@
 </div>
 
 <script src="{$BASE_URL}javascript/user_management.js"></script>
-<script type="text/javascript" src="{$BASE_URL}lib/slimScroll/jquery.slimscroll.min.js"></script>
 {include file='common/footer.tpl'}

@@ -9,7 +9,7 @@
     exit;
   }
      
-  $smarty->assign('moderators', getUsersByType('Moderator', 15, 0));
+  $smarty->assign('moderators', getUsersByType('Moderator', 10, 0));
   $smarty->assign('administratorAccess', administrator_access());
       
   $smarty->display('users/moderators.tpl'); 

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-03 03:55:00
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-03 10:35:20
          compiled from "C:\wamp\www\Overview\proto\templates\users\users.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9008575095b70e2b37-89450717%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a07f7334cbba97d84b8b507d4082163ce43989c3' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\users\\users.tpl',
-      1 => 1464918897,
+      1 => 1464942916,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'users' => 0,
-    'BASE_URL' => 0,
     'user' => 0,
+    'BASE_URL' => 0,
     'moderatorAccess' => 0,
     'administratorAccess' => 0,
     'ID' => 0,
@@ -33,7 +33,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars['user']->key => $_smarty_tpl->tpl_vars['user']->value) {
 $_smarty_tpl->tpl_vars['user']->_loop = true;
 ?>
-<div id="user-<?php echo $_smarty_tpl->tpl_vars['users']->value['id'];?>
+<div id="user-<?php echo $_smarty_tpl->tpl_vars['user']->value['id'];?>
 " href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['user']->value['id'];?>
 " class="selectable user-card button-link col-md-3">

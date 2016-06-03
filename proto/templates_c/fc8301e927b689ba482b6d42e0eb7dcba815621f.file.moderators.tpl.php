@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-03 03:54:59
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-03 16:00:38
          compiled from "C:\wamp\www\Overview\proto\templates\users\moderators.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:281775750e2689101f3-58708109%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fc8301e927b689ba482b6d42e0eb7dcba815621f' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\users\\moderators.tpl',
-      1 => 1464918806,
+      1 => 1464962423,
       2 => 'file',
     ),
   ),
@@ -19,6 +19,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_5750e268b07898_04482576',
   'variables' => 
   array (
+    'ID' => 0,
+    'moderatorAccess' => 0,
+    'administratorAccess' => 0,
     'moderators' => 0,
     'BASE_URL' => 0,
   ),
@@ -35,7 +38,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <hgroup class="mb20">
       <br>
       <h1><span class="fa fa-users"></span> Moderadores</h1>
-      <input id="user-type" type="hidden" value="moderators">
+      <input id="user-type" type="hidden" value="Moderator">
+      <input id="user-id" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
+">
+      <input id="moderator-access" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['moderatorAccess']->value;?>
+">
+      <input id="administrator-access" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['administratorAccess']->value;?>
+">
     </hgroup>
   </div>
 

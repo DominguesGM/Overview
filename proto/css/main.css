@@ -519,8 +519,12 @@ a#menu-toggle{
     color: #428BCA;
 }
 
-.blocked: {
-    text-decoration-color: #ff3333;
+.blocked {
+    color: #ff3333;
+}
+
+.blocked:hover {
+    color: #ff3333;
 }
 
 .delete:hover {

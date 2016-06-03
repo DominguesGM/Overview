@@ -1,5 +1,5 @@
 {foreach $users as $user}
-<div id="user-{$users['id']}" href="{$BASE_URL}pages/users/profile.php?id={$user['id']}" class="selectable user-card button-link col-md-3">
+<div id="user-{$user['id']}" href="{$BASE_URL}pages/users/profile.php?id={$user['id']}" class="selectable user-card button-link col-md-3">
   <div class="text-center button-link col-xs-8 col-md-8">
   <a href="{$BASE_URL}pages/users/profile.php?id={$user['id']}">
     <img class="img-circle" height="100" width="100" alt="Imagem de perfil" src="{$BASE_URL}{$user['path']}">
