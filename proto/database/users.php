@@ -113,7 +113,7 @@
     return true;
   }
   
-  function updateUserAccess($id, $type) {
+  function updateUserType($id, $type) {
     global $conn;
     
     try{
@@ -182,8 +182,21 @@
       return false;
     }
   }
+  
+  function getUsersByType($type, $limit, $offset){
+    global $conn;
+    $stmt = $conn->prepare("SELECT contributor.id, contributor.first_name, contributor.last_name,
+                                      contributor.status, contributor.type, contributor.about, image.path
+                              FROM contributor INNER JOIN image ON (contributor.picture = image.id)
+                              WHERE contributor.type = ? AND contributor.status NOT IN ('Unverified', 'Inactive') ORDER BY contributor.first_name
+                              LIMIT ? OFFSET ?");
 
-  function searchUser($keyword, $offset, $limit){
+      $stmt->execute(array($type, $limit, $offset));
+
+      return $stmt->fetchAll();
+  }
+
+  function searchUser($keyword, $limit, $offset){
     global $conn;
 
     $keyword = '%' . $keyword . '%';
@@ -201,7 +214,7 @@
                                       contributor.type, contributor.about, image.path
                               FROM contributor INNER JOIN image ON (contributor.picture = image.id)
                               WHERE lower(contributor.first_name || ' ' || contributor.last_name) LIKE ?
-                              AND contributor.status = 'Active'
+                              AND contributor.status NOT IN ('Unverified', 'Inactive')
                               LIMIT ? OFFSET ?");
 
       $stmt->execute(array($keyword, $limit, $offset));

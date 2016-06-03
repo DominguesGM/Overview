@@ -60,7 +60,6 @@
         </div>
         <div class="col-md-9 col-sm-9 col-xs-9">
           <b>John Doe posted a new article.</b>
-          <!-- <div class="pull-right text-muted" id="delete"><span class="glyphicon glyphicon-trash"></span></div> -->
         </div>
       </div>
     </div>

@@ -21,7 +21,7 @@
                             </div>
                         {/foreach}
                     {else}
-                        <p>Ainda não existem notícias nesta categoría</p>
+                        <p>Ainda não existem notícias nesta categoria.</p>
                     {/if}
                 </div>
             </div>

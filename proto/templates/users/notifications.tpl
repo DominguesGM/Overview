@@ -2,7 +2,6 @@
 
 {include file='common/status_messages.tpl'}
 
-<!-- image_gallery CSS-->
 <link rel="stylesheet" href="{$BASE_URL}css/notifications.css">
 
 <div class="container">

@@ -6,7 +6,6 @@
   </div>
 
   <ul class="all-blogs">
-
     {foreach $relatedArticles as $relatedArticle}
     {if $relatedArticle['article_id'] != $article['id']}
     <li class="media">

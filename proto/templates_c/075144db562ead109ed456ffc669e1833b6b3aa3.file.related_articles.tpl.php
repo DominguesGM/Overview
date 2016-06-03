@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 04:04:52
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 12:55:49
          compiled from "C:\wamp\www\Overview\proto\templates\articles\related_articles.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:23846572baa34563c76-57843384%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '075144db562ead109ed456ffc669e1833b6b3aa3' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\related_articles.tpl',
-      1 => 1464833076,
+      1 => 1464864754,
       2 => 'file',
     ),
   ),
@@ -37,7 +37,6 @@ pages/articles/category.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->val
   </div>
 
   <ul class="all-blogs">
-
     <?php  $_smarty_tpl->tpl_vars['relatedArticle'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['relatedArticle']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['relatedArticles']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['relatedArticle']->key => $_smarty_tpl->tpl_vars['relatedArticle']->value) {

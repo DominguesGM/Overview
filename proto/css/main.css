@@ -338,6 +338,7 @@ a#menu-toggle{
 
 .article-body{
     margin-top:50px;
+    font-size:1.1em;
 }
 
 .media-body{
@@ -345,7 +346,7 @@ a#menu-toggle{
 }
 
 .article-summary{
-    font-size:1.2em;
+    font-size:1.3em;
 }
 
 .article-title{
@@ -494,7 +495,32 @@ a#menu-toggle{
 
 .delete {
     line-height: 20px;
+}
 
+.user-card {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.user-card:hover{
+    background-color: lightgrey;
+}
+
+.user-info{
+    align-self: center;
+    line-height: 28px;
+    font-size: 18px;
+}
+
+.user-info:hover {
+    font-size: 28px;
+    cursor: pointer;
+    color: #428BCA;
+}
+
+.blocked: {
+    text-decoration-color: #ff3333;
 }
 
 .delete:hover {
