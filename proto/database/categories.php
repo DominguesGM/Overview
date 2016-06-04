@@ -16,5 +16,15 @@
                             WHERE id = ?");
     $stmt->execute(array($name, $id));
   }
+
+  function checkCategoryExists($name){
+    global $conn;
+    $stmt = $conn->prepare("SELECT * FROM category WHERE name LIKE ? ");
+    $stmt->execute(array($name));
+  
+    if(count($stmt->fetchAll()) == 0)
+      return false;
+    return true;
+  }
   
 ?>

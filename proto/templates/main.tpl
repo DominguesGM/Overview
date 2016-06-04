@@ -8,7 +8,7 @@
         {foreach from=$articlesByCategory item=category}
             <!-- Category Display -->
             <div class="col-md-4 portfolio-item short_category_item">
-                <h2 class="main_category"><a href="#">{$categories.$categoryId.name}</a></h2>
+                <h2 class="main_category"><a href="{$BASE_URL}pages/category.php?category={$categories.$categoryId.name}">{$categories.$categoryId.name}</a></h2>
                 {assign var="categoryId" value=$categoryId+1}
                 <div class="short_category_content">
                     {if count($category) > 0}
@@ -21,7 +21,7 @@
                             </div>
                         {/foreach}
                     {else}
-                        <p>Ainda não existem notícias nesta categoria.</p>
+                        <p>Ainda não existem notícias nesta categoría.</p>
                     {/if}
                 </div>
             </div>

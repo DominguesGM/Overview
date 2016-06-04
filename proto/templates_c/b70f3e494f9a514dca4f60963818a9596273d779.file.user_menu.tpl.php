@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 00:43:28
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-04 03:47:06
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\common\user_menu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:313135734525fb7bb93-54775437%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b70f3e494f9a514dca4f60963818a9596273d779' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\common\\user_menu.tpl',
-      1 => 1464820511,
+      1 => 1464860754,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5734525fc4af87_93659788')) {function content_5734525fc4af87_93659788($_smarty_tpl) {?><ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+<?php if ($_valid && !is_callable('content_5734525fc4af87_93659788')) {function content_5734525fc4af87_93659788($_smarty_tpl) {?><ul class="dropdown-menu multi-level" role="menu">
   <li><a class="text-center" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
 ">
@@ -38,8 +38,7 @@ pages/users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
 
   <li><a href="#"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
   <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/users/articles.php?id=<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
-"><span class="glyphicon glyphicon-duplicate"></span> Artigos</a></li>
+pages/users/articles.php"><span class="glyphicon glyphicon-duplicate"></span> Artigos</a></li>
   <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/users/notifications.php"><span class="glyphicon glyphicon-envelope"></span> Notificações</a></li>
 

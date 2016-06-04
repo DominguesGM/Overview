@@ -11,7 +11,7 @@ function loadAllCategories(){
 
   $.getJSON(BASE_URL + "api/articles/get_categories.php", function(result){
           $.each(result, function(key, category){
-              var option = $('<li><a href="#' + category['id'] + '">' + category['name'] + '</a></li>');
+              var option = $('<li><a href="' + BASE_URL + 'pages/category.php?category=' + category['name'] + '">' + category['name'] + '</a></li>');
                            
               $("#all-categories").append(option);
           });

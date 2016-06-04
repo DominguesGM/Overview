@@ -2,6 +2,7 @@
  * Created by Gil on 03/05/2016.
  */
 
+var categoryListing = false;
 var offset = 0;
 var limit = 4;
 var category = "";
@@ -19,15 +20,27 @@ var searchMetaEnd = '</h2></hgroup></div><div class="col-md-12"><section id="ite
 
 
 $(document).ready(function(){
-    loadCategories();
+    var tempCategory = $('div#result-container').data("category");
 
-    $("#type-selector").change(function(){
-        if($(this).val() == "Contribuidor")
-            $('#category-selector').remove();
-        else {
-            generateCategorySelect();
-        }
-    });
+    if(typeof tempCategory != "undefined")
+        categoryListing = true;
+
+    if(categoryListing != true) {
+        loadCategories();
+
+        $("#type-selector").change(function () {
+            if ($(this).val() == "Contribuidor")
+                $('#category-selector').remove();
+            else {
+                generateCategorySelect();
+            }
+        });
+    } else{
+        category = tempCategory;
+        queryType = "Artigo";
+        noResultsHTMLString = "<p>Nenhum artigo criado nesta categoria.</p>";
+        executeQuery();
+    }
 });
 
 
@@ -60,7 +73,7 @@ function prepareArticlesHtml(articlesArray){
         html += '</span></li><li><i class="glyphicon glyphicon-tags"></i> <span>';
         html += '<span class="category-link">' + articlesArray[i]['name'] + '</span>';
         html += '</span></li>';
-        html += '</ul></div><div class="col-xs-12 col-sm-12 col-md-7 excerpet"><h3><a href="' + BASE_URL + 'pages/articles/article.php?id=' + articlesArray[i]['id'] +  '" title="">';
+        html += '</ul></div><div class="col-xs-12 col-sm-12 col-md-7 excerpet"><h3><a href="' + BASE_URL + 'pages/articles/article.php?id=' + articlesArray[i]['article_id'] +  '" title="">';
         html += articlesArray[i]['title'];
         html += '</a></h3><p>';
         html += articlesArray[i]['summary'];
@@ -124,10 +137,19 @@ function executeQuery(){
     offset = 0;
     limit = 4;
 
-    var metaHtml = searchMeta1 + query + searchMeta2 + queryType + searchMeta3;
-    if(category != "" && category != undefined)
-        metaHtml += searchMetaCategory1 + category + searchMetaCategory2;
-    metaHtml += searchMetaEnd;
+    var metaHtml;
+    var articleUrlRequest = "../api/articles/search.php";
+
+    if(!categoryListing) {
+        metaHtml = searchMeta1 + query + searchMeta2 + queryType + searchMeta3;
+        if (category != "" && category != undefined)
+            metaHtml += searchMetaCategory1 + category + searchMetaCategory2;
+        metaHtml += searchMetaEnd;
+    } else {
+        if(category == "Following")
+            articleUrlRequest = "../api/articles/get_following_articles.php";
+        metaHtml = '<div class="col-md-12"><hgroup class="mb20"><br><h1>'+category+'</h1></hgroup></div><div class="col-md-12"><section id="item-container" class="col-md-12 col-sm-6 col-md-18"></section></div>';
+    }
 
     $('#result-container').html(metaHtml);
 
@@ -149,7 +171,7 @@ function executeQuery(){
 
     if(queryType == "Artigo"){
         $.ajax({
-            url:"../api/articles/search.php",
+            url:articleUrlRequest,
             method: "GET",
             data: {'keyword':query, 'offset': offset, 'limit': limit, 'category': category}
         }).done(function(html){
@@ -188,7 +210,7 @@ function executeQuery(){
 
                 if (queryType == "Artigo") {
                     $.ajax({
-                        url: "../api/articles/search.php",
+                        url: articleUrlRequest,
                         method: "GET",
                         data: {'keyword': query, 'offset': offset, 'limit': limit, 'category': category}
                     }).done(function (html) {
@@ -209,11 +231,15 @@ function executeQuery(){
 
 function categoryLink(){
     $('.category-link').unbind('click');
-    $('.category-link').click(function(a){
+    $('.category-link').click(function (a) {
         query = "";
         queryType = "Artigo";
         category = $(this).html();
-        $("#category-selector option[value='"+category+"']").attr("selected", true);
-        executeQuery();
+        if(!categoryListing) {
+            $("#category-selector option[value='" + category + "']").attr("selected", true);
+            executeQuery();
+        } else {
+            window.location.replace(BASE_URL+'pages/category.php?category='+$(this).html());
+        }
     });
 }
