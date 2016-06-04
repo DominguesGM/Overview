@@ -15,7 +15,7 @@
         if(isset($followee_articles)){
             $i = 1;
             array_push($articles_per_line, $followee_articles);
-            array_unshift($categories, array('id' => -1, 'name' => "Follow Feed"));
+            array_unshift($categories, array('id' => -1, 'name' => "Following"));
         }
     } else {
         $i = 0;

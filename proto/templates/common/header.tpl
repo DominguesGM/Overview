@@ -52,7 +52,9 @@
     <div id="sidebar-wrapper">
       <ul id="all-categories" class="sidebar-nav">
         <li>
-          <a href="#">Trending</a>
+          {if isset($ID)}
+            <a href="{$BASE_URL}pages/category.php?category=Following">Following</a>
+          {/if}
         </li>
       </ul>
     </div>
