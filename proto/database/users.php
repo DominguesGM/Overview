@@ -1,6 +1,10 @@
 <?php
   include_once($BASE_DIR .'database/images.php');
   
+  /**
+  * Registration
+  */
+  
   function createUser($firstName, $lastName, $email, $password, $about, $extension) {
     global $conn;
     
@@ -156,11 +160,15 @@
     $stmt->execute(array($id));
     return $stmt->fetch()['type'];
    }
+  
+  /**
+  * Following
+  */
     
   function getFollowers($id) {
     global $conn;
     
-    $stmt = $conn->prepare("SELECT id, email, picture, first_name, last_name, about
+    $stmt = $conn->prepare("SELECT id, email, first_name, last_name, about
                             FROM contributor INNER JOIN follows ON follower = id
                             WHERE followee = ?");
     $stmt->execute(array($id));
@@ -171,8 +179,8 @@
     global $conn;
     
     try {
-    $stmt = $conn->prepare("SELECT id, email, picture, first_name, last_name, about
-                            FROM contributor INNER JOIN follows follows ON followee = id
+    $stmt = $conn->prepare("SELECT id, first_name, last_name, about
+                            FROM contributor INNER JOIN follows ON followee = id
                             WHERE follower = ?");
     $stmt->execute(array($id));
      
@@ -181,6 +189,44 @@
       print $e->getMessage();
       return false;
     }
+  }
+  
+  function getFollowingCount($id) {
+    global $conn;
+    
+    $stmt = $conn->prepare("SELECT COUNT(*) AS n_following FROM follows WHERE follower = ?");
+    $stmt->execute(array($id));
+    return $stmt->fetch()['n_following'];
+  }
+  
+  function getFollowersCount($id) {
+    global $conn;
+    
+    $stmt = $conn->prepare("SELECT COUNT(*) AS n_followers FROM follows WHERE followee = ?");
+    $stmt->execute(array($id));
+    return $stmt->fetch()['n_followers'];
+  }
+  
+  function getFollowStatus($follower, $followee) {
+    global $conn;
+    
+    $stmt = $conn->prepare("SELECT COUNT(*) AS n_followers FROM follows WHERE follower = ? AND followee = ?");
+    $stmt->execute(array($follower, $followee));
+    return $stmt->fetch()['n_followers'] > 0;
+  }
+  
+  function follow($follower, $followee) {
+    global $conn;
+
+    $stmt = $conn->prepare("INSERT INTO follows(follower, followee) VALUES(?, ?)");
+    $stmt->execute(array($follower, $followee));
+  }
+  
+  function unfollow($follower, $followee) {
+    global $conn;
+
+    $stmt = $conn->prepare("DELETE FROM follows WHERE follower = ? AND followee = ?");
+    $stmt->execute(array($follower, $followee));
   }
   
   function getUsersByType($type, $limit, $offset){
@@ -194,6 +240,18 @@
       $stmt->execute(array($type, $limit, $offset));
 
       return $stmt->fetchAll();
+  }
+  
+  function getUserById($id){
+    global $conn;
+    $stmt = $conn->prepare("SELECT contributor.id, contributor.first_name, contributor.last_name,
+                                      contributor.status, contributor.type, contributor.about, image.path
+                              FROM contributor INNER JOIN image ON (contributor.picture = image.id)
+                              WHERE contributor.id = ? AND contributor.status NOT IN ('Unverified', 'Inactive')");
+
+      $stmt->execute(array($id));
+
+      return $stmt->fetchAll()[0];
   }
 
   function searchUser($keyword, $limit, $offset){

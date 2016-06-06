@@ -1,8 +1,15 @@
 {include file='common/header.tpl'}
 
 {include file='common/status_messages.tpl'}
-
 <div class="container">
+  <div class="col-md-12">
+    <hgroup class="mb20">
+      <br>
+      <h1><span class="glyphicon glyphicon-tag"></span> Categorias </h1>
+      <h2 class="lead">Criar ou alterar as categorias de artigos.</h2>
+    </hgroup>
+  </div>
+
     <div class="row">
         <div class="col-xs-5 col-xs-offset-1">
             <div id="categoryContainer">

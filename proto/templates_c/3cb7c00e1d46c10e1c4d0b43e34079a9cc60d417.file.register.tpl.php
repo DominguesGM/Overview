@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-22 13:02:40
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-06 14:13:57
          compiled from "C:\wamp\www\Overview\proto\templates\users\register.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:23265729f9162c5093-27712717%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3cb7c00e1d46c10e1c4d0b43e34079a9cc60d417' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\users\\register.tpl',
-      1 => 1463914954,
+      1 => 1464803182,
       2 => 'file',
     ),
   ),
@@ -49,13 +49,13 @@ actions/users/login.php" method="post">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
             <input id="login-email" type="text" class="form-control" name="email" <?php if ($_smarty_tpl->tpl_vars['email']->value) {?> value="<?php echo $_smarty_tpl->tpl_vars['email']->value;?>
 " <?php } else { ?> value="<?php echo $_smarty_tpl->tpl_vars['FORM_VALUES']->value['email'];?>
-" <?php }?> placeholder="Email">
+" <?php }?> placeholder="Email" required>
           </div>
 
           <div style="margin-bottom: 25px" class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
             <input id="login-password" type="password" class="form-control" name="password" value="<?php echo $_smarty_tpl->tpl_vars['FORM_VALUES']->value['password'];?>
-" placeholder="Password">
+" placeholder="Password" required>
           </div>
 
           <div style="margin-top:10px" class="form-group">
@@ -124,14 +124,14 @@ actions/users/register.php" method="post" enctype="multipart/form-data" onsubmit
           <div class="form-group">
             <label for="password" class="col-md-3 control-label">Password</label>
             <div class="col-md-9">
-              <input type="password" class="form-control" name="password" placeholder="Password" required data-toggle="tooltip" title="Introduza uma password com pelo menos uma letra e um número e no mínimo 8 caracteres." data-placement="bottom">
+              <input type="password" class="form-control" name="password" placeholder="Password" required data-toggle="tooltip" title="Introduza uma password com uma letra e um número e no mínimo 8 caracteres" data-placement="bottom">
             </div>
           </div>
 
           <div class="form-group">
             <label for="password_conf" class="col-md-3 control-label"></label>
             <div class="col-md-9">
-              <input type="password" class="form-control" name="password_conf" placeholder="Confirmar password" required data-toggle="tooltip" title="Introduza uma password com pelo menos uma letra e um número e no mínimo 8 caracteres." data-placement="bottom">
+              <input type="password" class="form-control" name="password_conf" placeholder="Confirmar password" required data-toggle="tooltip" title="Introduza uma password com uma letra e um número e no mínimo 8 caracteres" data-placement="bottom">
             </div>
           </div>
 

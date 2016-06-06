@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 22:22:08
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-06 17:49:30
          compiled from "C:\wamp\www\Overview\proto\templates\users\articles.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:197574f7a29075e33-59822517%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1cf8dc071b2d55a8e56af5c7f47d76f804e83ad4' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\users\\articles.tpl',
-      1 => 1464862521,
+      1 => 1465220481,
       2 => 'file',
     ),
   ),
@@ -63,7 +63,7 @@ pages/articles/article.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->valu
 </h4></a>
               <span class="image-box" data-score="<?php echo $_smarty_tpl->tpl_vars['article']->value['score'];?>
 "><img class="img-thumbnail" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-<?php echo $_smarty_tpl->tpl_vars['article']->value['path'];?>
+<?php echo $_smarty_tpl->tpl_vars['article']->value['image_article'];?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['article']->value['title'];?>
 "></span>
               <p class="summary"><?php echo $_smarty_tpl->tpl_vars['article']->value['summary'];?>

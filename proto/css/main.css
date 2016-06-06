@@ -544,3 +544,33 @@ a#menu-toggle{
 .option-buttons {
     font-size: 30px;
 }
+
+.user_picture {
+    margin-right: 5px;
+}
+
+.story {
+    margin-top: 5px;
+    margin-bottom   : 5px;
+}
+
+.about {
+    font-size: 1.1em;
+}
+
+.story {
+    margin-top: 5px;
+    margin-bottom: 5px;   
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+}
+
+.story:hover {
+    margin-top: 5px;
+    margin-bottom: 5px;   
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    background-color: lightgrey;
+}

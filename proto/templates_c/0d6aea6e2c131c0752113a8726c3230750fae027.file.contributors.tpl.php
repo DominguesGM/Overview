@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-03 15:33:07
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-06 15:36:48
          compiled from "C:\wamp\www\Overview\proto\templates\users\contributors.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:6259575095b6b23322-68123135%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0d6aea6e2c131c0752113a8726c3230750fae027' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\users\\contributors.tpl',
-      1 => 1464943953,
+      1 => 1464964077,
       2 => 'file',
     ),
   ),
@@ -19,6 +19,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_575095b6e40fb8_09107880',
   'variables' => 
   array (
+    'ID' => 0,
+    'contributorAccess' => 0,
+    'administratorAccess' => 0,
     'contributors' => 0,
     'BASE_URL' => 0,
   ),
@@ -36,13 +39,19 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       <br>
       <h1><span class="fa fa-users"></span> Contribuidores</h1>
       <input id="user-type" type="hidden" value="Contributor">
+      <input id="user-id" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
+">
+      <input id="contributor-access" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['contributorAccess']->value;?>
+">
+      <input id="administrator-access" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['administratorAccess']->value;?>
+">
     </hgroup>
   </div>
 
   <div id="all-contributors" class="col-md-12">
     <br>
     <div id="list-users" class="nav nav-pills nav-stacked">
-      <?php if (count($_smarty_tpl->tpl_vars['contributors']->value)==0) {?> <div class="no-users">Não existem contribuidores.</div><?php }?>
+      <?php if (count($_smarty_tpl->tpl_vars['contributors']->value)==0) {?> <div class="no-users button-link" onclick="getUsers()">Não existem moderadores.</div><?php }?>
       <?php $_smarty_tpl->tpl_vars["users"] = new Smarty_variable($_smarty_tpl->tpl_vars['contributors']->value, null, 0);?>
       <?php echo $_smarty_tpl->getSubTemplate ('users/users.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
@@ -52,8 +61,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/user_management.js"></script>
-<script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-lib/slimScroll/jquery.slimscroll.min.js"></script>
 <?php echo $_smarty_tpl->getSubTemplate ('common/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 <?php }} ?>

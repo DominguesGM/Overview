@@ -112,6 +112,14 @@
     return $stmt->fetchAll();
   }
   
+  function getArticleCount($id) {
+    global $conn;
+    $stmt = $conn->prepare("SELECT COUNT(*) AS n_articles  FROM article
+                            WHERE author = ?");
+    $stmt->execute(array($id));
+    return $stmt->fetch()['n_articles'];
+  }
+  
   function getArticleCategory($id) {
     global $conn;
     $stmt = $conn->prepare("SELECT * 

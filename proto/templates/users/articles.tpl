@@ -23,7 +23,7 @@
 
             <div class="short_news_item">
               <a href="{$BASE_URL}pages/articles/article.php?id={$article['id']}"><h4>{$article['title']}</h4></a>
-              <span class="image-box" data-score="{$article['score']}"><img class="img-thumbnail" src="{$BASE_URL}{$article['path']}" alt="{$article['title']}"></span>
+              <span class="image-box" data-score="{$article['score']}"><img class="img-thumbnail" src="{$BASE_URL}{$article['image_article']}" alt="{$article['title']}"></span>
               <p class="summary">{$article['summary']}</p>
             </div>
 

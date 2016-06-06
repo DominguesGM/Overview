@@ -12,5 +12,5 @@ if(!administrator_access()) {
 $smarty->assign('categories', getArticleCategories());
 $smarty->assign('administratorAccess', administrator_access());
 
-$smarty->display('moderation/categories.tpl');
+$smarty->display('administration/categories.tpl');
 ?>

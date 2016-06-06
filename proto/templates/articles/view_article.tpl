@@ -34,7 +34,7 @@
           </div>
           <div class="auhtor">
             <input id="access-level" type="hidden" value="{$contributorAccess}">
-            <em><a href="{$BASE_URL}users/profile.php?id={$article['author']}">{$article['first_name']} {$article['last_name']}</a></em>
+            <em><a href="{$BASE_URL}pages/users/profile.php?id={$article['author']}">{$article['first_name']} {$article['last_name']}</a></em>
             <span class="article-date">&nbsp;{$article['publication_date']}</span>
           </div>
           <br>

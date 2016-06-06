@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 12:42:35
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-06 15:40:03
          compiled from "C:\wamp\www\Overview\proto\templates\main.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:308395729d3dfe416f5-39804721%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6e4729f929d2809f410c0e34e7efe733dee94579' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\main.tpl',
-      1 => 1464863543,
+      1 => 1465220388,
       2 => 'file',
     ),
   ),
@@ -21,10 +21,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'categoriesByLine' => 0,
     'articlesByCategory' => 0,
+    'BASE_URL' => 0,
     'categoryId' => 0,
     'categories' => 0,
     'category' => 0,
-    'BASE_URL' => 0,
     'article' => 0,
   ),
   'has_nocache_code' => false,
@@ -48,7 +48,9 @@ $_smarty_tpl->tpl_vars['category']->_loop = true;
 ?>
             <!-- Category Display -->
             <div class="col-md-4 portfolio-item short_category_item">
-                <h2 class="main_category"><a href="#"><?php echo $_smarty_tpl->tpl_vars['categories']->value[$_smarty_tpl->tpl_vars['categoryId']->value]['name'];?>
+                <h2 class="main_category"><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/category.php?category=<?php echo $_smarty_tpl->tpl_vars['categories']->value[$_smarty_tpl->tpl_vars['categoryId']->value]['name'];?>
+"><?php echo $_smarty_tpl->tpl_vars['categories']->value[$_smarty_tpl->tpl_vars['categoryId']->value]['name'];?>
 </a></h2>
                 <?php $_smarty_tpl->tpl_vars["categoryId"] = new Smarty_variable($_smarty_tpl->tpl_vars['categoryId']->value+1, null, 0);?>
                 <div class="short_category_content">
@@ -74,7 +76,7 @@ pages/articles/article.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->valu
                             </div>
                         <?php } ?>
                     <?php } else { ?>
-                        <p>Ainda não existem notícias nesta categoria.</p>
+                        <p>Ainda não existem notícias nesta categoría.</p>
                     <?php }?>
                 </div>
             </div>

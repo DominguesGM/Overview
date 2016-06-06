@@ -3,84 +3,78 @@
 {include file='common/status_messages.tpl'}
 
 <link rel="shortcut icon" href="facivon.ico">
-
-<!-- search CSS -->
 <link href="{$BASE_URL}css/profile.css" rel="stylesheet">
 
-<div class="container1">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+<div class="row">
+  <div class="col-md-5 col-lg-5">
+    <div id="user-info" class="profile">
+      <input type="hidden" id="user-id" value="{$ID}">
+      <div class="col-sm-12">
+        <div class="col-xs-12 col-sm-8">
+          <h2>{$user.first_name} {$user.last_name}</h2>
+          <h4>{$user.type}</h4>
+          <br>
+          <p class="about"><strong>Sobre...</strong></p>
+          <p class="about">{$user.about}</p>
+          <br>
+        </div>
 
-        <div class="profile">
-          <div class="col-sm-12">
-            <div class="col-xs-12 col-sm-8">
-              <h2>{$FIRST_NAME} {$LAST_NAME}</h2>
-              <h4>{$TYPE}</h4>
-              <p><strong>Sobre...</strong></p>
-              <p>{$user['about']}</p>
-            </div>
-
-            <div class="col-xs-12 col-sm-4 text-center">
-              <figure>
-                <img src="{$BASE_URL}{$PICTURE}" alt="{$FIRST_NAME} {$LAST_NAME}" class="img-circle img-responsive" height="80" width="80">
-              </figure>
-            </div>
-          </div>
-
-          <div class="col-xs-12 divider text-center">
-            <div class="col-xs-12 col-sm-4 emphasis">
-              <h2><strong>22</strong></h2>
-              <p><small>Artigos</small></p>
-            </div>
-            <div class="col-xs-12 col-sm-4 emphasis">
-              <h2><strong>{$user['followers']}</strong></h2>
-              <p><small>A seguir</small></p>
-            </div>
-            <div class="col-xs-12 col-sm-4 emphasis">
-              <h2><strong>{$user['followers']}</strong></h2>
-              <p><small>Seguidores</small></p>
-            </div>
-          </div>
-
-          <div class="col-xs-12 divider text-center">
-            <button style="margin-top:30px" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span> Seguir </button>
-          </div>
+        <div class="col-xs-12 col-sm-4 text-center">
+          <figure>
+            <img src="{$BASE_URL}{$user.path}" alt="{$user.first_name} {$user.last_name}" class="img-circle img-responsive" height="80" width="80">
+          </figure>
         </div>
       </div>
+
+      <div class="col-xs-12 divider text-center">
+        <div class="col-xs-12 col-sm-4 emphasis">
+          <h2><strong>{$user.nArticles}</strong></h2>
+          <p><small>Artigo{if $user.nArticles !=1}s{/if}</small></p>
+        </div>
+        <div class="col-xs-12 col-sm-4 emphasis">
+          <h2><strong id="nFollowees">{$user.nFollowees}</strong></h2>
+          <p><small>A seguir</small></p>
+        </div>
+        <div class="col-xs-12 col-sm-4 emphasis">
+          <h2><strong id="nFollowers">{$user.nFollowers}</strong></h2>
+          <p><small>Seguidor{if $user.nFollowers!=1}es{/if}</small></p>
+        </div>
+      </div>
+
+      {if $ID && $ID != $user.id}
+      <div class="col-xs-12 divider text-center">
+        <button id="follow-button" style="margin-top:30px" onclick="toggleFollowStatus({$user.id})"class="btn btn-primary btn-block"><span class="glyphicon glyphicon-{if $user.follow_status==false}plus{else}minus{/if}"></span> {if $user.follow_status==true} Não seguir {else} Seguir {/if} </button>
+      </div>
+      {/if}
     </div>
   </div>
 
-  <div id="wall" class="container">
+  <div class="col-md-7 col-lg-7">
+    <div id="wall">
 
-    <div class="row">
-      <div class="col-md-offset-2 col-md-4 col-sm-4 col-xs-4">
-        <div class="col-md-3 col-sm-3 col-xs-3">
-          <img src="http://packetcode.com/apps/wall-design/image.jpg" class="img-circle" width="60px"/>
+      {foreach $userStories as $userStory}
+      <div class="row story">
+         <div class="col-md-offset-1 col-md-10 col-sm-10 col-xs-10">
+            <img src="{$BASE_URL}{$userStory.author_picture}" class="img-circle pull-left user_picture" width="60" height="60" alt="$userStory.first_name} {$userSorie.last_name}"/>
+            <b><span class="vcenter"><a href="{$BASE_URL}pages/users/profile.php?id={$userStory.author_id}">{$userStory.first_name} {$userStory.last_name}</a> editou um artigo.</span></b>
+            <p class="text-muted small">{$userStory.date}</p>
+         </div>
+
+        <div class="col-md-offset-3 col-md-9 col-sm-9 col-xs-9">
+         <div class="short_news_item">
+           <a href="{$BASE_URL}pages/articles/article.php?id={$userStory.article_id}"><h4>{$userStory.title}</h4></a>
+           <span class="image-box" data-score="{$userStory.score} ponto{if {$userStory.score}!=1}s{/if}"><img class="img-thumbnail" src="{$BASE_URL}{$userStory.path}" alt="{$userStory.title}"></span>
+           <p class="summary">{$userStory.summary}</p>
+         </div>
         </div>
-        <div class="col-md-9 col-sm-9 col-xs-9">
-          <b>John Doe posted a new article.</b>
-        </div>
-      </div>
     </div>
-
-    <div class="row">
-      <div class="col-md-offset-3 col-md-6 col-sm-6 col-xs-6">
-        <article class="search-result row">
-          <span class="image-box" data-score="321"><img class="img-thumbnail" src="http://placehold.it/75x75" alt=""></span>
-          <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
-            <h3><a href="#" title="">Voluptatem, exercitationem, suscipit, distinctio</a></h3>
-          </div>
-          <span class="clearfix borda"></span>
-        </article>
-
-        <div class="text-muted"><small>posted 2 minutes ago</small></div>
-      </div>
+    <br>
+    {/foreach}
     </div>
   </div>
 </div>
-</div>
 
-<script src="{$BASE_URL}javascript/profile.js"></script>
 <script type="text/javascript" src="{$BASE_URL}lib/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="{$BASE_URL}javascript/profile.js"></script>
+
 {include file='common/footer.tpl'}

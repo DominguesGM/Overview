@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-03 03:48:21
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-06 14:11:40
          compiled from "C:\wamp\www\Overview\proto\templates\common\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:155885729d3e0c18dd1-75233695%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6a0591bc0d71cf38e365b339d2b83f140cb68dce' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\common\\header.tpl',
-      1 => 1464918497,
+      1 => 1465201850,
       2 => 'file',
     ),
   ),
@@ -93,7 +93,10 @@ lib/fileinput/js/fileinput_locale_pt.js"></script>
     <div id="sidebar-wrapper">
       <ul id="all-categories" class="sidebar-nav">
         <li>
-          <a href="#">Trending</a>
+          <?php if (isset($_smarty_tpl->tpl_vars['ID']->value)) {?>
+            <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/category.php?category=Following">Following</a>
+          <?php }?>
         </li>
       </ul>
     </div>
