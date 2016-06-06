@@ -1,0 +1,33 @@
+#categoryContainer{
+    height: 55vh;
+    overflow-y: scroll;
+    border-left-style: solid;
+    border-left-color: #dddddd;
+    border-left-width: 1px;
+}
+
+
+.category {
+    border-bottom:solid 1px lightgrey;
+    padding-left: 25px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+
+.nav-stacked>li+li {
+    margin-top: 0px;
+}
+
+.category:hover {
+    background-color: #ccc;
+}
+
+.category-article, .category-comment{
+    text-align:right;
+}
+
+.active-category {
+    background-color: lightgrey;
+}
