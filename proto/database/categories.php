@@ -1,4 +1,4 @@
-  <?php
+<?php
   
   function createCategory($name) {
     global $conn;
@@ -14,7 +14,16 @@
     global $conn;
     $stmt = $conn->prepare("UPDATE category SET name = ?  
                             WHERE id = ?");
-    $stmt->execute(array($name, $id));
+    return $stmt->execute(array($name, $id));
   }
+
+  function checkCategoryExists($name){
+    global $conn;
+    $stmt = $conn->prepare("SELECT * FROM category WHERE name LIKE ? ");
+    $stmt->execute(array($name));
   
+    if(count($stmt->fetchAll()) == 0)
+      return false;
+    return true;
+  }
 ?>

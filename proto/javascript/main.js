@@ -1,20 +1,37 @@
-BASE_URL = '/Overview/proto/';
+BASE_URL = '/lbaw/Overview/proto/';
 
 /**
  * Manages the search bar and the sidebar toggle
  */
 
-var searchbarHTML = "<span id='search-container'><input type='text' id='search-bar' /><i class='fa fa-times' id='search-close'></i></span>";
-var searchbarTOGGLE = false;
+var categoryList;
+var categoryListBase="";
+
 
 function loadAllCategories(){
 
+  $("#all-categories").empty();
+  $("#all-categories").html(categoryListBase)
+  if(typeof category_management !== 'undefined'){
+      $("#category-edit-listing").empty();
+  }
+
   $.getJSON(BASE_URL + "api/articles/get_categories.php", function(result){
+      categoryList = result;
           $.each(result, function(key, category){
-              var option = $('<li><a href="#' + category['id'] + '">' + category['name'] + '</a></li>');
+              var option = $('<li><a href="' + BASE_URL + 'pages/category.php?category=' + category['name'] + '">' + category['name'] + '</a></li>');
                            
               $("#all-categories").append(option);
+
+              if(typeof category_management !== 'undefined'){
+                  var option = $('<li id="category-' + category['id'] + '" data-id="' + category['id'] + '" class="category category-element button-link"><div class="media"><p>' + category['name'] + '</p></div></li>');
+
+                  $("#category-edit-listing").append(option);
+              }
           });
+      if(typeof category_management !== 'undefined'){
+          prepareListForSelection();
+      }
       });
 }
 
@@ -58,6 +75,7 @@ $(function(){
 }
 
 $(document).ready(function(){
+    categoryListBase = $("#all-categories").html();
   	scrolling();
     loadAllCategories();
 	  initMessageClosers();

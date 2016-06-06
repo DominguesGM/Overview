@@ -6,6 +6,8 @@
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    overflow-x: hidden;
+    margin: 0px;
 }
 
 .container{
@@ -58,7 +60,13 @@ img.img-thumbnail{
 
 p.summary{
     margin-top: 12px;
+    height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     margin-left: 100px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
 
