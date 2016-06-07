@@ -25,10 +25,9 @@
     chmod($BASE_DIR . 'images/articles/article_'. $articleId . '-' . $i . '.' . $imageTypes[$i], 0644);
    }
   } catch (Exception $e) {
-    print $e->getMessage();
     $_SESSION['error_messages'][] = 'Ocorreu um erro ao guardar o artigo.';
     $_SESSION['form_values'] = $_POST;
-    //header("Location: $BASE_URL" . 'pages/articles/create_article.php');
+    header("Location: $BASE_URL" . 'pages/articles/create_article.php');
     exit;
   }
   

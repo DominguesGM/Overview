@@ -28,7 +28,6 @@
     chmod($BASE_DIR . 'images/articles/article_'. $articleId . '-' . $nextImageId . '.' . $imageTypes[$i], 0644);
    }
   } catch (Exception $e) {
-    print $e->getMessage();
     $_SESSION['error_messages'][] = 'Ocorreu um erro ao guardar o artigo.';
     $_SESSION['form_values'] = $_POST;
     
