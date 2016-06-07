@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 03:36:44
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 03:53:23
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\administration\categories.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:185885756252c188985-95440789%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7009252c81ad2463671b7676cba64a9ff1295ca9' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\administration\\categories.tpl',
-      1 => 1465263181,
+      1 => 1465264401,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_5756252c271960_29218122',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_5756252c271960_29218122',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5756252c271960_29218122')) {function content_5756252c271960_29218122($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
@@ -41,6 +41,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div class="col-xs-5 col-xs-offset-1">
             <div id="categoryContainer">
                 <ul id="category-edit-listing">
+                    <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+images/assets/loading.gif" style="width: 50px;height: 50px;">
                 </ul>
             </div>
         </div>

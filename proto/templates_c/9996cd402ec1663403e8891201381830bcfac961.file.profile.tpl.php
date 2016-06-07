@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 03:10:56
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 03:56:40
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\users\profile.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2790157561f203dc3d7-19931771%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9996cd402ec1663403e8891201381830bcfac961' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\users\\profile.tpl',
-      1 => 1465261818,
+      1 => 1465264598,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_57561f206fe088_15338762',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -25,8 +27,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'userSorie' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_57561f206fe088_15338762',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_57561f206fe088_15338762')) {function content_57561f206fe088_15338762($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
@@ -69,9 +69,11 @@ css/profile.css" rel="stylesheet">
           </figure>
         </div>
 
+        <?php if ($_smarty_tpl->tpl_vars['user']->value['id']==$_smarty_tpl->tpl_vars['ID']->value) {?>
         <div class="selectable btn-simple pull-right text-muted">
           <span onclick="editAccount()" data-placement="bottom" data-toggle="tooltip" title="Editar perfil" class="glyphicon glyphicon-wrench"></span>
         </div>
+        <?php }?>
       </div>
 
       <div class="col-xs-12 divider text-center">
