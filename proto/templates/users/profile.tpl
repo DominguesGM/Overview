@@ -26,9 +26,11 @@
           </figure>
         </div>
 
+        {if user.id == $ID}
         <div class="selectable btn-simple pull-right text-muted">
           <span onclick="editAccount()" data-placement="bottom" data-toggle="tooltip" title="Editar perfil" class="glyphicon glyphicon-wrench"></span>
         </div>
+        {/if}
       </div>
 
       <div class="col-xs-12 divider text-center">
