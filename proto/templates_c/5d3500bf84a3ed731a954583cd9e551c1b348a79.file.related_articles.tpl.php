@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-05 22:13:55
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 03:11:05
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\articles\related_articles.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:878573450af443bc8-53385267%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5d3500bf84a3ed731a954583cd9e551c1b348a79' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\articles\\related_articles.tpl',
-      1 => 1465007457,
+      1 => 1465261817,
       2 => 'file',
     ),
   ),
@@ -30,7 +30,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   <div class="page-header">
     <h3><span class="glyphicon glyphicon-tag"></span>
       <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/articles/category.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['category']['id'];?>
+pages/category.php?category=<?php echo $_smarty_tpl->tpl_vars['article']->value['category']['name'];?>
 "><?php echo $_smarty_tpl->tpl_vars['article']->value['category']['name'];?>
  </a>
     </h3>

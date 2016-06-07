@@ -11,7 +11,7 @@
                     </select>
                 </div>
                 <div class="input-group">
-                    <input id="search-box" type="text" class="form-control" name="query" placeholder="Search on Overview...">
+                    <input id="search-box" type="text" class="form-control" name="query" placeholder="Pesquise no Overview...">
 
                     <span class="input-group-btn">
                       <button id="search-form-button" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>

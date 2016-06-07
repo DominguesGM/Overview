@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-05 19:51:31
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 03:11:32
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\common\user_menu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:313135734525fb7bb93-54775437%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b70f3e494f9a514dca4f60963818a9596273d779' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\common\\user_menu.tpl',
-      1 => 1465007457,
+      1 => 1465261818,
       2 => 'file',
     ),
   ),
@@ -27,11 +27,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5734525fc4af87_93659788')) {function content_5734525fc4af87_93659788($_smarty_tpl) {?><ul class="dropdown-menu multi-level" role="menu">
+<?php if ($_valid && !is_callable('content_5734525fc4af87_93659788')) {function content_5734525fc4af87_93659788($_smarty_tpl) {?><ul class="dropdown-menu multi-level user-menu" role="menu">
   <li><a class="text-center" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
 ">
-    <img class="img-circle" height="50" width="50" alt="Imagem de perfil" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+    <img class="img-circle" height="75" width="75" alt="Imagem de perfil" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 <?php echo $_smarty_tpl->tpl_vars['PICTURE']->value;?>
 ">
   </a></li>

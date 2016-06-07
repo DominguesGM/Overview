@@ -13,10 +13,29 @@ $(document).ready(function () {
 
 $('#save-form-button').click(function(e){
     e.preventDefault();
-    if(selectedCategory < 0)
-        addCategory($('#category-box').val());
-    else
-        editCategory($('#category-box').val(), selectedCategory);
+    if($('#category-box').val() != "") {
+        if (selectedCategory < 0) {
+            bootbox.confirm({
+                message:"Tem a certeza que pretende adicionar a categoria \"" + $('#category-box').val() +"\"? Esta ação não pode ser anulada.",
+                locale: "pt",
+                callback: function(result){
+                    if(result){
+                        addCategory($('#category-box').val());
+                    }
+                }
+            });
+        } else {
+            bootbox.confirm({
+                message:"Tem a certeza que pretende alterar a categoria para \"" + $('#category-box').val() +"\"?",
+                locale: "pt",
+                callback: function(result){
+                    if(result){
+                        editCategory($('#category-box').val(), selectedCategory);
+                    }
+                }
+            });
+        }
+    }
 });
 
 

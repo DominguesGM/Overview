@@ -33,5 +33,6 @@
 
 <script type="text/javascript" src="{$BASE_URL}lib/slimScroll/jquery.slimscroll.min.js"></script>
 <script type="text/javascript" src="{$BASE_URL}javascript/category_management.js"></script>
+<script src="{$BASE_URL}lib/bootbox/bootbox.min.js"></script>
 <link rel="stylesheet" href="{$BASE_URL}css/categories.css">
 {include file='common/footer.tpl'}
