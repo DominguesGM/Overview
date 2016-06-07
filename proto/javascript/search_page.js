@@ -20,6 +20,8 @@ var searchMetaEnd = '</h2></hgroup></div><div class="col-md-12"><section id="ite
 
 
 $(document).ready(function(){
+    $("#type-selector option[value='Artigo']").attr("selected", true);
+
     var tempCategory = $('div#result-container').data("category");
 
     if(typeof tempCategory != "undefined")
@@ -51,7 +53,7 @@ function prepareUsersHtml(usersArray){
         html += 0;
         html += '"><img class="img-thumbnail" alt="Imagem do utilizador ' + usersArray[i]['first_name'] + " " + usersArray[i]['last_name'] + '" src="';
         html += BASE_URL + usersArray[i]['path'];
-        html += '" alt=""></span><div class="col-xs-12 col-sm-12 col-md-7 excerpet"><h3><a href="#">';
+        html += '" alt=""></span><div class="col-xs-12 col-sm-12 col-md-7 excerpet"><h3><a href="' +BASE_URL+ 'pages/users/profile.php?id=' + usersArray[i]['id'] +'">';
         html += usersArray[i]['first_name'] + " " + usersArray[i]['last_name'];
         html += '</a></h3><p>';
         html += usersArray[i]['about'];
