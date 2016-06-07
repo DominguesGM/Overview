@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-05 20:03:18
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 13:43:05
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\moderation\reports.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:99035754696609d351-78427260%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0f47b9ffb336c356da25b7418d3526b5e0f408a8' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\moderation\\reports.tpl',
-      1 => 1464820511,
+      1 => 1465299784,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_57546966302808_00790668',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -25,8 +27,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'comment' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_57546966302808_00790668',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_57546966302808_00790668')) {function content_57546966302808_00790668($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
@@ -154,8 +154,6 @@ pages/users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['comment']->value['
     </div>
   </div>
   </div>
-  </div>
-</div>
 
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/reports.js"></script>

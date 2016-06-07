@@ -77,8 +77,6 @@
     </div>
   </div>
   </div>
-  </div>
-</div>
 
 <script src="{$BASE_URL}javascript/reports.js"></script>
 <script src="{$BASE_URL}lib/bootbox/bootbox.min.js"></script>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 11:48:47
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 13:41:20
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\articles\article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21958575000ffc66782-42743522%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eb3c85108402fa352d361383cefe3064bbb82965' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\articles\\article.tpl',
-      1 => 1464809478,
+      1 => 1465261817,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_575000ffde7619_34951138',
   'variables' => 
   array (
     'article' => 0,
@@ -23,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'contributorAccess' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_575000ffde7619_34951138',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_575000ffde7619_34951138')) {function content_575000ffde7619_34951138($_smarty_tpl) {?><div class="container">
   <div class="row">
@@ -41,7 +41,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <h2><?php echo $_smarty_tpl->tpl_vars['article']->value['title'];?>
 </h2>
             <h4><span class="glyphicon glyphicon-tag"></span><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/articles/category.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['category']['id'];?>
+pages/category.php?category=<?php echo $_smarty_tpl->tpl_vars['article']->value['category']['name'];?>
 "> <?php echo $_smarty_tpl->tpl_vars['article']->value['category']['name'];?>
  </a></h4>
             <div id="article-score" class="article-score"><?php echo $_smarty_tpl->tpl_vars['article']->value['score'];?>
@@ -51,7 +51,7 @@ pages/articles/category.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->val
             <input id="access-level" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['contributorAccess']->value;?>
 ">
             <em><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['author'];?>
+pages/users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['author'];?>
 "><?php echo $_smarty_tpl->tpl_vars['article']->value['first_name'];?>
  <?php echo $_smarty_tpl->tpl_vars['article']->value['last_name'];?>
 </a></em>

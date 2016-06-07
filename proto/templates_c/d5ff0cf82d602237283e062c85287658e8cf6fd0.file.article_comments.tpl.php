@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 22:48:37
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 13:45:39
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\articles\article_comments.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:10767573450af565d67-63492534%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd5ff0cf82d602237283e062c85287658e8cf6fd0' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\articles\\article_comments.tpl',
-      1 => 1464809478,
+      1 => 1465299920,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'contributorAccess' => 0,
     'ID' => 0,
-    'article' => 0,
+    'FIRST_NAME' => 0,
+    'LAST_NAME' => 0,
     'PICTURE' => 0,
     'articleComments' => 0,
     'comment' => 0,
@@ -41,8 +42,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <textarea id="new-comment" style="overflow:auto;resize:vertical" class="form-control" name="comment" rows="2" ></textarea>
       </div>
       <button type="button" onclick="postComment(<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
-, '<?php echo $_smarty_tpl->tpl_vars['article']->value['first_name'];?>
-', '<?php echo $_smarty_tpl->tpl_vars['article']->value['last_name'];?>
+, '<?php echo $_smarty_tpl->tpl_vars['FIRST_NAME']->value;?>
+', '<?php echo $_smarty_tpl->tpl_vars['LAST_NAME']->value;?>
 ', '<?php echo $_smarty_tpl->tpl_vars['PICTURE']->value;?>
 ');" class="btn btn-primary">Enviar</button>
     </div>
