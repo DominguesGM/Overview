@@ -574,3 +574,7 @@ a#menu-toggle{
     padding-right: 15px;
     background-color: lightgrey;
 }
+
+.user-menu{
+    font-size: 1.1em;
+}

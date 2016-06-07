@@ -60,16 +60,26 @@
   </div>
 
   <div class="row">
-    <!-- Facebook-->
-    <a href="https://www.facebook.com/sharer/sharer.php?u=" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
-    <!--{include file='articles/sharing/facebook.tpl'}-->
-    <!-- Twitter -->
-    <a href="http://twitter.com/home?status=" title="Share on Twitter" target="_blank" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
-    <!--{include file='articles/sharing/twitter.tpl'}-->
+    <div class="col-md-8">
+      <div class="page-header">
+        <h3 class="share"><span class="fa fa-share-alt"></span> Partilhar </h3>
+      </div>
 
-    <!-- Google+ -->
-    <a href="https://plus.google.com/share?url=" title="Share on Google+" target="_blank" class="btn btn-googleplus"><i class="fa fa-google-plus"></i> Google+</a>
-    <!--{include file='articles/sharing/google_plus.tpl'}-->
+      <!-- Facebook-->
+      <div style="display:inline-block; vertical-align:top;">
+        {include file='articles/sharing/facebook.tpl'}
+      </div>
+
+      <!-- Twitter -->
+      <div style="display:inline-block; vertical-align:top;">
+        {include file='articles/sharing/twitter.tpl'}
+      </div>
+
+      <!-- Google+ -->
+      <div style="display:inline-block; vertical-align:top;">
+        {include file='articles/sharing/google_plus.tpl'}
+      </div>
+    </div>
   </div>
 
   {include file='articles/article_comments.tpl'}

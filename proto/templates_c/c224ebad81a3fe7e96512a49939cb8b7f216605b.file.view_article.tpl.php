@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-06 14:45:53
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-06 22:58:48
          compiled from "C:\wamp\www\Overview\proto\templates\articles\view_article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11407572b49bd710566-11169283%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c224ebad81a3fe7e96512a49939cb8b7f216605b' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\view_article.tpl',
-      1 => 1465217115,
+      1 => 1465246686,
       2 => 'file',
     ),
   ),
@@ -109,19 +109,29 @@ pages/users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['
   </div>
 
   <div class="row">
-    <!-- Facebook-->
-    <a href="https://www.facebook.com/sharer/sharer.php?u=" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
-    <!--<?php echo $_smarty_tpl->getSubTemplate ('articles/sharing/facebook.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
--->
-    <!-- Twitter -->
-    <a href="http://twitter.com/home?status=" title="Share on Twitter" target="_blank" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
-    <!--<?php echo $_smarty_tpl->getSubTemplate ('articles/sharing/twitter.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
--->
+    <div class="col-md-8">
+      <div class="page-header">
+        <h3 class="share"><span class="fa fa-share-alt"></span> Partilhar </h3>
+      </div>
 
-    <!-- Google+ -->
-    <a href="https://plus.google.com/share?url=" title="Share on Google+" target="_blank" class="btn btn-googleplus"><i class="fa fa-google-plus"></i> Google+</a>
-    <!--<?php echo $_smarty_tpl->getSubTemplate ('articles/sharing/google_plus.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
--->
+      <!-- Facebook-->
+      <div style="display:inline-block; vertical-align:top;">
+        <?php echo $_smarty_tpl->getSubTemplate ('articles/sharing/facebook.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+      </div>
+
+      <!-- Twitter -->
+      <div style="display:inline-block; vertical-align:top;">
+        <?php echo $_smarty_tpl->getSubTemplate ('articles/sharing/twitter.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+      </div>
+
+      <!-- Google+ -->
+      <div style="display:inline-block; vertical-align:top;">
+        <?php echo $_smarty_tpl->getSubTemplate ('articles/sharing/google_plus.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+      </div>
+    </div>
   </div>
 
   <?php echo $_smarty_tpl->getSubTemplate ('articles/article_comments.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>

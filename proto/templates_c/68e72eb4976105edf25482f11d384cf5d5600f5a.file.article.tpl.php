@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 03:56:10
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 02:36:49
          compiled from "C:\wamp\www\Overview\proto\templates\articles\article.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:615574ca54e08e325-65238273%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '68e72eb4976105edf25482f11d384cf5d5600f5a' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\articles\\article.tpl',
-      1 => 1464805806,
+      1 => 1465247100,
       2 => 'file',
     ),
   ),
@@ -41,7 +41,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <h2><?php echo $_smarty_tpl->tpl_vars['article']->value['title'];?>
 </h2>
             <h4><span class="glyphicon glyphicon-tag"></span><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/articles/category.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['category']['id'];?>
+pages/category.php?category=<?php echo $_smarty_tpl->tpl_vars['article']->value['category']['name'];?>
 "> <?php echo $_smarty_tpl->tpl_vars['article']->value['category']['name'];?>
  </a></h4>
             <div id="article-score" class="article-score"><?php echo $_smarty_tpl->tpl_vars['article']->value['score'];?>
@@ -51,7 +51,7 @@ pages/articles/category.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->val
             <input id="access-level" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['contributorAccess']->value;?>
 ">
             <em><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['author'];?>
+pages/users/profile.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->value['author'];?>
 "><?php echo $_smarty_tpl->tpl_vars['article']->value['first_name'];?>
  <?php echo $_smarty_tpl->tpl_vars['article']->value['last_name'];?>
 </a></em>

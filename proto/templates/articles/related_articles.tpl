@@ -1,7 +1,7 @@
 <div class="col-md-4 col-lg-4">
   <div class="page-header">
     <h3><span class="glyphicon glyphicon-tag"></span>
-      <a href="{$BASE_URL}pages/articles/category.php?id={$article['category']['id']}">{$article['category']['name']} </a>
+      <a href="{$BASE_URL}pages/category.php?category={$article['category']['name']}">{$article['category']['name']} </a>
     </h3>
   </div>
 

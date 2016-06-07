@@ -19,6 +19,12 @@
   
   $user = getUserById($userId);
   
+  if(!isset($user)) {
+    $_SESSION['error_messages'][] = 'O utilizador que procura não existe.';
+    header("Location: $BASE_URL");
+    exit;
+  }
+  
   switch ($user['type']) {
     case 'Contributor':
       $user['type'] = 'Contribuidor';

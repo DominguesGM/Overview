@@ -42,6 +42,10 @@ function toggleFollowStatus(followee){
   });
 }
 
+function editAccount(){
+	window.location.replace(BASE_URL + 'pages/users/edit_profile.php');
+}
+
 $(document).ready(function(){
   userId = $('#user-id').val();
 

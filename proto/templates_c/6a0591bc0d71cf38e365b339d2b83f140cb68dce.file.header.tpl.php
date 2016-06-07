@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-06 14:11:40
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-06 21:19:58
          compiled from "C:\wamp\www\Overview\proto\templates\common\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:155885729d3e0c18dd1-75233695%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6a0591bc0d71cf38e365b339d2b83f140cb68dce' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\common\\header.tpl',
-      1 => 1465201850,
+      1 => 1465240751,
       2 => 'file',
     ),
   ),
@@ -83,6 +83,10 @@ lib/fileinput/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
 lib/fileinput/js/fileinput.js" type="text/javascript"></script>
   <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 lib/fileinput/js/fileinput_locale_pt.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/bootstrap.min.js"></script>
 </head>
 
 <body>

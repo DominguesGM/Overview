@@ -42,6 +42,9 @@
   <link href="{$BASE_URL}lib/fileinput/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
   <script src="{$BASE_URL}lib/fileinput/js/fileinput.js" type="text/javascript"></script>
   <script src="{$BASE_URL}lib/fileinput/js/fileinput_locale_pt.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="{$BASE_URL}javascript/bootstrap.min.js"></script>
 </head>
 
 <body>

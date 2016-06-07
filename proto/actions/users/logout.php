@@ -11,5 +11,5 @@
   
   session_destroy();
   
-  header('Location:'.$_SERVER['HTTP_REFERER']);
+  header('Location:'.$BASE_URL);
 ?>

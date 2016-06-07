@@ -1,6 +1,6 @@
-<ul class="dropdown-menu multi-level" role="menu">
+<ul class="dropdown-menu multi-level user-menu" role="menu">
   <li><a class="text-center" href="{$BASE_URL}pages/users/profile.php?id={$ID}">
-    <img class="img-circle" height="50" width="50" alt="Imagem de perfil" src="{$BASE_URL}{$PICTURE}">
+    <img class="img-circle" height="75" width="75" alt="Imagem de perfil" src="{$BASE_URL}{$PICTURE}">
   </a></li>
 
   <li><a href="{$BASE_URL}pages/users/profile.php?id={$ID}"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>

@@ -12,6 +12,7 @@
       <div class="col-sm-12">
         <div class="col-xs-12 col-sm-8">
           <h2>{$user.first_name} {$user.last_name}</h2>
+          <p class="text-muted email">{$user.email}</p>
           <h4>{$user.type}</h4>
           <br>
           <p class="about"><strong>Sobre...</strong></p>
@@ -21,8 +22,12 @@
 
         <div class="col-xs-12 col-sm-4 text-center">
           <figure>
-            <img src="{$BASE_URL}{$user.path}" alt="{$user.first_name} {$user.last_name}" class="img-circle img-responsive" height="80" width="80">
+            <img height="80" width="80" src="{$BASE_URL}{$user.path}" alt="{$user.first_name} {$user.last_name}" class="img-circle">
           </figure>
+        </div>
+
+        <div class="selectable btn-simple pull-right text-muted">
+          <span onclick="editAccount()" data-placement="bottom" data-toggle="tooltip" title="Editar perfil" class="glyphicon glyphicon-wrench"></span>
         </div>
       </div>
 
@@ -74,6 +79,7 @@
   </div>
 </div>
 
+<script src="{$BASE_URL}lib/bootbox/bootbox.min.js"></script>
 <script type="text/javascript" src="{$BASE_URL}lib/slimScroll/jquery.slimscroll.min.js"></script>
 <script src="{$BASE_URL}javascript/profile.js"></script>
 

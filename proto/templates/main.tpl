@@ -1,5 +1,7 @@
 {include file='common/header.tpl'}
 
+{include file='common/status_messages.tpl'}
+
     {assign var="categoryId" value=0}
     <!-- Category Row generator -->
     {foreach from=$categoriesByLine item=articlesByCategory}

@@ -22,9 +22,6 @@
 <!-- browse_button Script -->
 <script src="{$BASE_URL}javascript/browse_button.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="{$BASE_URL}javascript/bootstrap.min.js"></script>
-
 <!-- Header and Sidebar Script -->
 <script>BASE_URL = "{$BASE_URL}"</script>
 

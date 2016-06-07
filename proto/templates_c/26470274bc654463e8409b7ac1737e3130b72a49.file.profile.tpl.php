@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-06 20:29:15
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 02:07:07
          compiled from "C:\wamp\www\Overview\proto\templates\users\profile.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:10491575570c5a8b832-78675479%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '26470274bc654463e8409b7ac1737e3130b72a49' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\users\\profile.tpl',
-      1 => 1465237753,
+      1 => 1465257964,
       2 => 'file',
     ),
   ),
@@ -48,6 +48,8 @@ css/profile.css" rel="stylesheet">
           <h2><?php echo $_smarty_tpl->tpl_vars['user']->value['first_name'];?>
  <?php echo $_smarty_tpl->tpl_vars['user']->value['last_name'];?>
 </h2>
+          <p class="text-muted email"><?php echo $_smarty_tpl->tpl_vars['user']->value['email'];?>
+</p>
           <h4><?php echo $_smarty_tpl->tpl_vars['user']->value['type'];?>
 </h4>
           <br>
@@ -59,12 +61,16 @@ css/profile.css" rel="stylesheet">
 
         <div class="col-xs-12 col-sm-4 text-center">
           <figure>
-            <img src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+            <img height="80" width="80" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 <?php echo $_smarty_tpl->tpl_vars['user']->value['path'];?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['user']->value['first_name'];?>
  <?php echo $_smarty_tpl->tpl_vars['user']->value['last_name'];?>
-" class="img-circle img-responsive" height="80" width="80">
+" class="img-circle">
           </figure>
+        </div>
+
+        <div class="selectable btn-simple pull-right text-muted">
+          <span onclick="editAccount()" data-placement="bottom" data-toggle="tooltip" title="Editar perfil" class="glyphicon glyphicon-wrench"></span>
         </div>
       </div>
 
@@ -141,6 +147,8 @@ pages/articles/article.php?id=<?php echo $_smarty_tpl->tpl_vars['userStory']->va
   </div>
 </div>
 
+<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+lib/bootbox/bootbox.min.js"></script>
 <script type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 lib/slimScroll/jquery.slimscroll.min.js"></script>
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>

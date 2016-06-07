@@ -60,7 +60,7 @@
     try {
     $stmt = $conn->prepare("SELECT *
                             FROM contributor 
-                            WHERE email = ?");
+                            WHERE email = ? AND status != 'Inactive'");
     $stmt->execute(array($email)); 
     $user = $stmt->fetch();
     
@@ -90,30 +90,19 @@
     return $validationCode === substr($validationCodeCheck, 0, 16);  ;
    }
   
-  function updateUserInfo($id, $firstName, $lastName, $email, $password, $picture, $about) {
+  function updateUserInfo($id, $firstName, $lastName, $password, $about) {
     global $conn;
     
     $validation_code = generateValidationCode();
-    
-    try{
-      $conn->beginTransaction();
-      $stmt =$conn->prepare("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ");
-      $stmt->execute();
       
-      $stmt = $conn->prepare("UPDATE contributor 
-      SET first_name = ?, last_name = ?, email = ?, password = ?, 
-      validation_code = ?, picture = ?, about = ?  
-      WHERE id = ?");
+    $stmt = $conn->prepare("UPDATE contributor 
+    SET first_name = ?, last_name = ?, password = ?, 
+    validation_code = ?, about = ?  
+    WHERE id = ?");
                 
-      $stmt->execute(array($firstName, $lastName, $email, hash('sha256', $validation_code . $password), 
-                            $validation_code, $picture, $about, $id));
+    $stmt->execute(array($firstName, $lastName, hash('sha256', $validation_code . $password), 
+                            $validation_code, $about, $id));
       
-      $conn->commit();    
-    }catch (PDOException $e) {
-      print $e->getMessage();
-      return false;
-    }
-    
     return true;
   }
   
@@ -244,8 +233,8 @@
   
   function getUserById($id){
     global $conn;
-    $stmt = $conn->prepare("SELECT contributor.id, contributor.first_name, contributor.last_name,
-                                      contributor.status, contributor.type, contributor.about, image.path
+    $stmt = $conn->prepare("SELECT contributor.id, contributor.email , contributor.first_name, contributor.last_name,
+                                      contributor.status, contributor.type, contributor.about, picture, image.path
                               FROM contributor INNER JOIN image ON (contributor.picture = image.id)
                               WHERE contributor.id = ? AND contributor.status NOT IN ('Unverified', 'Inactive')");
 

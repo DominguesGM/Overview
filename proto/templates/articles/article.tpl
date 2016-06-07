@@ -8,7 +8,7 @@
           <input type="hidden" id="user-id" value="{$ID}">
           <div class="page-header">
             <h2>{$article['title']}</h2>
-            <h4><span class="glyphicon glyphicon-tag"></span><a href="{$BASE_URL}pages/articles/category.php?id={$article['category']['id']}"> {$article['category']['name']} </a></h4>
+            <h4><span class="glyphicon glyphicon-tag"></span><a href="{$BASE_URL}pages/category.php?category={$article['category']['name']}"> {$article['category']['name']} </a></h4>
             <div id="article-score" class="article-score">{$article['score']} ponto{if $article['score'] != 1 && $article['score'] != -1}s{/if}</div>
           </div>
           <div class="auhtor">

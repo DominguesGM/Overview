@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-06 15:40:03
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-06 23:30:42
          compiled from "C:\wamp\www\Overview\proto\templates\main.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:308395729d3dfe416f5-39804721%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6e4729f929d2809f410c0e34e7efe733dee94579' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\main.tpl',
-      1 => 1465220388,
+      1 => 1465248622,
       2 => 'file',
     ),
   ),
@@ -30,6 +30,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5729d3e0a56c44_33607713')) {function content_5729d3e0a56c44_33607713($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+
+<?php echo $_smarty_tpl->getSubTemplate ('common/status_messages.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 
     <?php $_smarty_tpl->tpl_vars["categoryId"] = new Smarty_variable(0, null, 0);?>
