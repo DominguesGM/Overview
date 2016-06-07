@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 03:10:56
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 13:18:49
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\common\footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:289595721e88570d9f5-09750137%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7d18eeb09e390fa189563215131a9fe684358f06' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\common\\footer.tpl',
-      1 => 1465261817,
+      1 => 1465298327,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5721e88576ee14_20788268')) {function content_5721e88576ee14_20788268($_smarty_tpl) {?></div>
-<hr>
+</div>
+
+
 
 <!-- Footer -->
 <footer>
@@ -37,13 +39,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <!-- /.row -->
 </footer>
 
-</div>
-<div class="scroll-top-wrapper ">
+    <div class="scroll-top-wrapper ">
   <span class="scroll-top-inner">
     <i class="fa fa-2x fa-arrow-circle-up"></i>
   </span>
+    </div>
+
 </div>
-</div>
+
 
 <!-- browse_button Script -->
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>

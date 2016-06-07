@@ -14,7 +14,7 @@ body {
 ul.navbar-right{
     position: absolute;
     right: 0;
-    margin-right: 100px;
+    margin-right: 1vh;
     border-style: none;
     margin-top: -2px;
 }
@@ -90,10 +90,6 @@ p.summary{
     -webkit-box-orient: vertical;
 }
 
-
-footer {
-    margin: 50px 0;
-}
 
 
 /*
@@ -179,7 +175,7 @@ a#menu-toggle{
     position: fixed;
     left: 50px;
     width: 0;
-    height: 100%;
+    height: 95%;
     margin-left: -50px;
     overflow-y: auto;
     background: #000;
@@ -206,6 +202,10 @@ a#menu-toggle{
 }
 
 /* Sidebar Styles */
+
+#all-categories{
+    margin-top:0px;
+}
 
 .sidebar-nav {
     position: absolute;
@@ -398,7 +398,7 @@ a#menu-toggle{
    padding-left: 10px;
    padding-right: 10px;
    padding-bottom: 5px;
-   padding-top: 5px;  
+   padding-top: 5px;
 }
 
 .selectable:hover {
@@ -406,7 +406,7 @@ a#menu-toggle{
  color: #428BCA;
 }
 
-.vote:hover { 
+.vote:hover {
     cursor: pointer;
     color: #428BCA;
 }
@@ -526,7 +526,7 @@ a#menu-toggle{
 
 .story {
     margin-top: 5px;
-    margin-bottom: 5px;   
+    margin-bottom: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-right: 15px;
@@ -534,7 +534,7 @@ a#menu-toggle{
 
 .story:hover {
     margin-top: 5px;
-    margin-bottom: 5px;   
+    margin-bottom: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-right: 15px;
@@ -543,4 +543,33 @@ a#menu-toggle{
 
 .user-menu{
     font-size: 1.1em;
+}
+
+
+/* FOOTER */
+
+html,
+body {
+    margin:0;
+    padding:0;
+    height:100%;
+}
+#wrapper {
+    padding-top: 50px;
+    min-height:100%;
+    position:relative;
+}
+#page-content-wrapper {
+    padding-bottom: 75px; /* Height of the footer element */
+    height:100%;
+}
+footer {
+    background-color: #CFECEC;
+    width:100%;
+    height:75px;
+    position:absolute;
+    bottom:0;
+    left:0;
+    padding-top: 25px;
+
 }

@@ -1,5 +1,7 @@
 </div>
-<hr>
+</div>
+
+
 
 <!-- Footer -->
 <footer>
@@ -11,13 +13,14 @@
     <!-- /.row -->
 </footer>
 
-</div>
-<div class="scroll-top-wrapper ">
+    <div class="scroll-top-wrapper ">
   <span class="scroll-top-inner">
     <i class="fa fa-2x fa-arrow-circle-up"></i>
   </span>
+    </div>
+
 </div>
-</div>
+
 
 <!-- browse_button Script -->
 <script src="{$BASE_URL}javascript/browse_button.js"></script>

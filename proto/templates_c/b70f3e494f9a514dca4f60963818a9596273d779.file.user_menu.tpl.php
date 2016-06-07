@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 03:11:32
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 12:01:50
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\common\user_menu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:313135734525fb7bb93-54775437%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b70f3e494f9a514dca4f60963818a9596273d779' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\common\\user_menu.tpl',
-      1 => 1465261818,
+      1 => 1465293582,
       2 => 'file',
     ),
   ),
@@ -46,7 +46,7 @@ pages/users/notifications.php"><span class="glyphicon glyphicon-envelope"></span
 
   <?php if ($_smarty_tpl->tpl_vars['TYPE']->value!='Contributor'&&($_smarty_tpl->tpl_vars['STATUS']->value=='Active'||$_smarty_tpl->tpl_vars['STATUS']->value=='Warned')) {?>
     <li class="divider"></li>
-    <li class="dropdown-submenu"><a tabindex="-1" href="#"><span class="glyphicon glyphicon-eye-open"></span> Moderação</a>
+    <li class="dropdown-submenu pull-left"><a tabindex="-1" href="#"><span class="glyphicon glyphicon-eye-open"></span> Moderação</a>
         <ul class="dropdown-menu">
           <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/moderation/reports.php"><span class="glyphicon glyphicon-flag"></span> Itens reportados</a></li>
@@ -57,7 +57,7 @@ pages/moderation/contributors.php"><span class="fa fa-users"></span> Contribuido
   <?php }?>
 
   <?php if ($_smarty_tpl->tpl_vars['TYPE']->value=='Administrator'&&($_smarty_tpl->tpl_vars['STATUS']->value=='Active'||$_smarty_tpl->tpl_vars['STATUS']->value=='Warned')) {?>
-    <li class="dropdown-submenu"><a tabindex="-1" href="#"><span class="glyphicon glyphicon-lock"></span> Administração</a>
+    <li class="dropdown-submenu pull-left"><a tabindex="-1" href="#"><span class="glyphicon glyphicon-lock"></span> Administração</a>
         <ul class="dropdown-menu">
         <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/administration/moderators.php"><span class="fa fa-users"></span> Moderadores</a></li>
