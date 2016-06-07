@@ -9,7 +9,7 @@
 
   {if $TYPE != 'Contributor' && ($STATUS == 'Active' || $STATUS == 'Warned')}
     <li class="divider"></li>
-    <li class="dropdown-submenu"><a tabindex="-1" href="#"><span class="glyphicon glyphicon-eye-open"></span> Moderação</a>
+    <li class="dropdown-submenu pull-left"><a tabindex="-1" href="#"><span class="glyphicon glyphicon-eye-open"></span> Moderação</a>
         <ul class="dropdown-menu">
           <li><a href="{$BASE_URL}pages/moderation/reports.php"><span class="glyphicon glyphicon-flag"></span> Itens reportados</a></li>
           <li><a href="{$BASE_URL}pages/moderation/contributors.php"><span class="fa fa-users"></span> Contribuidores</a></li>
@@ -18,7 +18,7 @@
   {/if}
 
   {if $TYPE == 'Administrator' && ($STATUS == 'Active' || $STATUS == 'Warned')}
-    <li class="dropdown-submenu"><a tabindex="-1" href="#"><span class="glyphicon glyphicon-lock"></span> Administração</a>
+    <li class="dropdown-submenu pull-left"><a tabindex="-1" href="#"><span class="glyphicon glyphicon-lock"></span> Administração</a>
         <ul class="dropdown-menu">
         <li><a href="{$BASE_URL}pages/administration/moderators.php"><span class="fa fa-users"></span> Moderadores</a></li>
         <li><a href="{$BASE_URL}pages/administration/categories.php"><span class="glyphicon glyphicon-tag"></span> Categorias</a></li>

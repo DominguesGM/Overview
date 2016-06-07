@@ -25,13 +25,13 @@
             <input id="login-password" type="password" class="form-control" name="password" value="{$FORM_VALUES.password}" placeholder="Password" required>
           </div>
 
-          <!--<div style="margin-top:10px" class="form-group">
+          <div style="margin-top:10px" class="form-group">
             <div class="col-sm-12 controls">
               <input type="submit" id="btn-signup" type="button" class="btn btn-primary" value="Entrar">
-              <a id="btn-fblogin" href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Entrar com Facebook </a>
-              <a id="btn-twlogin" href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Entrar com Twitter </a>
+              <!--<a id="btn-fblogin" href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Entrar com Facebook </a>
+              <a id="btn-twlogin" href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Entrar com Twitter </a>-->
             </div>
-          </div>-->
+          </div>
 
           <div class="form-group">
             <div class="col-md-12 control">
