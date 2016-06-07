@@ -23,7 +23,7 @@
   $articleCategories = getArticleCategories();
   $articleImages = getArticleImages($_GET['id']);
   
-  if(edition_access($article['id'])){
+  if(edition_access($article['author'])){
     $smarty->assign('article', $article);
     $smarty->assign('articleCategories', $articleCategories);
     $smarty->assign('articleImages', $articleImages);   

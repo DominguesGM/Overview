@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-02 03:54:24
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 12:49:14
          compiled from "C:\wamp\www\Overview\proto\templates\users\notifications.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:22474574f4c9ec607b8-67172373%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'db303f153ad8e8f13e7a2597e7e056fdb76b713c' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\users\\notifications.tpl',
-      1 => 1464832459,
+      1 => 1464888780,
       2 => 'file',
     ),
   ),
@@ -35,7 +35,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php echo $_smarty_tpl->getSubTemplate ('common/status_messages.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 
-<!-- image_gallery CSS-->
 <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 css/notifications.css">
 

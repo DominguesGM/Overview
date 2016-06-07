@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 02:07:07
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 12:55:10
          compiled from "C:\wamp\www\Overview\proto\templates\users\profile.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:10491575570c5a8b832-78675479%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '26470274bc654463e8409b7ac1737e3130b72a49' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\users\\profile.tpl',
-      1 => 1465257964,
+      1 => 1465284075,
       2 => 'file',
     ),
   ),
@@ -69,9 +69,11 @@ css/profile.css" rel="stylesheet">
           </figure>
         </div>
 
+        <?php if ($_smarty_tpl->tpl_vars['user']->value['id']==$_smarty_tpl->tpl_vars['ID']->value) {?>
         <div class="selectable btn-simple pull-right text-muted">
           <span onclick="editAccount()" data-placement="bottom" data-toggle="tooltip" title="Editar perfil" class="glyphicon glyphicon-wrench"></span>
         </div>
+        <?php }?>
       </div>
 
       <div class="col-xs-12 divider text-center">

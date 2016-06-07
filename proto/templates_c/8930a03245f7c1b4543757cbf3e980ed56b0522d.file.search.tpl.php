@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-30 10:51:12
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 12:55:19
          compiled from "C:\wamp\www\Overview\proto\templates\search.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:40685733d1918a4ab0-85526022%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8930a03245f7c1b4543757cbf3e980ed56b0522d' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\search.tpl',
-      1 => 1463929352,
+      1 => 1465284075,
       2 => 'file',
     ),
   ),
@@ -37,7 +37,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     </select>
                 </div>
                 <div class="input-group">
-                    <input id="search-box" type="text" class="form-control" name="query" placeholder="Search on Overview...">
+                    <input id="search-box" type="text" class="form-control" name="query" placeholder="Pesquise no Overview...">
 
                     <span class="input-group-btn">
                       <button id="search-form-button" class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
