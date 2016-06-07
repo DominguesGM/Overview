@@ -560,10 +560,11 @@ body {
     position:relative;
 }
 #page-content-wrapper {
-    padding-bottom: 75px; /* Height of the footer element */
+    padding-bottom: 90px; /* Height of the footer element */
     height:100%;
 }
 footer {
+    margin-top: 10px;
     background-color: #CFECEC;
     width:100%;
     height:75px;
