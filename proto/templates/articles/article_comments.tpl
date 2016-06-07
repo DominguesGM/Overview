@@ -9,7 +9,7 @@
       <div class="form-group">
         <textarea id="new-comment" style="overflow:auto;resize:vertical" class="form-control" name="comment" rows="2" ></textarea>
       </div>
-      <button type="button" onclick="postComment({$ID}, '{$article['first_name']}', '{$article['last_name']}', '{$PICTURE}');" class="btn btn-primary">Enviar</button>
+      <button type="button" onclick="postComment({$ID}, '{$FIRST_NAME}', '{$LAST_NAME}', '{$PICTURE}');" class="btn btn-primary">Enviar</button>
     </div>
     <hr>
     {/if}
