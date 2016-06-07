@@ -31,7 +31,7 @@
    */
 
    function getCommentHtml(commentId, commentDate, content, score, postedBy, firstName, lastName, path, vote, report){
-    var commentHtml = '<div id="' + commentId + '" class=\"media comment\">';
+    var commentHtml = '<div id="comment-' + commentId + '" class=\"media comment\">';
     commentHtml += '<input class="comment-user" type="hidden" value="' + postedBy + '">';
     commentHtml += "<p class=\"pull-right\"><small>" + commentDate + "</small></p>";
 
@@ -59,7 +59,7 @@
     commentHtml += '</div>';
 
 	if(userId==postedBy){
-		commentHtml += '<div class="delete btn-simple pull-right text-muted"><small><span onclick="deleteComment(' + commentId + + ',' + postedBy+ ')" data-placement="left" data-toggle="tooltip" title="Apagar" class="glyphicon glyphicon-remove"></span></small></div>';
+		commentHtml += '<div class="delete btn-simple pull-right text-muted"><small><span onclick="deleteComment(' + commentId + ',' + postedBy+ ')" data-placement="left" data-toggle="tooltip" title="Apagar" class="glyphicon glyphicon-remove"></span></small></div>';
 	}
     
     commentHtml += '</div>';
