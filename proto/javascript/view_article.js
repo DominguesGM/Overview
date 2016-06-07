@@ -213,9 +213,9 @@ function deleteCommentConfirmed(commentId, author){
 
   function getArticleReportLink(articleId, reported){
     if(reported){
-      return "<div class=\"report-article text-muted\"><span data-placement=\"bottom\" class=\"glyphicon glyphicon-flag\"></span>Artigo reportado</div>"
+      return "<div class=\"report-article text-muted pull-right\"><span data-placement=\"bottom\" class=\"glyphicon glyphicon-flag\"></span>Artigo reportado</div>"
     }else{
-      return "<div class=\"selectable report-article\"><small><a data-id=\"article#" + articleId + "\" data-toggle=\"modal\" data-target=\"#article-form\"><span data-placement=\"bottom\" class=\"glyphicon glyphicon-flag\"></span>Reportar artigo</a></small></div>";
+      return "<div class=\"selectable report-article pull-right\"><small><a data-id=\"article#" + articleId + "\" data-toggle=\"modal\" data-target=\"#article-form\"><span data-placement=\"bottom\" class=\"glyphicon glyphicon-flag\"></span>Reportar artigo</a></small></div>";
     }
   }
 
@@ -268,6 +268,7 @@ function deleteCommentConfirmed(commentId, author){
 
       }else{
         warn("Ocorreu um erro ao reportar o " + (commentId != null ? 'comentário.' : 'artigo.'));
+        console.log(html);
       }
     });
 
