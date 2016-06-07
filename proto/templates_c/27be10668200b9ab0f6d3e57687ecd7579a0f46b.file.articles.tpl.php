@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-05 22:13:48
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 11:37:15
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\users\articles.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:22264575487fceb37a8-22954420%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '27be10668200b9ab0f6d3e57687ecd7579a0f46b' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\users\\articles.tpl',
-      1 => 1465007457,
+      1 => 1465261818,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_575487fd769eb3_63662999',
   'variables' => 
   array (
     'nArticles' => 0,
@@ -23,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'article' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_575487fd769eb3_63662999',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_575487fd769eb3_63662999')) {function content_575487fd769eb3_63662999($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
@@ -63,7 +63,7 @@ pages/articles/article.php?id=<?php echo $_smarty_tpl->tpl_vars['article']->valu
 </h4></a>
               <span class="image-box" data-score="<?php echo $_smarty_tpl->tpl_vars['article']->value['score'];?>
 "><img class="img-thumbnail" src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-<?php echo $_smarty_tpl->tpl_vars['article']->value['path'];?>
+<?php echo $_smarty_tpl->tpl_vars['article']->value['image_article'];?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['article']->value['title'];?>
 "></span>
               <p class="summary"><?php echo $_smarty_tpl->tpl_vars['article']->value['summary'];?>
