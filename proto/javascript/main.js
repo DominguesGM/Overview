@@ -1,4 +1,4 @@
-BASE_URL = '/lbaw/Overview/proto/';
+BASE_URL = '/Overview/proto/';
 
 /**
  * Manages the search bar and the sidebar toggle

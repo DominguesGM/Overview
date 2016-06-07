@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 03:34:05
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 11:15:05
          compiled from "C:\wamp\www\Overview\proto\templates\users\register.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:23265729f9162c5093-27712717%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3cb7c00e1d46c10e1c4d0b43e34079a9cc60d417' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\users\\register.tpl',
-      1 => 1465263223,
+      1 => 1465290870,
       2 => 'file',
     ),
   ),
@@ -58,13 +58,13 @@ actions/users/login.php" method="post">
 " placeholder="Password" required>
           </div>
 
-          <!--<div style="margin-top:10px" class="form-group">
+          <div style="margin-top:10px" class="form-group">
             <div class="col-sm-12 controls">
               <input type="submit" id="btn-signup" type="button" class="btn btn-primary" value="Entrar">
-              <a id="btn-fblogin" href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Entrar com Facebook </a>
-              <a id="btn-twlogin" href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Entrar com Twitter </a>
+              <!--<a id="btn-fblogin" href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Entrar com Facebook </a>
+              <a id="btn-twlogin" href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Entrar com Twitter </a>-->
             </div>
-          </div>-->
+          </div>
 
           <div class="form-group">
             <div class="col-md-12 control">

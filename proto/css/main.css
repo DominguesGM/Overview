@@ -456,7 +456,7 @@ a#menu-toggle{
 }
 
 .dropdown-submenu.pull-left {
-    float: none;
+    float: left;
 }
 
 .dropdown-submenu.pull-left>.dropdown-menu {
