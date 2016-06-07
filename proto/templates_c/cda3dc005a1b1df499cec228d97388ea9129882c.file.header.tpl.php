@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 03:10:56
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 04:49:20
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\common\header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19135721e8855c30b4-28490158%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cda3dc005a1b1df499cec228d97388ea9129882c' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\common\\header.tpl',
-      1 => 1465261818,
+      1 => 1465267672,
       2 => 'file',
     ),
   ),
@@ -119,7 +119,7 @@ pages/category.php?category=Following">Following</a>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a data-placement="bottom" data-toggle="tooltip" title="Procuar" id="search-button" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+              <a data-placement="bottom" data-toggle="tooltip" title="Procurar" id="search-button" href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/search.php"><i class="fa fa-search header-fa"></i></a>
             </li>
             <?php if ($_smarty_tpl->tpl_vars['ID']->value) {?>

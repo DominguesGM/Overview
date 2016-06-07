@@ -16,7 +16,7 @@ var searchMeta2 = '</strong>" em <strong id="query-type" class="text-danger">';
 var searchMeta3 = '</strong>';
 var searchMetaCategory1 = '<span id="category-conditional"> da categoria <strong id="query-category" class="text-danger">';
 var searchMetaCategory2 = '</strong></span>';
-var searchMetaEnd = '</h2></hgroup></div><div class="col-md-12"><section id="item-container" class="col-md-12 col-sm-6 col-md-18"></section></div>';
+var searchMetaEnd = '</h2></hgroup></div><div class="col-md-12"><section id="item-container" class="col-xs-12"></section></div>';
 
 
 $(document).ready(function(){
@@ -49,7 +49,7 @@ function prepareUsersHtml(usersArray){
     for(var i = 0; i < usersArray.length; i++){
         html += '<article class="search-result row"><span class="image-box-Contribuidor" data-score="';
         html += 0;
-        html += '"><img class="img-thumbnail" alt="Imagem do artigo" src="';
+        html += '"><img class="img-thumbnail" alt="Imagem do utilizador ' + usersArray[i]['first_name'] + " " + usersArray[i]['last_name'] + '" src="';
         html += BASE_URL + usersArray[i]['path'];
         html += '" alt=""></span><div class="col-xs-12 col-sm-12 col-md-7 excerpet"><h3><a href="#">';
         html += usersArray[i]['first_name'] + " " + usersArray[i]['last_name'];
@@ -66,7 +66,7 @@ function prepareArticlesHtml(articlesArray){
     for(var i = 0; i < articlesArray.length; i++){
         html += '<article class="search-result row"><span class="image-box" data-score="';
         html += articlesArray[i]['score'];
-        html += '"><img class="img-thumbnail" alt="Imagem do artigo" src="';
+        html += '"><img class="img-thumbnail" alt="Imagem do artigo ' + articlesArray[i]['article_id'] + '" src="';
         html += BASE_URL + articlesArray[i]['path'];
         html += '" alt=""></span><div class="col-xs-12 col-sm-12 col-md-2"><ul class="meta-search"><li><i class="glyphicon glyphicon-calendar"></i> <span>';
         html += articlesArray[i]['date'];
@@ -140,6 +140,8 @@ function executeQuery(){
     var metaHtml;
     var articleUrlRequest = "../api/articles/search.php";
 
+    var loadingImage = $('<img class="loadingIcon" src="'+BASE_URL+'images/assets/loading.gif" alt="loading icon" style="width: 50px;height: 50px;">');
+
     if(!categoryListing) {
         metaHtml = searchMeta1 + query + searchMeta2 + queryType + searchMeta3;
         if (category != "" && category != undefined)
@@ -153,6 +155,8 @@ function executeQuery(){
 
     $('#result-container').html(metaHtml);
 
+    $('#item-container').append(loadingImage);
+
     if(queryType == "Contribuidor"){
         $.ajax({
             url:"../api/users/search.php",
@@ -160,6 +164,7 @@ function executeQuery(){
             data: {'keyword':query, 'offset': offset, 'limit': limit }
         }).done(function(html){
             var jsonResponse = JSON.parse(html);
+            $('img.loadingIcon').remove();
             var listHtml = prepareUsersHtml(jsonResponse['users']);
             $('#item-container').append(listHtml);
             currentResultCount = jsonResponse['count'];
@@ -176,6 +181,7 @@ function executeQuery(){
             data: {'keyword':query, 'offset': offset, 'limit': limit, 'category': category}
         }).done(function(html){
             var jsonResponse = JSON.parse(html);
+            $('img.loadingIcon').remove();
             var listHtml = prepareArticlesHtml(jsonResponse['articles']);
             $('#item-container').append(listHtml);
             currentResultCount = jsonResponse['count'];
@@ -194,6 +200,9 @@ function executeQuery(){
     $(window).scroll(function() {
         if($(window).scrollTop() + $(window).height() == $(document).height()) {
             if(currentResultCount  == limit) {
+                $('#result-container').append(loadingImage);
+
+
                 if (queryType == "Contribuidor") {
                     $.ajax({
                         url: "../api/users/search.php",
@@ -201,6 +210,7 @@ function executeQuery(){
                         data: {'keyword': query, 'offset': offset, 'limit': limit}
                     }).done(function (html) {
                         var jsonResponse = JSON.parse(html);
+                        $('img.loadingIcon').remove();
                         $('#result-count').html(jsonResponse['count']);
                         var listHtml = prepareUsersHtml(jsonResponse['users']);
                         $('#item-container').append(listHtml);
@@ -215,6 +225,7 @@ function executeQuery(){
                         data: {'keyword': query, 'offset': offset, 'limit': limit, 'category': category}
                     }).done(function (html) {
                         var jsonResponse = JSON.parse(html);
+                        $('img.loadingIcon').remove();
                         $('#result-count').html(jsonResponse['count']);
                         var listHtml = prepareArticlesHtml(jsonResponse['articles']);
                         $('#item-container').append(listHtml);

@@ -75,7 +75,7 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a data-placement="bottom" data-toggle="tooltip" title="Procuar" id="search-button" href="{$BASE_URL}pages/search.php"><i class="fa fa-search header-fa"></i></a>
+              <a data-placement="bottom" data-toggle="tooltip" title="Procurar" id="search-button" href="{$BASE_URL}pages/search.php"><i class="fa fa-search header-fa"></i></a>
             </li>
             {if $ID}
             <li>

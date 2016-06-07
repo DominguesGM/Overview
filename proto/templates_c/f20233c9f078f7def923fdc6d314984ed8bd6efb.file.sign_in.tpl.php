@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-01 01:57:21
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 04:15:00
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\common\sign_in.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:155505721e8856bf814-93044378%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f20233c9f078f7def923fdc6d314984ed8bd6efb' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\common\\sign_in.tpl',
-      1 => 1464711321,
+      1 => 1465264521,
       2 => 'file',
     ),
   ),
@@ -27,12 +27,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   <li>
     <div class="row">
       <div class="col-md-12">
-        Entrar com
+        <!--Entrar com
         <div class="social-buttons">
           <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
           <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
         </div>
-        ou
+        ou-->
         <form class="form" role="form" method="post" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 actions/users/login.php" accept-charset="UTF-8" id="login-nav">
           <div class="form-group">

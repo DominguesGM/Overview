@@ -14,7 +14,7 @@
         <div class="col-xs-5 col-xs-offset-1">
             <div id="categoryContainer">
                 <ul id="category-edit-listing">
-                    <img src="{$BASE_URL}images/assets/loading.gif" style="width: 50px;height: 50px;">
+                    <img src="{$BASE_URL}images/assets/loading.gif" alt="loading icon" style="width: 50px;height: 50px;">
                 </ul>
             </div>
         </div>

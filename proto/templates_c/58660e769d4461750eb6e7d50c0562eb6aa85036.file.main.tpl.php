@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 03:11:21
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 04:36:54
          compiled from "C:\wamp\www\lbaw\Overview\proto\templates\main.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:113285721e885438035-29998333%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '58660e769d4461750eb6e7d50c0562eb6aa85036' => 
     array (
       0 => 'C:\\wamp\\www\\lbaw\\Overview\\proto\\templates\\main.tpl',
-      1 => 1465261818,
+      1 => 1465267012,
       2 => 'file',
     ),
   ),
@@ -50,7 +50,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['category']->key => $_smarty_tpl->tpl_
 $_smarty_tpl->tpl_vars['category']->_loop = true;
 ?>
             <!-- Category Display -->
-            <div class="col-md-4 portfolio-item short_category_item">
+            <div class="col-sm-4 portfolio-item short_category_item">
                 <h2 class="main_category"><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/category.php?category=<?php echo $_smarty_tpl->tpl_vars['categories']->value[$_smarty_tpl->tpl_vars['categoryId']->value]['name'];?>
 "><?php echo $_smarty_tpl->tpl_vars['categories']->value[$_smarty_tpl->tpl_vars['categoryId']->value]['name'];?>
