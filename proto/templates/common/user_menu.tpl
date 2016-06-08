@@ -7,8 +7,9 @@
   <li><a href="{$BASE_URL}pages/users/articles.php"><span class="glyphicon glyphicon-duplicate"></span> Artigos</a></li>
   <li><a href="{$BASE_URL}pages/users/notifications.php"><span class="glyphicon glyphicon-envelope"></span> Notificações</a></li>
 
+  <li class="divider"></li>
+
   {if $TYPE != 'Contributor' && ($STATUS == 'Active' || $STATUS == 'Warned')}
-    <li class="divider"></li>
     <li class="dropdown-submenu pull-left"><a tabindex="-1" href="#"><span class="glyphicon glyphicon-eye-open"></span> Moderação</a>
         <ul class="dropdown-menu">
           <li><a href="{$BASE_URL}pages/moderation/reports.php"><span class="glyphicon glyphicon-flag"></span> Itens reportados</a></li>
@@ -26,6 +27,5 @@
     </li>
   {/if}
 
-  <li class="divider"></li>
   <li><a href="{$BASE_URL}actions/users/logout.php"><span class="glyphicon glyphicon-share"></span> Sair</a></li>
 </ul>

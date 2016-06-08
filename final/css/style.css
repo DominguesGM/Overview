@@ -1,0 +1,9 @@
+ul.share-buttons{
+  list-style: none;
+  padding: 0;
+}
+
+.small_gallery{
+    display: inline-block;
+    margin-top: 20px;
+}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 10:58:33
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-07 14:27:24
          compiled from "C:\wamp\www\Overview\proto\templates\common\user_menu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:170475729f94e1814f9-54439382%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ba2927f2e6ffd6c98f7c42153dcbba82742554d3' => 
     array (
       0 => 'C:\\wamp\\www\\Overview\\proto\\templates\\common\\user_menu.tpl',
-      1 => 1465289908,
+      1 => 1465302408,
       2 => 'file',
     ),
   ),
@@ -44,8 +44,9 @@ pages/users/articles.php"><span class="glyphicon glyphicon-duplicate"></span> Ar
   <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 pages/users/notifications.php"><span class="glyphicon glyphicon-envelope"></span> Notificações</a></li>
 
+  <li class="divider"></li>
+
   <?php if ($_smarty_tpl->tpl_vars['TYPE']->value!='Contributor'&&($_smarty_tpl->tpl_vars['STATUS']->value=='Active'||$_smarty_tpl->tpl_vars['STATUS']->value=='Warned')) {?>
-    <li class="divider"></li>
     <li class="dropdown-submenu pull-left"><a tabindex="-1" href="#"><span class="glyphicon glyphicon-eye-open"></span> Moderação</a>
         <ul class="dropdown-menu">
           <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
@@ -67,7 +68,6 @@ pages/administration/categories.php"><span class="glyphicon glyphicon-tag"></spa
     </li>
   <?php }?>
 
-  <li class="divider"></li>
   <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 actions/users/logout.php"><span class="glyphicon glyphicon-share"></span> Sair</a></li>
 </ul>
